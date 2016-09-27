@@ -1,0 +1,27 @@
+PODS:
+  - EaseMobSDKFull (2.2.7)
+  - Masonry (1.0.2)
+  - SVProgressHUD (2.0.3)
+
+DEPENDENCIES:
+  - EaseMobSDKFull (from `https://github.com/easemob/sdk-ios-cocoapods-integration.git`)
+  - Masonry (~> 1.0.2)
+  - SVProgressHUD (~> 2.0.3)
+
+EXTERNAL SOURCES:
+  EaseMobSDKFull:
+    :git: https://github.com/easemob/sdk-ios-cocoapods-integration.git
+
+CHECKOUT OPTIONS:
+  EaseMobSDKFull:
+    :commit: 92aecd5faace9776d8e302ffca3a23c85c669de8
+    :git: https://github.com/easemob/sdk-ios-cocoapods-integration.git
+
+SPEC CHECKSUMS:
+  EaseMobSDKFull: 574e1c3fcbd541fd1419df750ee642aa6d443c6c
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+
+PODFILE CHECKSUM: 989ffb14c5d0232c1f50b66d263ec98a971ac1eb
+
+COCOAPODS: 1.0.1

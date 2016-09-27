@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="W8j-c4-zfw" customClass="MLInputView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZDQ-us-3q0">
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="send"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjQ-FS-wIo">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="PtY-3m-phU"/>
+                    </constraints>
+                    <state key="normal" image="speech.png"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="0.2"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="16"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="speech:" destination="W8j-c4-zfw" eventType="touchUpInside" id="QCE-tc-hTP"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNW-ID-te7">
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="bze-Fl-ETO"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhx-dA-zns">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="8Lz-f1-Yws"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="add.png"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="16"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="0.2"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="more:" destination="W8j-c4-zfw" eventType="touchUpInside" id="HSq-Pe-tvD"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dP6-fl-Fdv">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="i6T-2X-2gm"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="face.png"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="16"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="0.2"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="face:" destination="W8j-c4-zfw" eventType="touchUpInside" id="9EK-9J-hVF"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="mjQ-FS-wIo" firstAttribute="top" secondItem="W8j-c4-zfw" secondAttribute="top" constant="9" id="CZB-FT-kny"/>
+                <constraint firstItem="aNW-ID-te7" firstAttribute="top" secondItem="W8j-c4-zfw" secondAttribute="top" id="Cok-y3-IMl"/>
+                <constraint firstItem="dP6-fl-Fdv" firstAttribute="top" secondItem="aNW-ID-te7" secondAttribute="bottom" constant="9" id="M5k-FP-BM4"/>
+                <constraint firstItem="mjQ-FS-wIo" firstAttribute="leading" secondItem="W8j-c4-zfw" secondAttribute="leading" constant="9" id="Mtn-a6-kP5"/>
+                <constraint firstItem="ZDQ-us-3q0" firstAttribute="top" secondItem="W8j-c4-zfw" secondAttribute="top" constant="9" id="Sif-Xt-JkJ"/>
+                <constraint firstItem="ZDQ-us-3q0" firstAttribute="leading" secondItem="mjQ-FS-wIo" secondAttribute="trailing" constant="9" id="T7p-wg-8Ht"/>
+                <constraint firstAttribute="trailing" secondItem="aNW-ID-te7" secondAttribute="trailing" id="Zfa-hj-KCV"/>
+                <constraint firstAttribute="bottom" secondItem="dP6-fl-Fdv" secondAttribute="bottom" constant="9" id="aE7-5O-GIk"/>
+                <constraint firstItem="dhx-dA-zns" firstAttribute="leading" secondItem="dP6-fl-Fdv" secondAttribute="trailing" constant="9" id="dVC-pa-3tY"/>
+                <constraint firstAttribute="trailing" secondItem="dhx-dA-zns" secondAttribute="trailing" constant="9" id="hoN-Se-iOh"/>
+                <constraint firstItem="dP6-fl-Fdv" firstAttribute="leading" secondItem="ZDQ-us-3q0" secondAttribute="trailing" constant="9" id="jjT-kd-pDd"/>
+                <constraint firstAttribute="bottom" secondItem="dhx-dA-zns" secondAttribute="bottom" constant="9" id="mMd-uW-Xn6"/>
+                <constraint firstItem="aNW-ID-te7" firstAttribute="leading" secondItem="W8j-c4-zfw" secondAttribute="leading" id="qy3-cz-TUV"/>
+                <constraint firstAttribute="bottom" secondItem="mjQ-FS-wIo" secondAttribute="bottom" constant="9" id="vFa-xg-wEc"/>
+                <constraint firstItem="dhx-dA-zns" firstAttribute="top" secondItem="aNW-ID-te7" secondAttribute="bottom" constant="9" id="w9d-6q-jPy"/>
+                <constraint firstAttribute="bottom" secondItem="ZDQ-us-3q0" secondAttribute="bottom" constant="9" id="y7B-qY-6gN"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="textField" destination="ZDQ-us-3q0" id="bR4-vX-rEH"/>
+            </connections>
+            <point key="canvasLocation" x="258.5" y="-205.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="add.png" width="32" height="32"/>
+        <image name="face.png" width="32" height="32"/>
+        <image name="speech.png" width="32" height="32"/>
+    </resources>
+</document>
