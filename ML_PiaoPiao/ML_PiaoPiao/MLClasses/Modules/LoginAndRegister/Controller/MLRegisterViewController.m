@@ -42,11 +42,6 @@
 }
 
 
-#pragma mark - 便利构造器
-+(instancetype)ml_registerViewController {
-
-    return [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil].lastObject;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

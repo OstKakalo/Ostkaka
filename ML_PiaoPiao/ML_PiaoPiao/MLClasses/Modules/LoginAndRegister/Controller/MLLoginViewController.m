@@ -20,6 +20,8 @@
 @end
 
 @implementation MLLoginViewController
+
+
 - (IBAction)back:(id)sender {
     
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -29,13 +31,7 @@
 
 
 
-+ (instancetype)ml_loginViewController {
-    
-    id test = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil].lastObject;
-    NSLog(@"%@", test);
-    return [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil].lastObject;
 
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

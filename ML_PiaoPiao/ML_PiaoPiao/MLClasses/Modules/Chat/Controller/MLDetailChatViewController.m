@@ -18,7 +18,8 @@ static NSString *const ID = @"mlconversation";
 <
 UITableViewDelegate,
 UITableViewDataSource,
-UITextFieldDelegate
+UITextFieldDelegate,
+EMChatManagerDelegate
 >
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -51,6 +52,8 @@ UITextFieldDelegate
     
     
     
+    
+    [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
     
     
 }
@@ -101,7 +104,7 @@ UITextFieldDelegate
 - (UIView *)inputView {
     if (!_inputView) {
         _inputView = [MLInputView ml_inputView];
-        _inputView.frame = CGRectMake(0, self.view.bounds.size.height - 50 , self.view.bounds.size.width, 50);
+        _inputView.frame = CGRectMake(0, self.view.bounds.size.height - 50 -10 , self.view.bounds.size.width, 50 );
         _inputView.textField.delegate = self;
         
     }
@@ -246,4 +249,12 @@ UITextFieldDelegate
 
 
 }
+
+#pragma mark - EaseMode
+- (void)didReceiveMessage:(EMMessage *)message {
+
+    [self ml_reload];
+
+}
+
 @end

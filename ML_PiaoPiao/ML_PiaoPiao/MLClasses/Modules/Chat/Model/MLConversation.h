@@ -16,7 +16,7 @@
 @property (nonatomic, copy, readonly) NSString *contentText;
 
 // 文字聊天的背景图
-@property (nonatomic, strong, readonly) UIImage *contentBackGroundImage;
+@property (nonatomic, strong, readonly) UIColor *contentBackGroundColor;
 
 // 头像url
 @property (nonatomic, copy, readonly) NSString *userIcon;

@@ -28,7 +28,7 @@
     MLConversation *conversation = conversationFrame.conversation;
     _timeLabel.text = conversation.timeStr;
     [_contentButton setTitle:conversation.contentText forState:UIControlStateNormal];
-    [_contentButton setBackgroundImage:conversation.contentBackGroundImage forState:UIControlStateNormal];
+    _contentButton.backgroundColor = conversation.contentBackGroundColor;
     [_iconButton setImage:[UIImage imageNamed:conversation.userIcon] forState:UIControlStateNormal];
     
     
@@ -58,6 +58,7 @@
         self.contentButton = [[MLLongPressButton alloc] init];
 //        _contentButton.contentEdgeInsets = UIEdgeInsetsMake(kContentEdgeTop, kContentEdgeLeft, kContentEdgeBottom, kContentEdgeRight);
         _contentButton.titleLabel.numberOfLines = 0;
+
         _contentButton.layer.cornerRadius = 5.0;
         [_contentButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         _contentButton.backgroundColor = [UIColor cyanColor];

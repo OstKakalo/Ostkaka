@@ -3,98 +3,92 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
-        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <viewController id="Bv6-jt-bkj" customClass="MLRegisterViewController">
-            <layoutGuides>
-                <viewControllerLayoutGuide type="top" id="6Lr-QN-BRa"/>
-                <viewControllerLayoutGuide type="bottom" id="7De-hJ-jul"/>
-            </layoutGuides>
-            <view key="view" contentMode="scaleToFill" id="AXc-5c-DPJ">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Xfg-eo-Dnq"/>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lB8-xc-SBX">
-                        <constraints>
-                            <constraint firstAttribute="height" constant="60" id="PEl-3A-Q5O"/>
-                        </constraints>
-                        <nil key="textColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                        <textInputTraits key="textInputTraits"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="30"/>
-                        </userDefinedRuntimeAttributes>
-                    </textField>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rck-MP-ROC">
-                        <constraints>
-                            <constraint firstAttribute="height" constant="60" id="16V-Vi-H9D"/>
-                        </constraints>
-                        <nil key="textColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                        <textInputTraits key="textInputTraits"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="30"/>
-                        </userDefinedRuntimeAttributes>
-                    </textField>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOh-at-O6H">
-                        <color key="backgroundColor" red="0.36350942335432446" green="1" blue="0.51414995190575485" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="60" id="gpv-UG-TPB"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                        <state key="normal" title="Regiser">
-                            <color key="titleColor" cyan="0.0" magenta="0.0001772865653" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
-                        </state>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="30"/>
-                        </userDefinedRuntimeAttributes>
-                        <connections>
-                            <action selector="ml_register:" destination="Bv6-jt-bkj" eventType="touchUpInside" id="sEo-Sj-ZXp"/>
-                        </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJ1-HO-uWI">
-                        <constraints>
-                            <constraint firstAttribute="width" constant="75" id="2zf-aD-oed"/>
-                            <constraint firstAttribute="height" constant="30" id="Af7-oj-mfh"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <state key="normal" title="&lt;  返回"/>
-                        <connections>
-                            <action selector="back:" destination="Bv6-jt-bkj" eventType="touchUpInside" id="JDg-oa-Qh0"/>
-                        </connections>
-                    </button>
-                </subviews>
-                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                <constraints>
-                    <constraint firstItem="dOh-at-O6H" firstAttribute="top" secondItem="Rck-MP-ROC" secondAttribute="bottom" constant="20" id="29v-iX-omM"/>
-                    <constraint firstAttribute="trailing" secondItem="dOh-at-O6H" secondAttribute="trailing" constant="40" id="ETZ-VS-P0d"/>
-                    <constraint firstAttribute="trailing" secondItem="lB8-xc-SBX" secondAttribute="trailing" constant="40" id="Fa5-DK-VzJ"/>
-                    <constraint firstItem="dOh-at-O6H" firstAttribute="leading" secondItem="AXc-5c-DPJ" secondAttribute="leading" constant="40" id="IP9-CB-8QW"/>
-                    <constraint firstItem="7De-hJ-jul" firstAttribute="top" secondItem="Xfg-eo-Dnq" secondAttribute="bottom" id="JDA-AB-I7f"/>
-                    <constraint firstItem="lB8-xc-SBX" firstAttribute="leading" secondItem="AXc-5c-DPJ" secondAttribute="leading" constant="40" id="PHq-zN-5fr"/>
-                    <constraint firstItem="7De-hJ-jul" firstAttribute="top" secondItem="lB8-xc-SBX" secondAttribute="bottom" constant="180" id="Qnt-U6-yFZ"/>
-                    <constraint firstItem="hJ1-HO-uWI" firstAttribute="leading" secondItem="AXc-5c-DPJ" secondAttribute="leading" constant="10" id="V10-eK-t1Q"/>
-                    <constraint firstItem="Rck-MP-ROC" firstAttribute="leading" secondItem="AXc-5c-DPJ" secondAttribute="leading" constant="40" id="bj3-wI-43c"/>
-                    <constraint firstAttribute="trailing" secondItem="Rck-MP-ROC" secondAttribute="trailing" constant="40" id="cg8-eY-TMi"/>
-                    <constraint firstAttribute="trailing" secondItem="Xfg-eo-Dnq" secondAttribute="trailing" id="goy-uw-Zdx"/>
-                    <constraint firstItem="hJ1-HO-uWI" firstAttribute="top" secondItem="6Lr-QN-BRa" secondAttribute="bottom" constant="5" id="ntN-lJ-QM5"/>
-                    <constraint firstItem="Xfg-eo-Dnq" firstAttribute="top" secondItem="AXc-5c-DPJ" secondAttribute="topMargin" id="rwH-IO-j0e"/>
-                    <constraint firstItem="Rck-MP-ROC" firstAttribute="top" secondItem="lB8-xc-SBX" secondAttribute="bottom" constant="20" id="uQc-67-j1Q"/>
-                    <constraint firstItem="Xfg-eo-Dnq" firstAttribute="leading" secondItem="AXc-5c-DPJ" secondAttribute="leading" id="vrh-2w-VN1"/>
-                </constraints>
-            </view>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MLRegisterViewController">
             <connections>
-                <outlet property="password" destination="Rck-MP-ROC" id="f7h-kj-Lp9"/>
-                <outlet property="username" destination="lB8-xc-SBX" id="oTq-jT-ezT"/>
+                <outlet property="password" destination="Rck-MP-ROC" id="fya-Lc-dbE"/>
+                <outlet property="username" destination="lB8-xc-SBX" id="2tP-5y-ciC"/>
+                <outlet property="view" destination="AXc-5c-DPJ" id="cqp-is-oMI"/>
             </connections>
-            <point key="canvasLocation" x="-19.5" y="91.5"/>
-        </viewController>
+        </placeholder>
+        <view contentMode="scaleToFill" id="AXc-5c-DPJ">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Xfg-eo-Dnq"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lB8-xc-SBX">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="PEl-3A-Q5O"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="30"/>
+                    </userDefinedRuntimeAttributes>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rck-MP-ROC">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="16V-Vi-H9D"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="30"/>
+                    </userDefinedRuntimeAttributes>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOh-at-O6H">
+                    <color key="backgroundColor" red="0.36350942335432446" green="1" blue="0.51414995190575485" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="gpv-UG-TPB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <state key="normal" title="Regiser">
+                        <color key="titleColor" cyan="0.0" magenta="0.0001772865653" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="30"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="ml_register:" destination="-1" eventType="touchUpInside" id="ar9-ga-Vd6"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJ1-HO-uWI">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="75" id="2zf-aD-oed"/>
+                        <constraint firstAttribute="height" constant="30" id="Af7-oj-mfh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="&lt;  返回"/>
+                    <connections>
+                        <action selector="back:" destination="-1" eventType="touchUpInside" id="u7M-QC-kLq"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="dOh-at-O6H" firstAttribute="top" secondItem="Rck-MP-ROC" secondAttribute="bottom" constant="20" id="29v-iX-omM"/>
+                <constraint firstItem="Xfg-eo-Dnq" firstAttribute="leading" secondItem="AXc-5c-DPJ" secondAttribute="leading" id="ApI-9o-YLv"/>
+                <constraint firstAttribute="trailing" secondItem="dOh-at-O6H" secondAttribute="trailing" constant="40" id="ETZ-VS-P0d"/>
+                <constraint firstAttribute="bottom" secondItem="Xfg-eo-Dnq" secondAttribute="bottom" id="FZp-1Z-COi"/>
+                <constraint firstAttribute="trailing" secondItem="lB8-xc-SBX" secondAttribute="trailing" constant="40" id="Fa5-DK-VzJ"/>
+                <constraint firstItem="dOh-at-O6H" firstAttribute="leading" secondItem="AXc-5c-DPJ" secondAttribute="leading" constant="40" id="IP9-CB-8QW"/>
+                <constraint firstItem="lB8-xc-SBX" firstAttribute="leading" secondItem="AXc-5c-DPJ" secondAttribute="leading" constant="40" id="PHq-zN-5fr"/>
+                <constraint firstItem="hJ1-HO-uWI" firstAttribute="leading" secondItem="AXc-5c-DPJ" secondAttribute="leading" constant="10" id="V10-eK-t1Q"/>
+                <constraint firstAttribute="bottom" secondItem="lB8-xc-SBX" secondAttribute="bottom" constant="180" id="YKo-sE-lSb"/>
+                <constraint firstItem="Rck-MP-ROC" firstAttribute="leading" secondItem="AXc-5c-DPJ" secondAttribute="leading" constant="40" id="bj3-wI-43c"/>
+                <constraint firstAttribute="trailing" secondItem="Rck-MP-ROC" secondAttribute="trailing" constant="40" id="cg8-eY-TMi"/>
+                <constraint firstItem="Xfg-eo-Dnq" firstAttribute="top" secondItem="AXc-5c-DPJ" secondAttribute="top" id="cxW-gE-dGI"/>
+                <constraint firstAttribute="trailing" secondItem="Xfg-eo-Dnq" secondAttribute="trailing" id="mCC-Cb-cpE"/>
+                <constraint firstItem="hJ1-HO-uWI" firstAttribute="top" secondItem="AXc-5c-DPJ" secondAttribute="top" constant="25" id="mEN-xD-w1f"/>
+                <constraint firstItem="Rck-MP-ROC" firstAttribute="top" secondItem="lB8-xc-SBX" secondAttribute="bottom" constant="20" id="uQc-67-j1Q"/>
+            </constraints>
+        </view>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
     </objects>
     <resources>
         <image name="background.jpg" width="640" height="1136"/>

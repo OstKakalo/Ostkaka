@@ -10,6 +10,6 @@
 
 @interface MLRegisterViewController : MLBaseViewController
 
-+(instancetype)ml_registerViewController;
+
 
 @end

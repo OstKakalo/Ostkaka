@@ -63,13 +63,13 @@
 
 #pragma mark - 私有方法
 - (void)ml_registerAction:(UIButton *)button {
-    MLRegisterViewController *registerVC = [MLRegisterViewController ml_registerViewController];
+    MLRegisterViewController *registerVC = [[MLRegisterViewController alloc] init];
     [self presentViewController:registerVC animated:YES completion:nil];
     
 }
  
 - (void)ml_loginButton:(UIButton *)button {
-    MLLoginViewController *loginVC = [MLLoginViewController ml_loginViewController];
+    MLLoginViewController *loginVC = [[MLLoginViewController alloc] init];
     [self presentViewController:loginVC animated:YES completion:nil];
 }
 

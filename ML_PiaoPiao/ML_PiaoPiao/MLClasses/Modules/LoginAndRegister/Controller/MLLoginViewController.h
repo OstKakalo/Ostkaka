@@ -10,6 +10,6 @@
 
 @interface MLLoginViewController : MLBaseViewController
 
-+(instancetype) ml_loginViewController;
+
 
 @end

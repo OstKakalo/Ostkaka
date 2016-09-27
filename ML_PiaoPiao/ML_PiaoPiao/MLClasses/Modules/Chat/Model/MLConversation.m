@@ -15,7 +15,7 @@
 @property (nonatomic, copy) NSString *contentText;
 
 // 文字聊天的背景图
-@property (nonatomic, strong) UIImage *contentBackGroundImage;
+@property (nonatomic, strong) UIColor *contentBackGroundColor;
 
 // 头像url
 @property (nonatomic, copy) NSString *userIcon;
@@ -40,12 +40,12 @@
     if ([loginUsername isEqualToString:message.from]) {
         self.me = YES;
         self.userIcon = @"head.jpg";
-        self.contentBackGroundImage = nil;
+        self.contentBackGroundColor = [UIColor cyanColor];
         
     } else if([loginUsername isEqualToString:message.to]){
         self.me = NO;
         self.userIcon = @"head.jpg";
-        self.contentBackGroundImage = nil;
+        self.contentBackGroundColor = [UIColor whiteColor];
     
     }
     
