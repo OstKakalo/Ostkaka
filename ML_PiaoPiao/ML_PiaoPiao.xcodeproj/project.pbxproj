@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		116686761D9A9DF50070C3F7 /* water.png in Resources */ = {isa = PBXBuildFile; fileRef = 116686751D9A9DF50070C3F7 /* water.png */; };
 		11C6A0C71D954F2700304D7D /* MLTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C6A0C61D954F2700304D7D /* MLTabBarViewController.m */; };
 		11C6A0DF1D95530F00304D7D /* MLMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C6A0DD1D95530F00304D7D /* MLMeViewController.m */; };
 		11C6A0E91D95548100304D7D /* chat-s.png in Resources */ = {isa = PBXBuildFile; fileRef = 11C6A0E11D95548100304D7D /* chat-s.png */; };
@@ -85,6 +86,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		116686751D9A9DF50070C3F7 /* water.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water.png; sourceTree = "<group>"; };
 		11C6A0C51D954F2700304D7D /* MLTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTabBarViewController.h; sourceTree = "<group>"; };
 		11C6A0C61D954F2700304D7D /* MLTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTabBarViewController.m; sourceTree = "<group>"; };
 		11C6A0DC1D95530F00304D7D /* MLMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLMeViewController.h; sourceTree = "<group>"; };
@@ -637,6 +639,7 @@
 				11E72FE91D94FEE5001D964E /* launch.jpg */,
 				11C6A1361D967E6000304D7D /* newFriend.png */,
 				11C6A12A1D965DA300304D7D /* head.jpg */,
+				116686751D9A9DF50070C3F7 /* water.png */,
 				11C6A0E11D95548100304D7D /* chat-s.png */,
 				11C6A1561D98CB2D00304D7D /* face.png */,
 				11C6A1571D98CB2D00304D7D /* add.png */,
@@ -795,6 +798,7 @@
 				11C6A0F41D956DE700304D7D /* MLChatViewController.storyboard in Resources */,
 				11C6A0FD1D9606CC00304D7D /* MLSetTableViewController.storyboard in Resources */,
 				11E72FB41D94DA42001D964E /* Main.storyboard in Resources */,
+				116686761D9A9DF50070C3F7 /* water.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,7 +32,7 @@
     [regisButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.view).offset(-30);
         make.left.equalTo(self.view).offset(30);
-        make.width.equalTo(@100);
+        make.width.equalTo(@120);
         make.height.equalTo(@45);
     }];
     [regisButton setTitle:@"注册" forState:UIControlStateNormal];
@@ -46,7 +46,7 @@
     [loginButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.view).offset(-30);
         make.right.equalTo(self.view).offset(-30);
-        make.width.equalTo(@100);
+        make.width.equalTo(@120);
         make.height.equalTo(@45);
     }];
     [loginButton setTitle:@"登录" forState:UIControlStateNormal];

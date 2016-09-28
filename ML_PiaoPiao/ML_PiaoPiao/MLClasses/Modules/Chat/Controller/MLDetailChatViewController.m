@@ -257,4 +257,9 @@ EMChatManagerDelegate
 
 }
 
+- (void)didReceiveOfflineMessages:(NSArray *)offlineMessages {
+
+    [self ml_reload];
+}
+
 @end

@@ -14,6 +14,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *lpassword;
 
+@property (weak, nonatomic) IBOutlet UIImageView *logo;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 
 
@@ -69,6 +71,8 @@
 #pragma mark - 点击任意
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
+    self.logo.alpha = 0;
+    self.titleLabel.alpha = 0;
     
 }
 #pragma mark - 私有方法 
@@ -94,7 +98,8 @@
         CGFloat viewY = endY - SCREEN_HEIGHT;
         [UIView animateWithDuration:duration animations:^{
             self.view.frame = CGRectMake(0, viewY, SCREEN_WIDTH, SCREEN_HEIGHT);
-            
+            self.logo.alpha = 0;
+            self.titleLabel.alpha = 0;
         }];
         
         

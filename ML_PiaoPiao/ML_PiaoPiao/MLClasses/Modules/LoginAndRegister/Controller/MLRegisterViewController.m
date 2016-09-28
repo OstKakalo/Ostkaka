@@ -14,6 +14,10 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *password;
 
+@property (weak, nonatomic) IBOutlet UIImageView *logo;
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLable;
+
 
 @end
 
@@ -54,6 +58,10 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
+    [UIView animateWithDuration:0.25 animations:^{
+        self.logo.alpha = 1;
+        self.titleLable.alpha = 1;
+    }];
 
 }
 #pragma mark - 私有方法
@@ -79,7 +87,8 @@
         CGFloat viewY = endY - SCREEN_HEIGHT;
         [UIView animateWithDuration:duration animations:^{
             self.view.frame = CGRectMake(0, viewY, SCREEN_WIDTH, SCREEN_HEIGHT);
-            
+            self.logo.alpha = 0;
+            self.titleLable.alpha = 0;
         }];
         
         
