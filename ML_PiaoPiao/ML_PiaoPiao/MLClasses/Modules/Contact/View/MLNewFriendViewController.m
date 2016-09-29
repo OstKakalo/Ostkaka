@@ -73,6 +73,7 @@ UITableViewDataSource
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
     _tableView.rowHeight = 100;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
 }
 

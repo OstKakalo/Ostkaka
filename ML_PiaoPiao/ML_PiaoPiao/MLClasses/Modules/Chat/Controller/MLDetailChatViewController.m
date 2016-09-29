@@ -12,6 +12,7 @@
 #import "MLConversationFrame.h"
 #import "MLConversationTableViewCell.h"
 #import "MLMoreView.h"
+#import <MWPhotoBrowser.h>
 static NSString *const ID = @"mlconversation";
 
 @interface MLDetailChatViewController ()
@@ -25,7 +26,8 @@ MLMoreViewDelegate,
 UINavigationControllerDelegate,
 UIImagePickerControllerDelegate,
 IEMChatProgressDelegate,
-MLConversationTableViewCellDelegate
+MLConversationTableViewCellDelegate,
+MWPhotoBrowserDelegate
 >
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -38,6 +40,10 @@ MLConversationTableViewCellDelegate
 @property (nonatomic, assign) CGFloat keyHeight;
 
 @property (nonatomic, strong) UIView *modelView;
+
+@property (nonatomic, strong) NSMutableArray *contentThumbnailImageArray;
+
+@property (nonatomic, strong) NSMutableArray *contentImageArray;
 @end
 
 @implementation MLDetailChatViewController
@@ -62,8 +68,8 @@ MLConversationTableViewCellDelegate
     [self.modelView addSubview:self.inputView];
     [self.view addSubview:self.moreView];
     
-    [self.view bringSubviewToFront:_inputView];
     [self.view bringSubviewToFront:self.modelView];
+    [self.view bringSubviewToFront:_inputView];
     
     self.title = self.buddy.username;
     
@@ -95,7 +101,7 @@ MLConversationTableViewCellDelegate
     [self.view endEditing:YES];
     
     [UIView animateWithDuration:0.25 animations:^{
-        self.modelView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
+        self.modelView.frame = CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height - 64);
     }];
     
     
@@ -123,7 +129,7 @@ MLConversationTableViewCellDelegate
 - (UIView *)modelView {
 
     if (!_modelView) {
-        _modelView = [[UIView alloc] initWithFrame:self.view.bounds];
+        _modelView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height - 64)];
         _modelView.backgroundColor = ColorWith243;
         
     }
@@ -143,7 +149,7 @@ MLConversationTableViewCellDelegate
 - (UIView *)inputView {
     if (!_inputView) {
         _inputView = [MLInputView ml_inputView];
-        _inputView.frame = CGRectMake(0, self.view.bounds.size.height - 50 - 10, self.view.bounds.size.width, 50 );
+        _inputView.frame = CGRectMake(0, self.view.bounds.size.height - 50 - 64, self.view.bounds.size.width, 50 );
         _inputView.textField.delegate = self;
         _inputView.delegate = self;
         
@@ -154,7 +160,7 @@ MLConversationTableViewCellDelegate
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] init];
-        _tableView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - 50);
+        _tableView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - 50 - 64);
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.backgroundColor = ColorWith243;
@@ -180,12 +186,29 @@ MLConversationTableViewCellDelegate
 
 }
 
+- (NSMutableArray *)contentThumbnailImageArray {
+    if (!_contentThumbnailImageArray) {
+        _contentThumbnailImageArray = [NSMutableArray array];
+        
+    }
+    return _contentThumbnailImageArray;
+
+}
+
+- (NSMutableArray *)contentImageArray {
+    if (!_contentImageArray) {
+        _contentImageArray = [NSMutableArray array];
+    }
+    return _contentImageArray;
+
+}
+
 #pragma mark - setter方法
 
 - (void)setKeyHeight:(CGFloat)keyHeight {
 
     _keyHeight = keyHeight;
-    self.moreView.frame = CGRectMake(0,self.view.bounds.size.height - _keyHeight, self.view.bounds.size.width, _keyHeight);
+    self.moreView.frame = CGRectMake(0,self.view.bounds.size.height - _keyHeight , self.view.bounds.size.width, _keyHeight);
 
 }
 
@@ -237,6 +260,7 @@ MLConversationTableViewCellDelegate
     cell.delegate = self;
     [cell setConversationFrame:_messagesArray[indexPath.row]];
     
+   
     return cell;
 }
 #pragma mark - EaseMode协议方法
@@ -263,7 +287,7 @@ MLConversationTableViewCellDelegate
         
         [self.view endEditing:YES];
 
-        self.modelView.frame = CGRectMake(0, - self.keyHeight, self.view.bounds.size.width, self.view.bounds.size.height);
+        self.modelView.frame = CGRectMake(0, - self.keyHeight + 64, self.view.bounds.size.width, self.view.bounds.size.height - 64);
         
 
     } else {
@@ -335,9 +359,48 @@ MLConversationTableViewCellDelegate
 #pragma mark - MLConversationTableViewCellDelegate协议方法
 
 - (void)ml_conversationTableViewCell:(MLConversationTableViewCell *)conversationTableViewCell {
+    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+    NSUInteger index = 0;
+    if (conversationTableViewCell.conversationFrame.conversation.contentThumbnailImage) {
+        index = [self.contentThumbnailImageArray indexOfObject:conversationTableViewCell.conversationFrame.conversation.contentThumbnailImage];
+    } else {
+        index = [self.contentThumbnailImageArray indexOfObject:conversationTableViewCell.conversationFrame.conversation.contentThumbnailImageURL];
+    }
+    
+    [browser setCurrentPhotoIndex:index];
 
     
+    [self.navigationController pushViewController:browser animated:YES];
+}
+#pragma mark - MWPhotoBrowserDelegate协议方法
 
+// 数量
+- (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser {
+
+    return self.contentThumbnailImageArray.count;
+    
+}
+// 大图
+- (id <MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index {
+    id image = self.contentImageArray[index];
+    MWPhoto *photo;
+    if ([self.contentImageArray[index] isKindOfClass:[UIImage class]]) {
+        photo = [MWPhoto photoWithImage:image];
+    } else {
+        photo = [MWPhoto photoWithURL:image];
+    }
+    return photo;
+}
+// 缩略图
+- (id <MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser thumbPhotoAtIndex:(NSUInteger)index {
+    id image = self.contentThumbnailImageArray[index];
+    MWPhoto *photo;
+    if ([self.contentThumbnailImageArray[index] isKindOfClass:[UIImage class]]) {
+        photo = [MWPhoto photoWithImage:image];
+    } else {
+        photo = [MWPhoto photoWithURL:image];
+    }
+    return photo;
 }
 
 #pragma mark - 私有方法
@@ -366,7 +429,7 @@ MLConversationTableViewCellDelegate
         self.keyHeight = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue].size.height;
         
         [UIView animateWithDuration:duration animations:^{
-            self.modelView.frame = CGRectMake(0, itemY, self.view.bounds.size.width, self.view.bounds.size.height);
+            self.modelView.frame = CGRectMake(0, itemY + 64, self.view.bounds.size.width, self.view.bounds.size.height - 64);
         
         }];
         
@@ -381,6 +444,8 @@ MLConversationTableViewCellDelegate
 - (void)ml_reload {
     
     [self.messagesArray removeAllObjects];
+    [self.contentImageArray removeAllObjects];
+    [self.contentThumbnailImageArray removeAllObjects];
     
      EMConversation *conversation = [[EaseMob sharedInstance].chatManager conversationForChatter:self.buddy.username conversationType:eConversationTypeChat];
     
@@ -392,6 +457,25 @@ MLConversationTableViewCellDelegate
         MLConversationFrame *conversationFrame = [[MLConversationFrame alloc] init];
         conversationFrame.conversation = conversation;
         [self.messagesArray addObject:conversationFrame];
+        // 判断信息类型是否是图片
+        if (conversation.messageBodyType == eMessageBodyType_Image) {
+            
+            // 为数组中存大图片
+            if (conversation.contentImage) {
+                [self.contentImageArray addObject:conversation.contentImage];
+            } else {
+                
+                [self.contentImageArray addObject:conversation.contentImageURL];
+            }
+            // 为数组中存缩略图
+            if (conversation.contentThumbnailImage) {
+                [self.contentThumbnailImageArray addObject:conversation.contentThumbnailImage];
+            } else {
+                
+                [self.contentThumbnailImageArray addObject:conversation.contentThumbnailImageURL];
+            }
+        }
+        
     }
     
     [_tableView reloadData];

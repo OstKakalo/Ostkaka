@@ -43,6 +43,12 @@
     switch (conversation.messageBodyType) {
         case eMessageBodyType_Text:
         {
+            
+            // 解决图文重用问题，如果是文字，将button图片置空
+            [_contentButton setImage:nil forState:UIControlStateNormal];
+            
+                
+            
             [_contentButton setTitle:conversation.contentText forState:UIControlStateNormal];
             _contentButton.backgroundColor = conversation.contentBackGroundColor;
             

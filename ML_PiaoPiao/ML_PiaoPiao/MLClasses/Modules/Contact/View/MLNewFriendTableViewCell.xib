@@ -72,12 +72,21 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pKr-VU-EN8">
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="TvO-qa-RqH"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="1mh-WQ-B0h" firstAttribute="leading" secondItem="4j1-5a-YHY" secondAttribute="trailing" constant="10" id="62y-Ws-78e"/>
                     <constraint firstItem="PQN-2M-jsM" firstAttribute="height" secondItem="4j1-5a-YHY" secondAttribute="height" multiplier="0.5" id="6Hk-20-TTR"/>
                     <constraint firstItem="4j1-5a-YHY" firstAttribute="top" secondItem="tCk-jl-VZ0" secondAttribute="bottom" constant="10" id="7Bx-UZ-pr2"/>
+                    <constraint firstAttribute="trailing" secondItem="pKr-VU-EN8" secondAttribute="trailing" id="97C-wT-yWg"/>
                     <constraint firstItem="PQN-2M-jsM" firstAttribute="leading" secondItem="4j1-5a-YHY" secondAttribute="trailing" constant="10" id="DBL-qK-Fhr"/>
+                    <constraint firstItem="pKr-VU-EN8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="FAv-dK-x8r"/>
+                    <constraint firstAttribute="bottom" secondItem="pKr-VU-EN8" secondAttribute="bottom" id="Gol-kK-e2W"/>
                     <constraint firstItem="7jY-vL-GGl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Nfg-lU-7rR"/>
                     <constraint firstItem="PQN-2M-jsM" firstAttribute="top" secondItem="4j1-5a-YHY" secondAttribute="top" id="RSs-ha-n40"/>
                     <constraint firstItem="tCk-jl-VZ0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="TA6-jN-O24"/>
