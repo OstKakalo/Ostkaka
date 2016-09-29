@@ -10,6 +10,11 @@
 
 @implementation MLInputView
 - (IBAction)more:(id)sender {
+  
+    if ([self.delegate respondsToSelector:@selector(ml_inputView:)]) {
+        [self.delegate ml_inputView:self];
+    }
+
     NSLog(@"more");
 }
 

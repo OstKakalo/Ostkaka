@@ -24,6 +24,9 @@
 @implementation MLLoginViewController
 
 
+
+
+
 - (IBAction)back:(id)sender {
     
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -71,8 +74,8 @@
 #pragma mark - 点击任意
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
-    self.logo.alpha = 0;
-    self.titleLabel.alpha = 0;
+    self.logo.alpha = 1;
+    self.titleLabel.alpha = 1;
     
 }
 #pragma mark - 私有方法 

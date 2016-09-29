@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1117AA191D9C9FDD008B4D40 /* MLMoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1117AA181D9C9FDD008B4D40 /* MLMoreView.xib */; };
+		1117AA1B1D9CA1C1008B4D40 /* photo- chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 1117AA1A1D9CA1C1008B4D40 /* photo- chat.png */; };
 		116686761D9A9DF50070C3F7 /* water.png in Resources */ = {isa = PBXBuildFile; fileRef = 116686751D9A9DF50070C3F7 /* water.png */; };
+		118F7EFF1D9BFC3C00D1F592 /* MLMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 118F7EFE1D9BFC3C00D1F592 /* MLMoreView.m */; };
 		11C6A0C71D954F2700304D7D /* MLTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C6A0C61D954F2700304D7D /* MLTabBarViewController.m */; };
 		11C6A0DF1D95530F00304D7D /* MLMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C6A0DD1D95530F00304D7D /* MLMeViewController.m */; };
 		11C6A0E91D95548100304D7D /* chat-s.png in Resources */ = {isa = PBXBuildFile; fileRef = 11C6A0E11D95548100304D7D /* chat-s.png */; };
@@ -86,7 +89,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1117AA181D9C9FDD008B4D40 /* MLMoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MLMoreView.xib; sourceTree = "<group>"; };
+		1117AA1A1D9CA1C1008B4D40 /* photo- chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo- chat.png"; sourceTree = "<group>"; };
 		116686751D9A9DF50070C3F7 /* water.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water.png; sourceTree = "<group>"; };
+		118F7EFD1D9BFC3C00D1F592 /* MLMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLMoreView.h; sourceTree = "<group>"; };
+		118F7EFE1D9BFC3C00D1F592 /* MLMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLMoreView.m; sourceTree = "<group>"; };
 		11C6A0C51D954F2700304D7D /* MLTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTabBarViewController.h; sourceTree = "<group>"; };
 		11C6A0C61D954F2700304D7D /* MLTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTabBarViewController.m; sourceTree = "<group>"; };
 		11C6A0DC1D95530F00304D7D /* MLMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLMeViewController.h; sourceTree = "<group>"; };
@@ -445,6 +452,9 @@
 				11C6A14F1D98B06500304D7D /* MLInputView.h */,
 				11C6A1501D98B06500304D7D /* MLInputView.m */,
 				11C6A1521D98B07700304D7D /* MLInputView.xib */,
+				118F7EFD1D9BFC3C00D1F592 /* MLMoreView.h */,
+				118F7EFE1D9BFC3C00D1F592 /* MLMoreView.m */,
+				1117AA181D9C9FDD008B4D40 /* MLMoreView.xib */,
 				11E023FA1D991D660065A72B /* MLConversationTableViewCell.h */,
 				11E023FB1D991D660065A72B /* MLConversationTableViewCell.m */,
 				11E024031D991E690065A72B /* MLLongPressButton.h */,
@@ -639,6 +649,7 @@
 				11E72FE91D94FEE5001D964E /* launch.jpg */,
 				11C6A1361D967E6000304D7D /* newFriend.png */,
 				11C6A12A1D965DA300304D7D /* head.jpg */,
+				1117AA1A1D9CA1C1008B4D40 /* photo- chat.png */,
 				116686751D9A9DF50070C3F7 /* water.png */,
 				11C6A0E11D95548100304D7D /* chat-s.png */,
 				11C6A1561D98CB2D00304D7D /* face.png */,
@@ -773,6 +784,8 @@
 				11C6A1351D96735900304D7D /* MLMenuTableViewCell.xib in Resources */,
 				11C6A0EA1D95548100304D7D /* chat.png in Resources */,
 				11C6A0EE1D95548100304D7D /* discover.png in Resources */,
+				1117AA191D9C9FDD008B4D40 /* MLMoreView.xib in Resources */,
+				1117AA1B1D9CA1C1008B4D40 /* photo- chat.png in Resources */,
 				11C6A0F21D956D5100304D7D /* MLMeViewController.storyboard in Resources */,
 				11C6A1291D9628A600304D7D /* search.png in Resources */,
 				11C6A1591D98CB2D00304D7D /* face.png in Resources */,
@@ -891,6 +904,7 @@
 				11E72FE81D94FCB1001D964E /* MLMainViewController.m in Sources */,
 				11C6A12F1D96732F00304D7D /* MLFriendsTableViewCell.m in Sources */,
 				11E7300A1D950292001D964E /* NSString+Regex.m in Sources */,
+				118F7EFF1D9BFC3C00D1F592 /* MLMoreView.m in Sources */,
 				11E72FAE1D94DA42001D964E /* AppDelegate.mm in Sources */,
 				11E024051D991E690065A72B /* MLLongPressButton.m in Sources */,
 				11E7300D1D950292001D964E /* UIColor+Categories.m in Sources */,

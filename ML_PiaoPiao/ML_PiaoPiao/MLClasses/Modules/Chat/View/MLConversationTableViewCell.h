@@ -8,10 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@class MLConversationFrame;
+@class MLConversationFrame, MLConversationTableViewCell;
+
+@protocol MLConversationTableViewCellDelegate <NSObject>
+
+@optional
+
+- (void)ml_conversationTableViewCell:(MLConversationTableViewCell *)conversationTableViewCell;
+
+@end
+
 
 @interface MLConversationTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) MLConversationFrame *conversationFrame;
+@property (nonatomic, weak) id<MLConversationTableViewCellDelegate> delegate;
 
 @end

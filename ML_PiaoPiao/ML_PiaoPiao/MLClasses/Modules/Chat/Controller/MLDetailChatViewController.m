@@ -11,7 +11,7 @@
 #import "MLConversation.h"
 #import "MLConversationFrame.h"
 #import "MLConversationTableViewCell.h"
-
+#import "MLMoreView.h"
 static NSString *const ID = @"mlconversation";
 
 @interface MLDetailChatViewController ()
@@ -19,13 +19,25 @@ static NSString *const ID = @"mlconversation";
 UITableViewDelegate,
 UITableViewDataSource,
 UITextFieldDelegate,
-EMChatManagerDelegate
+EMChatManagerDelegate,
+MLInputViewDelegate,
+MLMoreViewDelegate,
+UINavigationControllerDelegate,
+UIImagePickerControllerDelegate,
+IEMChatProgressDelegate,
+MLConversationTableViewCellDelegate
 >
 @property (nonatomic, strong) UITableView *tableView;
 
 @property (nonatomic, strong) MLInputView *inputView;
 
 @property (nonatomic, strong) NSMutableArray *messagesArray;
+
+@property (nonatomic, strong) MLMoreView *moreView;
+
+@property (nonatomic, assign) CGFloat keyHeight;
+
+@property (nonatomic, strong) UIView *modelView;
 @end
 
 @implementation MLDetailChatViewController
@@ -33,24 +45,37 @@ EMChatManagerDelegate
 
 
 
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    
+    
+    
     // 添加子控件
-    [self.view addSubview:self.tableView];
-    [self.view addSubview:self.inputView];
+    [self.view addSubview:self.modelView];
+    [self.modelView addSubview:self.tableView];
+    [self.modelView addSubview:self.inputView];
+    [self.view addSubview:self.moreView];
+    
+    [self.view bringSubviewToFront:_inputView];
+    [self.view bringSubviewToFront:self.modelView];
     
     self.title = self.buddy.username;
     
     // 刷新
     [self ml_reload];
-    // 监控键盘
-    [self ml_keyBoardMove];
+    
     
     // 注册
     [self.tableView registerClass:[MLConversationTableViewCell class] forCellReuseIdentifier:ID];
     
-    
+    // 监控键盘
+    [self ml_keyBoardMove];
     
     
     [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
@@ -68,19 +93,22 @@ EMChatManagerDelegate
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
 
     [self.view endEditing:YES];
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        self.modelView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
+    }];
+    
+    
+    
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-
-    [self.view endEditing:YES];
-
-}
 
 
 #pragma mark - 操控tabBar消失出现
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.tabBarController.tabBar.hidden = YES;
+    
     
 }
 - (void)viewWillDisappear:(BOOL)animated {
@@ -92,6 +120,17 @@ EMChatManagerDelegate
 
 #pragma mark - 懒加载
 
+- (UIView *)modelView {
+
+    if (!_modelView) {
+        _modelView = [[UIView alloc] initWithFrame:self.view.bounds];
+        _modelView.backgroundColor = ColorWith243;
+        
+    }
+    return _modelView;
+
+
+}
 
 - (NSMutableArray *)messagesArray {
     
@@ -104,8 +143,9 @@ EMChatManagerDelegate
 - (UIView *)inputView {
     if (!_inputView) {
         _inputView = [MLInputView ml_inputView];
-        _inputView.frame = CGRectMake(0, self.view.bounds.size.height - 50 -10 , self.view.bounds.size.width, 50 );
+        _inputView.frame = CGRectMake(0, self.view.bounds.size.height - 50 - 10, self.view.bounds.size.width, 50 );
         _inputView.textField.delegate = self;
+        _inputView.delegate = self;
         
     }
     return _inputView;
@@ -126,7 +166,31 @@ EMChatManagerDelegate
     
 }
 
-#pragma mark - textField代理
+- (MLMoreView *)moreView {
+    
+    if (!_moreView) {
+        _moreView = [[MLMoreView alloc] init];
+        _moreView.frame = CGRectMake(0, self.view.frame.size.height -  _keyHeight, self.view.bounds.size.width, _keyHeight);
+        _moreView.backgroundColor = [UIColor whiteColor];
+        _moreView.delegate = self;
+        _moreView.userInteractionEnabled = YES;
+        
+    }
+    return _moreView;
+
+}
+
+#pragma mark - setter方法
+
+- (void)setKeyHeight:(CGFloat)keyHeight {
+
+    _keyHeight = keyHeight;
+    self.moreView.frame = CGRectMake(0,self.view.bounds.size.height - _keyHeight, self.view.bounds.size.width, _keyHeight);
+
+}
+
+
+#pragma mark - textField协议方法
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
 
     
@@ -157,7 +221,7 @@ EMChatManagerDelegate
 
 
 
-#pragma mark - tableView代理
+#pragma mark - tableView协议方法
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     return [self.messagesArray[indexPath.row] cellH];
@@ -170,10 +234,110 @@ EMChatManagerDelegate
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     MLConversationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    
+    cell.delegate = self;
     [cell setConversationFrame:_messagesArray[indexPath.row]];
     
     return cell;
+}
+#pragma mark - EaseMode协议方法
+- (void)didReceiveMessage:(EMMessage *)message {
+    
+    [self ml_reload];
+    
+}
+
+- (void)didReceiveOfflineMessages:(NSArray *)offlineMessages {
+    
+    [self ml_reload];
+}
+
+
+#pragma mark - InputView协议方法
+- (void)ml_inputView:(MLInputView *)inputView {
+    
+    
+    
+    
+    if ([_inputView.textField isFirstResponder]) {
+
+        
+        [self.view endEditing:YES];
+
+        self.modelView.frame = CGRectMake(0, - self.keyHeight, self.view.bounds.size.width, self.view.bounds.size.height);
+        
+
+    } else {
+    
+        [_inputView.textField becomeFirstResponder];
+    
+    }
+    
+
+}
+
+#pragma mark - moreView协议方法
+- (void)ml_moreView:(MLMoreView *)moreView moreButtonStyle:(NSInteger)buttonStyle {
+    // 相册
+    if (buttonStyle == 0) {
+        UIImagePickerController *iPC = [[UIImagePickerController alloc] init];
+        iPC.delegate = self;
+        [self presentViewController:iPC animated:YES completion:nil];
+        
+    }
+
+    
+    
+
+}
+#pragma mark - UIImagePickerControllerDelegate协议方法
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    
+    
+    EMChatImage *emImage = [[EMChatImage alloc] initWithUIImage:image displayName:@"展示的图片名"];
+    
+    EMImageMessageBody *body = [[EMImageMessageBody alloc] initWithChatObject:emImage];
+    
+    EMMessage *emsg = [[EMMessage alloc] initWithReceiver:self.buddy.username bodies:@[body]];
+    
+    
+    
+    [[EaseMob sharedInstance].chatManager asyncSendMessage:emsg progress:self prepare:^(EMMessage *message, EMError *error) {
+        //
+    } onQueue:nil completion:^(EMMessage *message, EMError *error) {
+        // 发送成功
+        if (!error) {
+            [self ml_reload];
+        }
+        
+    } onQueue:nil];
+    
+    
+
+
+}
+
+#pragma mark - IEMChatProgressDelegate协议方法
+
+- (void)setProgress:(float)progress {
+
+}
+- (void)setProgress:(float)progress
+         forMessage:(EMMessage *)message
+     forMessageBody:(id<IEMMessageBody>)messageBody {
+
+}
+
+#pragma mark - MLConversationTableViewCellDelegate协议方法
+
+- (void)ml_conversationTableViewCell:(MLConversationTableViewCell *)conversationTableViewCell {
+
+    
+
 }
 
 #pragma mark - 私有方法
@@ -199,8 +363,10 @@ EMChatManagerDelegate
         CGFloat itemY = endY - self.view.bounds.size.height ;
         CGFloat duration = [note.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
         
+        self.keyHeight = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue].size.height;
+        
         [UIView animateWithDuration:duration animations:^{
-            self.view.frame = CGRectMake(0, itemY, self.view.bounds.size.width, self.view.bounds.size.height);
+            self.modelView.frame = CGRectMake(0, itemY, self.view.bounds.size.width, self.view.bounds.size.height);
         
         }];
         
@@ -250,16 +416,6 @@ EMChatManagerDelegate
 
 }
 
-#pragma mark - EaseMode
-- (void)didReceiveMessage:(EMMessage *)message {
 
-    [self ml_reload];
-
-}
-
-- (void)didReceiveOfflineMessages:(NSArray *)offlineMessages {
-
-    [self ml_reload];
-}
 
 @end

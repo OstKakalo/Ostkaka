@@ -8,9 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
+@class MLInputView;
+
+@protocol MLInputViewDelegate <NSObject>
+
+@optional
+
+
+- (void)ml_inputView:(MLInputView *)inputView;
+
+@end
+
+
+
 @interface MLInputView : UIView
 
 + (instancetype)ml_inputView;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
+@property (nonatomic, weak) id<MLInputViewDelegate> delegate;
 @end

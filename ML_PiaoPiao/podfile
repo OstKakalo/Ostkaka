@@ -3,4 +3,6 @@ target'ML_PiaoPiao' do
 pod 'EaseMobSDKFull', :git => 'https://github.com/easemob/sdk-ios-cocoapods-integration.git'
 pod 'Masonry', '~> 1.0.2'
 pod 'SVProgressHUD', '~> 2.0.3'
+pod 'SDWebImage', '~> 3.8.2'
+pod 'MWPhotoBrowser', '~> 2.1.2'
 end

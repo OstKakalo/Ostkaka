@@ -14,6 +14,25 @@
 // 文字聊天内容
 @property (nonatomic, copy) NSString *contentText;
 
+
+// 详情大图
+@property (nonatomic, strong) UIImage *contentImage;
+
+// 预览图
+@property (nonatomic, strong) UIImage *contentThumbnailImage;
+
+// 详情大图url
+@property (nonatomic, strong) NSURL *contentImageURL;
+
+// 预览图
+@property (nonatomic, strong) NSURL *contentThumbnailImageURL;
+
+// 预览图尺寸
+@property (nonatomic, assign) CGSize contentThumbnailImageSize;
+
+// 是否横预览
+@property (nonatomic, assign, getter=isVertical) BOOL vertical;
+
 // 文字聊天的背景图
 @property (nonatomic, strong) UIColor *contentBackGroundColor;
 
@@ -25,6 +44,9 @@
 
 // 是我还是他
 @property (nonatomic, assign, getter=isMe) BOOL me;
+
+// 消息类型
+@property (nonatomic) MessageBodyType messageBodyType;
 
 @end
 
@@ -61,6 +83,8 @@
     
     // 解析消息
     id<IEMMessageBody> msgBody = message.messageBodies.firstObject;
+    
+    self.messageBodyType = msgBody.messageBodyType;
     switch (msgBody.messageBodyType) {
         case eMessageBodyType_Text:
         {
@@ -81,6 +105,11 @@
             NSLog(@"大图的W -- %f ,大图的H -- %f",body.size.width,body.size.height);
             NSLog(@"大图的下载状态 -- %lu",body.attachmentDownloadStatus);
             
+            if ([[NSFileManager defaultManager] fileExistsAtPath:body.localPath]) {
+                self.contentImage = [UIImage imageWithContentsOfFile:body.localPath];
+            }
+            self.contentImageURL = [NSURL URLWithString:body.remotePath];
+            
             
             // 缩略图sdk会自动下载
             NSLog(@"小图remote路径 -- %@"   ,body.thumbnailRemotePath);
@@ -88,7 +117,17 @@
             NSLog(@"小图的secret -- %@"    ,body.thumbnailSecretKey);
             NSLog(@"小图的W -- %f ,大图的H -- %f",body.thumbnailSize.width,body.thumbnailSize.height);
             NSLog(@"小图的下载状态 -- %lu",body.thumbnailDownloadStatus);
+            
+            if ([[NSFileManager defaultManager] fileExistsAtPath:body.thumbnailLocalPath]) {
+                self.contentThumbnailImage = [UIImage imageWithContentsOfFile:body.thumbnailLocalPath];
+                
+            }
+            self.contentThumbnailImageURL = [NSURL URLWithString:body.thumbnailRemotePath];
+            
+            self.contentThumbnailImageSize = body.thumbnailSize;
+            
         }
+            
             break;
         case eMessageBodyType_Location:
         {

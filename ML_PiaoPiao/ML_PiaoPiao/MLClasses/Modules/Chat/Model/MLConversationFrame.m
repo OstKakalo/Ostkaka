@@ -53,15 +53,68 @@
     CGFloat iconH = 44;
     
     
+    
     CGFloat contentX;
     CGFloat contentY = iconY;
     CGFloat contentW;
     CGFloat contentH;
-    CGFloat MaxContentW = screenW - 2 * (margin + iconW + margin);
-    CGSize contentSize = [conversation.contentText boundingRectWithSize:CGSizeMake(MaxContentW, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : kContentTextFont} context:nil].size;
+    /*
+     eMessageBodyType_Text = 1,
+     eMessageBodyType_Image,
+     eMessageBodyType_Video,
+     eMessageBodyType_Location,
+     eMessageBodyType_Voice,
+     eMessageBodyType_File,
+    */
+    switch (_conversation.messageBodyType) {
+        case eMessageBodyType_Text:
+        {
+            CGFloat MaxContentW = screenW - 2 * (margin + iconW + margin);
+            CGSize contentSize = [conversation.contentText boundingRectWithSize:CGSizeMake(MaxContentW, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : kContentTextFont} context:nil].size;
+            
+            contentW = contentSize.width + kContentEdgeLeft + kContentEdgeRight;
+            contentH = contentSize.height + kContentEdgeTop + kContentEdgeBottom;
+            
+        }
+            break;
+            
+        case eMessageBodyType_Image:
+        {
+            
+            contentW = _conversation.contentThumbnailImageSize.width;
+            contentH = _conversation.contentThumbnailImageSize.height;
+            
+        }
+            break;
+            
+        case eMessageBodyType_Video:
+        {
+            
+        }
+            break;
+            
+        case eMessageBodyType_Location:
+        {
+            
+        }
+            break;
+            
+        case eMessageBodyType_Voice:
+        {
+            
+        }
+            break;
+            
+        case eMessageBodyType_File:
+        {
+            
+        }
+            break;
+            
+        default:
+            break;
+    }
     
-    contentW = contentSize.width + kContentEdgeLeft + kContentEdgeRight;
-    contentH = contentSize.height + kContentEdgeTop + kContentEdgeBottom;
     
     
     if (conversation.isMe) {

@@ -11,6 +11,7 @@
 #import "MLConversation.h"
 #import "MLConversationFrame.h"
 #import "MLLongPressButton.h"
+#import <UIButton+WebCache.h>
 @interface MLConversationTableViewCell ()
 
 @property (nonatomic, strong) UILabel *timeLabel;
@@ -25,11 +26,69 @@
 
     _conversationFrame = conversationFrame;
     
+    
     MLConversation *conversation = conversationFrame.conversation;
     _timeLabel.text = conversation.timeStr;
-    [_contentButton setTitle:conversation.contentText forState:UIControlStateNormal];
-    _contentButton.backgroundColor = conversation.contentBackGroundColor;
     [_iconButton setImage:[UIImage imageNamed:conversation.userIcon] forState:UIControlStateNormal];
+    
+    
+    /*
+     eMessageBodyType_Text = 1,
+     eMessageBodyType_Image,
+     eMessageBodyType_Video,
+     eMessageBodyType_Location,
+     eMessageBodyType_Voice,
+     eMessageBodyType_File,
+     */
+    switch (conversation.messageBodyType) {
+        case eMessageBodyType_Text:
+        {
+            [_contentButton setTitle:conversation.contentText forState:UIControlStateNormal];
+            _contentButton.backgroundColor = conversation.contentBackGroundColor;
+            
+        }
+            break;
+            
+        case eMessageBodyType_Image:
+        {
+            
+            if (conversation.contentThumbnailImage) {
+                [_contentButton setImage:conversation.contentThumbnailImage forState:UIControlStateNormal];
+            } else {
+            
+                [_contentButton sd_setImageWithURL:conversation.contentThumbnailImageURL forState:UIControlStateNormal];
+            }
+        }
+            break;
+            
+        case eMessageBodyType_Video:
+        {
+            
+        }
+            break;
+            
+        case eMessageBodyType_Location:
+        {
+            
+        }
+            break;
+            
+        case eMessageBodyType_Voice:
+        {
+            
+        }
+            break;
+            
+        case eMessageBodyType_File:
+        {
+            
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
     
     
 }
@@ -51,18 +110,19 @@
         _timeLabel.textColor = [UIColor grayColor];
         _timeLabel.textAlignment = NSTextAlignmentCenter;
         _timeLabel.font = kTimeFont;
-        
         [self.contentView addSubview:_timeLabel];
         
         
+        
+        
         self.contentButton = [[MLLongPressButton alloc] init];
-//        _contentButton.contentEdgeInsets = UIEdgeInsetsMake(kContentEdgeTop, kContentEdgeLeft, kContentEdgeBottom, kContentEdgeRight);
         _contentButton.titleLabel.numberOfLines = 0;
-
         _contentButton.layer.cornerRadius = 5.0;
         [_contentButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         _contentButton.backgroundColor = [UIColor cyanColor];
         [self.contentView addSubview:_contentButton];
+        [_contentButton addTarget:self action:@selector(ml_contentButtonClick) forControlEvents:UIControlEventTouchUpInside];
+        
         
         
         self.iconButton = [[MLLongPressButton alloc] init];
@@ -92,6 +152,16 @@
     
 
     
+
+}
+
+
+#pragma mark - button点击事件
+- (void)ml_contentButtonClick {
+    if ([self.delegate respondsToSelector:@selector(ml_conversationTableViewCell:)]) {
+        [self.delegate ml_conversationTableViewCell:self];
+    }
+
 
 }
 
