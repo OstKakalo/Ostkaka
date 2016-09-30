@@ -15,7 +15,7 @@
 @optional
 
 
-- (void)ml_inputView:(MLInputView *)inputView;
+- (void)ml_inputView:(MLInputView *)inputView inputButtonStyle:(NSInteger)buttonStyle sender:(id)sender;
 
 @end
 

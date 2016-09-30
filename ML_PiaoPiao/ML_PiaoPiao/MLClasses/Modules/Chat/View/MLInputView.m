@@ -11,8 +11,8 @@
 @implementation MLInputView
 - (IBAction)more:(id)sender {
   
-    if ([self.delegate respondsToSelector:@selector(ml_inputView:)]) {
-        [self.delegate ml_inputView:self];
+    if ([self.delegate respondsToSelector:@selector(ml_inputView:inputButtonStyle:sender:)]) {
+        [self.delegate ml_inputView:self inputButtonStyle:2 sender:sender];
     }
 
     NSLog(@"more");
@@ -24,6 +24,9 @@
 
 - (IBAction)speech:(id)sender {
     NSLog(@"speech");
+    if ([self.delegate respondsToSelector:@selector(ml_inputView:inputButtonStyle:sender:)]) {
+        [self.delegate ml_inputView:self inputButtonStyle:0 sender:sender];
+    }
 }
 
 + (instancetype)ml_inputView {

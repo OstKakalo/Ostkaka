@@ -13,6 +13,7 @@
 #import "MLConversationTableViewCell.h"
 #import "MLMoreView.h"
 #import <MWPhotoBrowser.h>
+#import "MLSpeakView.h"
 static NSString *const ID = @"mlconversation";
 
 @interface MLDetailChatViewController ()
@@ -44,6 +45,8 @@ MWPhotoBrowserDelegate
 @property (nonatomic, strong) NSMutableArray *contentThumbnailImageArray;
 
 @property (nonatomic, strong) NSMutableArray *contentImageArray;
+
+@property (nonatomic, strong) MLSpeakView *speakView;
 @end
 
 @implementation MLDetailChatViewController
@@ -67,6 +70,7 @@ MWPhotoBrowserDelegate
     [self.modelView addSubview:self.tableView];
     [self.modelView addSubview:self.inputView];
     [self.view addSubview:self.moreView];
+    [self.moreView addSubview:self.speakView];
     
     [self.view bringSubviewToFront:self.modelView];
     [self.view bringSubviewToFront:_inputView];
@@ -179,7 +183,7 @@ MWPhotoBrowserDelegate
         _moreView.frame = CGRectMake(0, self.view.frame.size.height -  _keyHeight, self.view.bounds.size.width, _keyHeight);
         _moreView.backgroundColor = [UIColor whiteColor];
         _moreView.delegate = self;
-        _moreView.userInteractionEnabled = YES;
+        
         
     }
     return _moreView;
@@ -203,6 +207,15 @@ MWPhotoBrowserDelegate
 
 }
 
+- (MLSpeakView *)speakView {
+    if (!_speakView) {
+        _speakView = [[MLSpeakView alloc] init];
+        _speakView.frame = CGRectMake(0, 0, self.view.frame.size.width, _keyHeight);
+        _speakView.backgroundColor = [UIColor whiteColor];
+        
+    }
+    return _speakView;
+}
 #pragma mark - setter方法
 
 - (void)setKeyHeight:(CGFloat)keyHeight {
@@ -277,24 +290,50 @@ MWPhotoBrowserDelegate
 
 
 #pragma mark - InputView协议方法
-- (void)ml_inputView:(MLInputView *)inputView {
+- (void)ml_inputView:(MLInputView *)inputView inputButtonStyle:(NSInteger)buttonStyle sender:(id)sender {
+    
+    UIButton *senderButton = sender;
+    senderButton.selected = YES;
     
     
     
-    
-    if ([_inputView.textField isFirstResponder]) {
-
+    if (buttonStyle == 2) {
+        // 更多按钮
+        if ([_inputView.textField isFirstResponder]) {
+            
+            self.speakView.hidden = YES;
+            
+            [self.view endEditing:YES];
+            
+            self.modelView.frame = CGRectMake(0, - self.keyHeight + 64, self.view.bounds.size.width, self.view.bounds.size.height - 64);
+            
+            
+        } else {
+            
+            [_inputView.textField becomeFirstResponder];
+            
+        }
+    } else if (buttonStyle == 0) {
+        // 语音按钮
+        if ([_inputView.textField isFirstResponder]) {
+            
+            self.speakView.hidden = NO;
+            
+            [self.view endEditing:YES];
+            
+            self.modelView.frame = CGRectMake(0, - self.keyHeight + 64, self.view.bounds.size.width, self.view.bounds.size.height - 64);
+            
+        } else {
+            
+            [_inputView.textField becomeFirstResponder];
         
-        [self.view endEditing:YES];
-
-        self.modelView.frame = CGRectMake(0, - self.keyHeight + 64, self.view.bounds.size.width, self.view.bounds.size.height - 64);
-        
-
-    } else {
+        }
     
-        [_inputView.textField becomeFirstResponder];
+    
     
     }
+    
+    
     
 
 }

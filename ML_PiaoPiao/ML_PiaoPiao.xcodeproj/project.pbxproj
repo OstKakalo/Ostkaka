@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1117AA191D9C9FDD008B4D40 /* MLMoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1117AA181D9C9FDD008B4D40 /* MLMoreView.xib */; };
 		1117AA1B1D9CA1C1008B4D40 /* photo- chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 1117AA1A1D9CA1C1008B4D40 /* photo- chat.png */; };
+		1136D4C21D9E7F67002E872B /* MLSpeakView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1136D4C11D9E7F67002E872B /* MLSpeakView.m */; };
+		1136D4C41D9E7F73002E872B /* MLSpeakView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1136D4C31D9E7F73002E872B /* MLSpeakView.xib */; };
+		1136D4C61D9E8536002E872B /* speak.png in Resources */ = {isa = PBXBuildFile; fileRef = 1136D4C51D9E8536002E872B /* speak.png */; };
 		116686761D9A9DF50070C3F7 /* water.png in Resources */ = {isa = PBXBuildFile; fileRef = 116686751D9A9DF50070C3F7 /* water.png */; };
 		118F7EFF1D9BFC3C00D1F592 /* MLMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 118F7EFE1D9BFC3C00D1F592 /* MLMoreView.m */; };
 		11C6A0C71D954F2700304D7D /* MLTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C6A0C61D954F2700304D7D /* MLTabBarViewController.m */; };
@@ -91,6 +94,10 @@
 /* Begin PBXFileReference section */
 		1117AA181D9C9FDD008B4D40 /* MLMoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MLMoreView.xib; sourceTree = "<group>"; };
 		1117AA1A1D9CA1C1008B4D40 /* photo- chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo- chat.png"; sourceTree = "<group>"; };
+		1136D4C01D9E7F67002E872B /* MLSpeakView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSpeakView.h; sourceTree = "<group>"; };
+		1136D4C11D9E7F67002E872B /* MLSpeakView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSpeakView.m; sourceTree = "<group>"; };
+		1136D4C31D9E7F73002E872B /* MLSpeakView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MLSpeakView.xib; sourceTree = "<group>"; };
+		1136D4C51D9E8536002E872B /* speak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speak.png; sourceTree = "<group>"; };
 		116686751D9A9DF50070C3F7 /* water.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water.png; sourceTree = "<group>"; };
 		118F7EFD1D9BFC3C00D1F592 /* MLMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLMoreView.h; sourceTree = "<group>"; };
 		118F7EFE1D9BFC3C00D1F592 /* MLMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLMoreView.m; sourceTree = "<group>"; };
@@ -455,6 +462,9 @@
 				118F7EFD1D9BFC3C00D1F592 /* MLMoreView.h */,
 				118F7EFE1D9BFC3C00D1F592 /* MLMoreView.m */,
 				1117AA181D9C9FDD008B4D40 /* MLMoreView.xib */,
+				1136D4C01D9E7F67002E872B /* MLSpeakView.h */,
+				1136D4C11D9E7F67002E872B /* MLSpeakView.m */,
+				1136D4C31D9E7F73002E872B /* MLSpeakView.xib */,
 				11E023FA1D991D660065A72B /* MLConversationTableViewCell.h */,
 				11E023FB1D991D660065A72B /* MLConversationTableViewCell.m */,
 				11E024031D991E690065A72B /* MLLongPressButton.h */,
@@ -648,6 +658,7 @@
 				11E730231D9515AA001D964E /* background.jpg */,
 				11E72FE91D94FEE5001D964E /* launch.jpg */,
 				11C6A1361D967E6000304D7D /* newFriend.png */,
+				1136D4C51D9E8536002E872B /* speak.png */,
 				11C6A12A1D965DA300304D7D /* head.jpg */,
 				1117AA1A1D9CA1C1008B4D40 /* photo- chat.png */,
 				116686751D9A9DF50070C3F7 /* water.png */,
@@ -782,9 +793,11 @@
 				11C6A15A1D98CB2D00304D7D /* add.png in Resources */,
 				11E730221D95107A001D964E /* MLRegisterViewController.xib in Resources */,
 				11C6A1351D96735900304D7D /* MLMenuTableViewCell.xib in Resources */,
+				1136D4C61D9E8536002E872B /* speak.png in Resources */,
 				11C6A0EA1D95548100304D7D /* chat.png in Resources */,
 				11C6A0EE1D95548100304D7D /* discover.png in Resources */,
 				1117AA191D9C9FDD008B4D40 /* MLMoreView.xib in Resources */,
+				1136D4C41D9E7F73002E872B /* MLSpeakView.xib in Resources */,
 				1117AA1B1D9CA1C1008B4D40 /* photo- chat.png in Resources */,
 				11C6A0F21D956D5100304D7D /* MLMeViewController.storyboard in Resources */,
 				11C6A1291D9628A600304D7D /* search.png in Resources */,
@@ -885,6 +898,7 @@
 				11E72FB11D94DA42001D964E /* ViewController.m in Sources */,
 				11E7300C1D950292001D964E /* UIButton+Block.m in Sources */,
 				11E023FF1D991DF60065A72B /* MLConversation.m in Sources */,
+				1136D4C21D9E7F67002E872B /* MLSpeakView.m in Sources */,
 				11E7300F1D950292001D964E /* UIView+Frame.m in Sources */,
 				11E730091D950292001D964E /* NSString+Categories.m in Sources */,
 				11C6A1201D961D7400304D7D /* MLBaseView.m in Sources */,
