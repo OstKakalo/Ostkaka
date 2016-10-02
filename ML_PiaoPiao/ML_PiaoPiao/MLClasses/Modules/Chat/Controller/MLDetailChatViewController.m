@@ -156,7 +156,7 @@ MLSpeakViewDelegate
 - (UIView *)inputView {
     if (!_inputView) {
         _inputView = [MLInputView ml_inputView];
-        _inputView.frame = CGRectMake(0, self.view.bounds.size.height - 50 - 64, self.view.bounds.size.width, 50 );
+        _inputView.frame = CGRectMake(0, self.view.bounds.size.height - 50 - 64 - 10, self.view.bounds.size.width, 50 );
         _inputView.textField.delegate = self;
         _inputView.delegate = self;
         
@@ -501,16 +501,20 @@ MLSpeakViewDelegate
         case eMessageBodyType_Voice:
         {
             
+            UIButton *contentButton = (UIButton *)conversationTableViewCell.contentButton;
             
             if ([[EMCDDeviceManager sharedInstance] isPlaying]) {
                 [[EMCDDeviceManager sharedInstance] stopPlaying];
+                [contentButton.imageView stopAnimating];
             } else {
-            
+                [contentButton.imageView startAnimating];
                 [[EMCDDeviceManager sharedInstance] asyncPlayingWithPath:conversationTableViewCell.conversationFrame.conversation.voicePath completion:^(NSError *error) {
                     //
                     if (!error) {
                         //
-                        NSLog(@"000000000000000");
+                        
+                        [contentButton.imageView stopAnimating];
+                        
                     }
                 }];
             

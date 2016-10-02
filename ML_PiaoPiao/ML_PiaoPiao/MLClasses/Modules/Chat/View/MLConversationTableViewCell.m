@@ -15,7 +15,7 @@
 @interface MLConversationTableViewCell ()
 
 @property (nonatomic, strong) UILabel *timeLabel;
-@property (nonatomic, strong) MLLongPressButton *contentButton;
+//@property (nonatomic, strong) MLLongPressButton *contentButton;
 @property (nonatomic, strong) MLLongPressButton *iconButton;
 
 
@@ -88,18 +88,35 @@
         case eMessageBodyType_Voice:
         {
             // 解决图文重用问题，如果是文字，将button图片置空
-            [_contentButton setImage:[UIImage imageNamed:@"me3"] forState:UIControlStateNormal];
+            
+
+            
+            
+            if (conversation.isMe) {
+                [_contentButton setImage:[UIImage imageNamed:@"me3"] forState:UIControlStateNormal];
+                _contentButton.imageEdgeInsets = UIEdgeInsetsMake( 11, conversationFrame.contentFrame.size.width - 22 - 6, 11, 6);
+                _contentButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+                _contentButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 30);
+            } else {
+                [_contentButton setImage:[UIImage imageNamed:@"he3"] forState:UIControlStateNormal];
+                _contentButton.imageEdgeInsets = UIEdgeInsetsMake( 11, 6, 11, conversationFrame.contentFrame.size.width - 22 - 6);
+                _contentButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+                _contentButton.titleEdgeInsets = UIEdgeInsetsMake(0, 15, 0, 0);
+            
+            }
+            _contentButton.imageView.animationImages = conversation.imageArray;
+            _contentButton.imageView.animationDuration = 1.f;
+            _contentButton.imageView.animationRepeatCount = 0;
+            
+            
+            
+            
+            
             [_contentButton setTitle:[NSString stringWithFormat:@"%ld''",(long)conversation.voiceDuration] forState:UIControlStateNormal];
             [_contentButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
             _contentButton.titleLabel.font = [UIFont systemFontOfSize: 10.f];
             _contentButton.backgroundColor = conversation.contentBackGroundColor;
-            _contentButton.imageEdgeInsets = UIEdgeInsetsMake( 11, conversationFrame.contentFrame.size.width - 22 - 11, 11, 0);
-
-            
-            _contentButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
-            _contentButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 30);
-
-            
+    
         }
             break;
             

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class MLConversationFrame, MLConversationTableViewCell;
+@class MLConversationFrame, MLConversationTableViewCell, MLLongPressButton;
 
 @protocol MLConversationTableViewCellDelegate <NSObject>
 
@@ -21,6 +21,8 @@
 
 @interface MLConversationTableViewCell : UITableViewCell
 
+
+@property (nonatomic, strong) MLLongPressButton *contentButton;
 @property (nonatomic, strong) MLConversationFrame *conversationFrame;
 @property (nonatomic, weak) id<MLConversationTableViewCellDelegate> delegate;
 
