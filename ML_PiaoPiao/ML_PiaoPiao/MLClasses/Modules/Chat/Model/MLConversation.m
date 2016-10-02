@@ -11,9 +11,18 @@
 
 @interface MLConversation ()
 
+
+
+/************** 文字消息 *******************/
+
 // 文字聊天内容
 @property (nonatomic, copy) NSString *contentText;
 
+// 文字聊天的背景颜色
+@property (nonatomic, strong) UIColor *contentBackGroundColor;
+
+
+/************** 图片消息 *******************/
 
 // 详情大图
 @property (nonatomic, strong) UIImage *contentImage;
@@ -33,8 +42,20 @@
 // 是否横预览
 @property (nonatomic, assign, getter=isVertical) BOOL vertical;
 
-// 文字聊天的背景图
-@property (nonatomic, strong) UIColor *contentBackGroundColor;
+/************** 语音消息 *******************/
+
+// 持续时间
+@property (nonatomic, assign) NSInteger voiceDuration;
+
+// 本地路径
+@property (nonatomic, copy) NSString *voicePath;
+
+
+// 音频图片动态图数组
+@property (nonatomic, strong) NSMutableArray *imageArray;
+
+
+/************** 其他 *******************/
 
 // 头像url
 @property (nonatomic, copy) NSString *userIcon;
@@ -57,6 +78,8 @@
     _message = message;
     
     
+    self.imageArray = [NSMutableArray array];
+    
     // 是我还是他
     NSString *loginUsername = [[EaseMob sharedInstance].chatManager loginInfo][@"username"];
     if ([loginUsername isEqualToString:message.from]) {
@@ -64,10 +87,22 @@
         self.userIcon = @"head.jpg";
         self.contentBackGroundColor = [UIColor cyanColor];
         
+        for (int i = 1; i <= 3 ; i++) {
+            NSString *imageName = [NSString stringWithFormat:@"me%d.png", i];
+            UIImage *image = [UIImage imageNamed:imageName];
+            [self.imageArray addObject:image];
+        }
+        
     } else if([loginUsername isEqualToString:message.to]){
         self.me = NO;
         self.userIcon = @"head.jpg";
         self.contentBackGroundColor = [UIColor whiteColor];
+        
+        for (int i = 1; i <= 3 ; i++) {
+            NSString *imageName = [NSString stringWithFormat:@"he%d.png", i];
+            UIImage *image = [UIImage imageNamed:imageName];
+            [self.imageArray addObject:image];
+        }
     
     }
     
@@ -147,6 +182,13 @@
             NSLog(@"音频文件大小 -- %lld"       ,body.fileLength);
             NSLog(@"音频文件的下载状态 -- %lu"   ,body.attachmentDownloadStatus);
             NSLog(@"音频的时间长度 -- %lu"      ,body.duration);
+            
+            
+            
+            if ([[NSFileManager defaultManager] fileExistsAtPath:body.localPath]) {
+                self.voicePath = body.localPath;
+            }
+            self.voiceDuration = body.duration;
         }
             break;
         case eMessageBodyType_Video:

@@ -22,6 +22,7 @@
 @property(nonatomic, assign) CGFloat cellH;
 
 
+
 @end
 
 @implementation MLConversationFrame
@@ -58,6 +59,11 @@
     CGFloat contentY = iconY;
     CGFloat contentW;
     CGFloat contentH;
+    CGFloat MaxContentW = screenW - 2 * (margin + iconW + margin);
+    
+    
+    
+
     /*
      eMessageBodyType_Text = 1,
      eMessageBodyType_Image,
@@ -69,7 +75,7 @@
     switch (_conversation.messageBodyType) {
         case eMessageBodyType_Text:
         {
-            CGFloat MaxContentW = screenW - 2 * (margin + iconW + margin);
+            
             CGSize contentSize = [conversation.contentText boundingRectWithSize:CGSizeMake(MaxContentW, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : kContentTextFont} context:nil].size;
             
             contentW = contentSize.width + kContentEdgeLeft + kContentEdgeRight;
@@ -87,9 +93,27 @@
         }
             break;
             
+        case eMessageBodyType_Voice:
+        {
+            contentH = 44.f;
+            // 计算contentW长度
+            if (conversation.voiceDuration <= 1) {
+                contentW = 64.f;
+            } else if (conversation.voiceDuration >= 20){
+                contentW = MaxContentW;
+            } else {
+                contentW = 64.f + (conversation.voiceDuration - 1.f) / 19.f * (MaxContentW - 64.f);
+            }
+            
+            
+            
+        }
+            break;
+            
         case eMessageBodyType_Video:
         {
             
+
         }
             break;
             
@@ -99,11 +123,7 @@
         }
             break;
             
-        case eMessageBodyType_Voice:
-        {
-            
-        }
-            break;
+        
             
         case eMessageBodyType_File:
         {
@@ -120,14 +140,19 @@
     if (conversation.isMe) {
         iconX = screenW - margin - iconW;
         contentX = iconX - margin - contentW;
+        
+
     } else {
         iconX = margin;
         contentX = margin + iconW + margin;
+        
+
     
     }
     self.iconFrame = CGRectMake(iconX, iconY, iconW, iconH);
     self.contentFrame = CGRectMake(contentX, contentY, contentW, contentH);
-    
+
+
     
     self.cellH = timeH + margin + contentH + margin;
     

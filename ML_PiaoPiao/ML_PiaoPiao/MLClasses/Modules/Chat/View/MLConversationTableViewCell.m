@@ -18,6 +18,8 @@
 @property (nonatomic, strong) MLLongPressButton *contentButton;
 @property (nonatomic, strong) MLLongPressButton *iconButton;
 
+
+
 @end
 
 @implementation MLConversationTableViewCell
@@ -30,8 +32,7 @@
     MLConversation *conversation = conversationFrame.conversation;
     _timeLabel.text = conversation.timeStr;
     [_iconButton setImage:[UIImage imageNamed:conversation.userIcon] forState:UIControlStateNormal];
-    
-    
+
     /*
      eMessageBodyType_Text = 1,
      eMessageBodyType_Image,
@@ -45,12 +46,14 @@
         {
             
             // 解决图文重用问题，如果是文字，将button图片置空
+            _contentButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
             [_contentButton setImage:nil forState:UIControlStateNormal];
             
-                
-            
+            [_contentButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            _contentButton.titleLabel.font = [UIFont systemFontOfSize: 15.f];
             [_contentButton setTitle:conversation.contentText forState:UIControlStateNormal];
             _contentButton.backgroundColor = conversation.contentBackGroundColor;
+            _contentButton.titleEdgeInsets = UIEdgeInsetsZero;
             
         }
             break;
@@ -58,6 +61,8 @@
         case eMessageBodyType_Image:
         {
             
+
+            _contentButton.imageEdgeInsets = UIEdgeInsetsZero;;
             if (conversation.contentThumbnailImage) {
                 [_contentButton setImage:conversation.contentThumbnailImage forState:UIControlStateNormal];
             } else {
@@ -70,6 +75,7 @@
         case eMessageBodyType_Video:
         {
             
+            
         }
             break;
             
@@ -81,6 +87,18 @@
             
         case eMessageBodyType_Voice:
         {
+            // 解决图文重用问题，如果是文字，将button图片置空
+            [_contentButton setImage:[UIImage imageNamed:@"me3"] forState:UIControlStateNormal];
+            [_contentButton setTitle:[NSString stringWithFormat:@"%ld''",(long)conversation.voiceDuration] forState:UIControlStateNormal];
+            [_contentButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+            _contentButton.titleLabel.font = [UIFont systemFontOfSize: 10.f];
+            _contentButton.backgroundColor = conversation.contentBackGroundColor;
+            _contentButton.imageEdgeInsets = UIEdgeInsetsMake( 11, conversationFrame.contentFrame.size.width - 22 - 11, 11, 0);
+
+            
+            _contentButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+            _contentButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 30);
+
             
         }
             break;
@@ -123,9 +141,8 @@
         
         self.contentButton = [[MLLongPressButton alloc] init];
         _contentButton.titleLabel.numberOfLines = 0;
-        _contentButton.layer.cornerRadius = 5.0;
-        [_contentButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        _contentButton.backgroundColor = [UIColor cyanColor];
+        _contentButton.layer.cornerRadius = 10.0;
+        
         [self.contentView addSubview:_contentButton];
         [_contentButton addTarget:self action:@selector(ml_contentButtonClick) forControlEvents:UIControlEventTouchUpInside];
         
@@ -135,6 +152,11 @@
         _iconButton.layer.cornerRadius = 22.0;
         _iconButton.clipsToBounds = YES;
         [self.contentView addSubview:_iconButton];
+        
+        
+        
+       
+        
         
         
         
@@ -155,8 +177,7 @@
     _timeLabel.frame = _conversationFrame.timeFrame;
     _contentButton.frame = _conversationFrame.contentFrame;
     _iconButton.frame = _conversationFrame.iconFrame;
-    
-
+   
     
 
 }

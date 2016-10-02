@@ -9,6 +9,7 @@
 #import "MLSpeakView.h"
 
 
+
 @interface MLSpeakView ()
 
 @property (weak, nonatomic) IBOutlet UILabel *labelStatus;
@@ -29,21 +30,31 @@
 
 - (IBAction)touchDown:(UIButton *)sender {
     self.labelStatus.text = @"松手发送";
+    if ([self.delegate respondsToSelector:@selector(ml_speakView:voiceStatus:)]) {
+        [self.delegate ml_speakView:self voiceStatus:MLVoiceStatusSpeaking];
+    }
+    
     
 }
 - (IBAction)touchUpInside {
     self.labelStatus.text = @"按住说话";
-    
+    if ([self.delegate respondsToSelector:@selector(ml_speakView:voiceStatus:)]) {
+        [self.delegate ml_speakView:self voiceStatus:MLVoiceStatusSend];
+    }
     
 }
 - (IBAction)touchDragOutside {
     self.labelStatus.text = @"松手取消发送";
-    
+    if ([self.delegate respondsToSelector:@selector(ml_speakView:voiceStatus:)]) {
+        [self.delegate ml_speakView:self voiceStatus:MLVoiceStatusWillCancle];
+    }
     
 }
 - (IBAction)touchUpOutside {
     self.labelStatus.text = @"按住说话";
-    
+    if ([self.delegate respondsToSelector:@selector(ml_speakView:voiceStatus:)]) {
+        [self.delegate ml_speakView:self voiceStatus:MLVoiceStatusCancle];
+    }
     
 }
 

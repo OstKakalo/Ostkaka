@@ -14,6 +14,7 @@
 #import "MLMoreView.h"
 #import <MWPhotoBrowser.h>
 #import "MLSpeakView.h"
+#import "EMCDDeviceManager.h"
 static NSString *const ID = @"mlconversation";
 
 @interface MLDetailChatViewController ()
@@ -28,7 +29,9 @@ UINavigationControllerDelegate,
 UIImagePickerControllerDelegate,
 IEMChatProgressDelegate,
 MLConversationTableViewCellDelegate,
-MWPhotoBrowserDelegate
+MWPhotoBrowserDelegate,
+MLSpeakViewDelegate
+
 >
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -212,6 +215,7 @@ MWPhotoBrowserDelegate
         _speakView = [[MLSpeakView alloc] init];
         _speakView.frame = CGRectMake(0, 0, self.view.frame.size.width, _keyHeight);
         _speakView.backgroundColor = [UIColor whiteColor];
+        _speakView.delegate = self;
         
     }
     return _speakView;
@@ -338,6 +342,73 @@ MWPhotoBrowserDelegate
 
 }
 
+#pragma mark - speakView协议方法
+- (void)ml_speakView:(MLSpeakView *)speakView voiceStatus:(MLVoiceStatus)voiceStatus {
+    
+    switch (voiceStatus) {
+        case MLVoiceStatusSpeaking:
+        {
+            NSInteger now= (NSInteger)[[NSDate date] timeIntervalSince1970];
+            NSInteger randowNum = arc4random() % 100000;
+            NSString *fileName = [NSString stringWithFormat:@"%@%zd%zd", self.buddy.username, now, randowNum];
+            [[EMCDDeviceManager sharedInstance] asyncStartRecordingWithFileName:fileName completion:^(NSError *error) {
+                if (!error) {
+                    NSLog(@"正在录制");
+                }
+            }];
+            
+            
+        }
+            break;
+            
+        case MLVoiceStatusSend:
+        {
+            [[EMCDDeviceManager sharedInstance] asyncStopRecordingWithCompletion:^(NSString *recordPath, NSInteger aDuration, NSError *error) {
+                if (!error) {
+                    
+                    
+                    EMChatVoice *voice = [[EMChatVoice alloc] initWithFile:recordPath displayName:@"audio"];
+                    voice.duration = aDuration;
+                    EMVoiceMessageBody *body = [[EMVoiceMessageBody alloc] initWithChatObject:voice];
+                    
+                    // 生成message
+                    EMMessage *message = [[EMMessage alloc] initWithReceiver:self.buddy.username bodies:@[body]];
+                    
+                    [[EaseMob sharedInstance].chatManager asyncSendMessage:message progress:nil prepare:^(EMMessage *message, EMError *error) {
+                        //
+                    } onQueue:nil completion:^(EMMessage *message, EMError *error) {
+                        if (!error) {
+                            [self ml_reload];
+                        }
+                    } onQueue:nil];
+                    
+                    
+                    
+                    
+                }
+            }];
+        }
+            break;
+            
+        case MLVoiceStatusWillCancle:
+        {
+            // 如果有时间可以加HUD
+        }
+            break;
+            
+        case MLVoiceStatusCancle:
+        {
+            // 当前取消录音
+            [[EMCDDeviceManager sharedInstance] cancelCurrentRecording];
+        }
+            break;
+            
+        default:
+            break;
+    }
+
+}
+
 #pragma mark - moreView协议方法
 - (void)ml_moreView:(MLMoreView *)moreView moreButtonStyle:(NSInteger)buttonStyle {
     // 相册
@@ -366,6 +437,7 @@ MWPhotoBrowserDelegate
     EMImageMessageBody *body = [[EMImageMessageBody alloc] initWithChatObject:emImage];
     
     EMMessage *emsg = [[EMMessage alloc] initWithReceiver:self.buddy.username bodies:@[body]];
+    
     
     
     
@@ -398,18 +470,82 @@ MWPhotoBrowserDelegate
 #pragma mark - MLConversationTableViewCellDelegate协议方法
 
 - (void)ml_conversationTableViewCell:(MLConversationTableViewCell *)conversationTableViewCell {
-    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
-    NSUInteger index = 0;
-    if (conversationTableViewCell.conversationFrame.conversation.contentThumbnailImage) {
-        index = [self.contentThumbnailImageArray indexOfObject:conversationTableViewCell.conversationFrame.conversation.contentThumbnailImage];
-    } else {
-        index = [self.contentThumbnailImageArray indexOfObject:conversationTableViewCell.conversationFrame.conversation.contentThumbnailImageURL];
+    
+    
+    
+    switch (conversationTableViewCell.conversationFrame.conversation.messageBodyType) {
+        case eMessageBodyType_Text:
+        {
+        
+        }
+            break;
+            
+        case eMessageBodyType_Image:
+        {
+            MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+            NSUInteger index = 0;
+            if (conversationTableViewCell.conversationFrame.conversation.contentThumbnailImage) {
+                index = [self.contentThumbnailImageArray indexOfObject:conversationTableViewCell.conversationFrame.conversation.contentThumbnailImage];
+            } else {
+                index = [self.contentThumbnailImageArray indexOfObject:conversationTableViewCell.conversationFrame.conversation.contentThumbnailImageURL];
+            }
+            
+            [browser setCurrentPhotoIndex:index];
+            
+            
+            [self.navigationController pushViewController:browser animated:YES];
+            
+        }
+            break;
+            
+        case eMessageBodyType_Voice:
+        {
+            
+            
+            if ([[EMCDDeviceManager sharedInstance] isPlaying]) {
+                [[EMCDDeviceManager sharedInstance] stopPlaying];
+            } else {
+            
+                [[EMCDDeviceManager sharedInstance] asyncPlayingWithPath:conversationTableViewCell.conversationFrame.conversation.voicePath completion:^(NSError *error) {
+                    //
+                    if (!error) {
+                        //
+                        NSLog(@"000000000000000");
+                    }
+                }];
+            
+            }
+            
+            
+            
+            
+        }
+            break;
+            
+        case eMessageBodyType_Video:
+        {
+            
+        }
+            break;
+            
+        case eMessageBodyType_Location:
+        {
+            
+        }
+            break;
+            
+        case eMessageBodyType_File:
+        {
+            
+        }
+            break;
+            
+        default:
+            break;
     }
     
-    [browser setCurrentPhotoIndex:index];
-
     
-    [self.navigationController pushViewController:browser animated:YES];
+    
 }
 #pragma mark - MWPhotoBrowserDelegate协议方法
 

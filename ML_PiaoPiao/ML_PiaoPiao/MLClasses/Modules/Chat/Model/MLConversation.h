@@ -12,10 +12,16 @@
 
 @property (nonatomic, strong) EMMessage *message;
 
+
+/************** 文字消息 *******************/
 // 文字聊天内容
 @property (nonatomic, copy, readonly) NSString *contentText;
 
+// 文字聊天的背景图
+@property (nonatomic, strong, readonly) UIColor *contentBackGroundColor;
 
+
+/************** 图片消息 *******************/
 // 详情大图
 @property (nonatomic, strong, readonly) UIImage *contentImage;
 
@@ -35,8 +41,20 @@
 // 是否横预览
 @property (nonatomic, assign, getter=isVertical ,readonly) BOOL vertical;
 
-// 文字聊天的背景图
-@property (nonatomic, strong, readonly) UIColor *contentBackGroundColor;
+
+
+/************** 语音消息 *******************/
+
+// 持续时间
+@property (nonatomic, assign, readonly) NSInteger voiceDuration;
+
+// 本地路径
+@property (nonatomic, copy, readonly) NSString *voicePath;
+
+
+// 音频图片动态图数组
+@property (nonatomic, strong, readonly) NSMutableArray *imageArray;
+/************** 其他 *******************/
 
 // 头像url
 @property (nonatomic, copy, readonly) NSString *userIcon;
