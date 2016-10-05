@@ -8,6 +8,6 @@
 
 #import "MLBaseTableViewController.h"
 
-@interface MLChatViewController : MLBaseTableViewController
+@interface MLChatViewController : MLBaseViewController
 
 @end

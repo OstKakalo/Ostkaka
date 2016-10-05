@@ -9,7 +9,7 @@
 #import "MLTabBarViewController.h"
 #import "MLChatViewController.h"
 #import "MLContactViewController.h"
-#import "MLDiscoverViewController.h"
+
 #import "MLMeViewController.h"
 #import "MLNavigationController.h"
 
@@ -43,23 +43,21 @@ EMChatManagerDelegate
         MLNavigationController *chatNav = [[MLNavigationController alloc] initWithRootViewController:chatVC];
         MLContactViewController *contactVC = [[MLContactViewController alloc] init];
         MLNavigationController *contactNav = [[MLNavigationController alloc] initWithRootViewController:contactVC];
-        MLDiscoverViewController *discoverVC = [[MLDiscoverViewController alloc] init];
-        MLNavigationController *discoverNav = [[MLNavigationController alloc] initWithRootViewController:discoverVC];
         MLMeViewController *meVC = [MLMeViewController ml_meViewController];
         MLNavigationController *meNav = [[MLNavigationController alloc] initWithRootViewController: meVC];
         
         
         
         
-        self.viewControllers = @[chatNav,contactNav,discoverNav,meNav];
+        self.viewControllers = @[chatNav,contactNav,meNav];
         
         chatNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"消息" image:[UIImage imageNamed:@"chat"] selectedImage:[UIImage imageNamed:@"chat-s"]];
         contactNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"联系人" image:[UIImage imageNamed:@"contect"] selectedImage:[UIImage imageNamed:@"contect-s"]];
-        discoverNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"动态" image:[UIImage imageNamed:@"discover"] selectedImage:[UIImage imageNamed:@"discover-s"]];
+
         meNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"我" image:[UIImage imageNamed:@"me"] selectedImage:[UIImage imageNamed:@"me-s"]];
         
-        
-        self.tabBar.tintColor = [UIColor greenColor];
+        self.tabBar.barTintColor = [UIColor blackColor];
+        self.tabBar.tintColor = [UIColor whiteColor];
     }
     return self;
 }

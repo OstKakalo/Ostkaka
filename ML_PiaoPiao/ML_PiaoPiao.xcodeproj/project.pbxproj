@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		110DB1121DA214E100985683 /* MLTotalConversationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 110DB1101DA214E100985683 /* MLTotalConversationTableViewCell.m */; };
+		110DB1131DA214E100985683 /* MLTotalConversationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110DB1111DA214E100985683 /* MLTotalConversationTableViewCell.xib */; };
 		1117AA191D9C9FDD008B4D40 /* MLMoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1117AA181D9C9FDD008B4D40 /* MLMoreView.xib */; };
 		1117AA1B1D9CA1C1008B4D40 /* photo- chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 1117AA1A1D9CA1C1008B4D40 /* photo- chat.png */; };
 		1136D4C21D9E7F67002E872B /* MLSpeakView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1136D4C11D9E7F67002E872B /* MLSpeakView.m */; };
@@ -44,14 +46,12 @@
 		11C6A0F01D95548100304D7D /* me.png in Resources */ = {isa = PBXBuildFile; fileRef = 11C6A0E81D95548100304D7D /* me.png */; };
 		11C6A0F21D956D5100304D7D /* MLMeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C6A0F11D956D5100304D7D /* MLMeViewController.storyboard */; };
 		11C6A0F41D956DE700304D7D /* MLChatViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C6A0F31D956DE700304D7D /* MLChatViewController.storyboard */; };
-		11C6A0F81D956E2000304D7D /* MLDiscoverViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C6A0F71D956E2000304D7D /* MLDiscoverViewController.storyboard */; };
 		11C6A0FB1D9606BB00304D7D /* MLSetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C6A0FA1D9606BB00304D7D /* MLSetTableViewController.m */; };
 		11C6A0FD1D9606CC00304D7D /* MLSetTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C6A0FC1D9606CC00304D7D /* MLSetTableViewController.storyboard */; };
 		11C6A1001D96077D00304D7D /* MLBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C6A0FF1D96077D00304D7D /* MLBaseTableViewController.m */; };
 		11C6A1061D96152C00304D7D /* MLContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C6A1051D96152C00304D7D /* MLContactViewController.m */; };
 		11C6A1081D96154500304D7D /* MLContactViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C6A1071D96154500304D7D /* MLContactViewController.storyboard */; };
 		11C6A10B1D96157600304D7D /* MLChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C6A10A1D96157600304D7D /* MLChatViewController.m */; };
-		11C6A10E1D96159A00304D7D /* MLDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C6A10D1D96159A00304D7D /* MLDiscoverViewController.m */; };
 		11C6A1171D9619AE00304D7D /* MLAddFrendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C6A1151D9619AE00304D7D /* MLAddFrendViewController.m */; };
 		11C6A11B1D961C4100304D7D /* MLAddFriendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C6A11A1D961C4100304D7D /* MLAddFriendView.m */; };
 		11C6A11D1D961C4F00304D7D /* MLAddFriendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C6A11C1D961C4F00304D7D /* MLAddFriendView.xib */; };
@@ -110,6 +110,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		110DB10F1DA214E100985683 /* MLTotalConversationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTotalConversationTableViewCell.h; sourceTree = "<group>"; };
+		110DB1101DA214E100985683 /* MLTotalConversationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTotalConversationTableViewCell.m; sourceTree = "<group>"; };
+		110DB1111DA214E100985683 /* MLTotalConversationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MLTotalConversationTableViewCell.xib; sourceTree = "<group>"; };
 		1117AA181D9C9FDD008B4D40 /* MLMoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MLMoreView.xib; sourceTree = "<group>"; };
 		1117AA1A1D9CA1C1008B4D40 /* photo- chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo- chat.png"; sourceTree = "<group>"; };
 		1136D4C01D9E7F67002E872B /* MLSpeakView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSpeakView.h; sourceTree = "<group>"; };
@@ -169,7 +172,6 @@
 		11C6A0E81D95548100304D7D /* me.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me.png; sourceTree = "<group>"; };
 		11C6A0F11D956D5100304D7D /* MLMeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MLMeViewController.storyboard; sourceTree = "<group>"; };
 		11C6A0F31D956DE700304D7D /* MLChatViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MLChatViewController.storyboard; sourceTree = "<group>"; };
-		11C6A0F71D956E2000304D7D /* MLDiscoverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MLDiscoverViewController.storyboard; sourceTree = "<group>"; };
 		11C6A0F91D9606BB00304D7D /* MLSetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSetTableViewController.h; sourceTree = "<group>"; };
 		11C6A0FA1D9606BB00304D7D /* MLSetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSetTableViewController.m; sourceTree = "<group>"; };
 		11C6A0FC1D9606CC00304D7D /* MLSetTableViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MLSetTableViewController.storyboard; sourceTree = "<group>"; };
@@ -180,8 +182,6 @@
 		11C6A1071D96154500304D7D /* MLContactViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MLContactViewController.storyboard; sourceTree = "<group>"; };
 		11C6A1091D96157600304D7D /* MLChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLChatViewController.h; sourceTree = "<group>"; };
 		11C6A10A1D96157600304D7D /* MLChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLChatViewController.m; sourceTree = "<group>"; };
-		11C6A10C1D96159A00304D7D /* MLDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLDiscoverViewController.h; sourceTree = "<group>"; };
-		11C6A10D1D96159A00304D7D /* MLDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLDiscoverViewController.m; sourceTree = "<group>"; };
 		11C6A1141D9619AE00304D7D /* MLAddFrendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLAddFrendViewController.h; sourceTree = "<group>"; };
 		11C6A1151D9619AE00304D7D /* MLAddFrendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLAddFrendViewController.m; sourceTree = "<group>"; };
 		11C6A1191D961C4100304D7D /* MLAddFriendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLAddFriendView.h; sourceTree = "<group>"; };
@@ -555,7 +555,6 @@
 				11C6A09B1D95335000304D7D /* Main */,
 				11E72FCC1D94DFCF001D964E /* Chat */,
 				11E72FD01D94DFCF001D964E /* Contact */,
-				11E72FD41D94DFCF001D964E /* Discover */,
 				11E72FD81D94DFCF001D964E /* LoginAndRegister */,
 				11E72FDC1D94DFCF001D964E /* Me */,
 			);
@@ -611,6 +610,9 @@
 				11E023FB1D991D660065A72B /* MLConversationTableViewCell.m */,
 				11E024031D991E690065A72B /* MLLongPressButton.h */,
 				11E024041D991E690065A72B /* MLLongPressButton.m */,
+				110DB10F1DA214E100985683 /* MLTotalConversationTableViewCell.h */,
+				110DB1101DA214E100985683 /* MLTotalConversationTableViewCell.m */,
+				110DB1111DA214E100985683 /* MLTotalConversationTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -664,40 +666,6 @@
 				11C6A13B1D96A7E700304D7D /* MLNewFriendTableViewCell.h */,
 				11C6A13C1D96A7E700304D7D /* MLNewFriendTableViewCell.m */,
 				11C6A13D1D96A7E700304D7D /* MLNewFriendTableViewCell.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		11E72FD41D94DFCF001D964E /* Discover */ = {
-			isa = PBXGroup;
-			children = (
-				11E72FD51D94DFCF001D964E /* Controller */,
-				11E72FD61D94DFCF001D964E /* Model */,
-				11E72FD71D94DFCF001D964E /* View */,
-			);
-			path = Discover;
-			sourceTree = "<group>";
-		};
-		11E72FD51D94DFCF001D964E /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				11C6A10C1D96159A00304D7D /* MLDiscoverViewController.h */,
-				11C6A10D1D96159A00304D7D /* MLDiscoverViewController.m */,
-				11C6A0F71D956E2000304D7D /* MLDiscoverViewController.storyboard */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		11E72FD61D94DFCF001D964E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		11E72FD71D94DFCF001D964E /* View */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -960,6 +928,7 @@
 				11C6A0EB1D95548100304D7D /* contect-s.png in Resources */,
 				11C6A14B1D97EB3100304D7D /* MLContactDetailViewController.storyboard in Resources */,
 				11E72FEA1D94FEE5001D964E /* launch.jpg in Resources */,
+				110DB1131DA214E100985683 /* MLTotalConversationTableViewCell.xib in Resources */,
 				11E730241D9515AA001D964E /* background.jpg in Resources */,
 				11C6A0F01D95548100304D7D /* me.png in Resources */,
 				11C6A15B1D98CB2D00304D7D /* speech.png in Resources */,
@@ -974,7 +943,6 @@
 				11C6A1371D967E6000304D7D /* newFriend.png in Resources */,
 				1136D50C1D9FBC30002E872B /* he2.png in Resources */,
 				11E72FB61D94DA42001D964E /* Assets.xcassets in Resources */,
-				11C6A0F81D956E2000304D7D /* MLDiscoverViewController.storyboard in Resources */,
 				11C6A0F41D956DE700304D7D /* MLChatViewController.storyboard in Resources */,
 				11C6A0FD1D9606CC00304D7D /* MLSetTableViewController.storyboard in Resources */,
 				11E72FB41D94DA42001D964E /* Main.storyboard in Resources */,
@@ -1047,6 +1015,7 @@
 				1136D4F51D9E95F0002E872B /* EMVoiceConverter.mm in Sources */,
 				11E730061D950292001D964E /* NSDate+EasyExtend.mm in Sources */,
 				11E730051D950292001D964E /* NSDate+Categories.m in Sources */,
+				110DB1121DA214E100985683 /* MLTotalConversationTableViewCell.m in Sources */,
 				11C6A11B1D961C4100304D7D /* MLAddFriendView.m in Sources */,
 				11E7300B1D950292001D964E /* NSUserDefaults+Categories.m in Sources */,
 				11E730121D950973001D964E /* MLBaseViewController.m in Sources */,
@@ -1069,7 +1038,6 @@
 				11C6A1481D97EA1800304D7D /* MLContactDetailViewController.m in Sources */,
 				11C6A13A1D96A3CB00304D7D /* MLNewFriendViewController.m in Sources */,
 				11C6A1231D9620D400304D7D /* MLNavigationController.m in Sources */,
-				11C6A10E1D96159A00304D7D /* MLDiscoverViewController.m in Sources */,
 				11E730071D950292001D964E /* NSDictionary+Categories.m in Sources */,
 				11C6A1341D96735900304D7D /* MLMenuTableViewCell.m in Sources */,
 				11E72FE31D94DFCF001D964E /* main.m in Sources */,

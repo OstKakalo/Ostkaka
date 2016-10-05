@@ -138,7 +138,7 @@
             NSLog(@"大图local路径 -- %@"    ,body.localPath); // // 需要使用SDK提供的下载方法后才会存在
             NSLog(@"大图的secret -- %@"    ,body.secretKey);
             NSLog(@"大图的W -- %f ,大图的H -- %f",body.size.width,body.size.height);
-            NSLog(@"大图的下载状态 -- %lu",body.attachmentDownloadStatus);
+            NSLog(@"大图的下载状态 -- %lu",(unsigned long)body.attachmentDownloadStatus);
             
             if ([[NSFileManager defaultManager] fileExistsAtPath:body.localPath]) {
                 self.contentImage = [UIImage imageWithContentsOfFile:body.localPath];
@@ -151,7 +151,7 @@
             NSLog(@"小图local路径 -- %@"    ,body.thumbnailLocalPath);
             NSLog(@"小图的secret -- %@"    ,body.thumbnailSecretKey);
             NSLog(@"小图的W -- %f ,大图的H -- %f",body.thumbnailSize.width,body.thumbnailSize.height);
-            NSLog(@"小图的下载状态 -- %lu",body.thumbnailDownloadStatus);
+            NSLog(@"小图的下载状态 -- %lu",(unsigned long)body.thumbnailDownloadStatus);
             
             if ([[NSFileManager defaultManager] fileExistsAtPath:body.thumbnailLocalPath]) {
                 self.contentThumbnailImage = [UIImage imageWithContentsOfFile:body.thumbnailLocalPath];

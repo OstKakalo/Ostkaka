@@ -9,6 +9,7 @@
 #import "MLBaseViewController.h"
 
 @interface MLDetailChatViewController : MLBaseViewController
-@property (nonatomic, strong) EMBuddy *buddy;
+
+@property (nonatomic, copy) NSString *userName;
 
 @end

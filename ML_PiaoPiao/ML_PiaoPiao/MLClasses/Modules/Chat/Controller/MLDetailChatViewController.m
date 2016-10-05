@@ -78,7 +78,7 @@ MLSpeakViewDelegate
     [self.view bringSubviewToFront:self.modelView];
     [self.view bringSubviewToFront:_inputView];
     
-    self.title = self.buddy.username;
+    self.title = self.userName;
     
     // 刷新
     [self ml_reload];
@@ -92,6 +92,10 @@ MLSpeakViewDelegate
     
     
     [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
+    
+    
+    
+    [[[EaseMob sharedInstance].chatManager conversationForChatter:self.userName conversationType:eConversationTypeChat] markAllMessagesAsRead:YES];
     
     
 }
@@ -239,7 +243,7 @@ MLSpeakViewDelegate
     
     EMTextMessageBody *body = [[EMTextMessageBody alloc] initWithChatObject:textChat];
     
-    EMMessage *message = [[EMMessage alloc] initWithReceiver:self.buddy.username bodies:@[body]];
+    EMMessage *message = [[EMMessage alloc] initWithReceiver:self.userName bodies:@[body]];
    
     
     
@@ -350,7 +354,7 @@ MLSpeakViewDelegate
         {
             NSInteger now= (NSInteger)[[NSDate date] timeIntervalSince1970];
             NSInteger randowNum = arc4random() % 100000;
-            NSString *fileName = [NSString stringWithFormat:@"%@%zd%zd", self.buddy.username, now, randowNum];
+            NSString *fileName = [NSString stringWithFormat:@"%@%zd%zd", self.userName, now, randowNum];
             [[EMCDDeviceManager sharedInstance] asyncStartRecordingWithFileName:fileName completion:^(NSError *error) {
                 if (!error) {
                     NSLog(@"正在录制");
@@ -372,7 +376,7 @@ MLSpeakViewDelegate
                     EMVoiceMessageBody *body = [[EMVoiceMessageBody alloc] initWithChatObject:voice];
                     
                     // 生成message
-                    EMMessage *message = [[EMMessage alloc] initWithReceiver:self.buddy.username bodies:@[body]];
+                    EMMessage *message = [[EMMessage alloc] initWithReceiver:self.userName bodies:@[body]];
                     
                     [[EaseMob sharedInstance].chatManager asyncSendMessage:message progress:nil prepare:^(EMMessage *message, EMError *error) {
                         //
@@ -436,7 +440,7 @@ MLSpeakViewDelegate
     
     EMImageMessageBody *body = [[EMImageMessageBody alloc] initWithChatObject:emImage];
     
-    EMMessage *emsg = [[EMMessage alloc] initWithReceiver:self.buddy.username bodies:@[body]];
+    EMMessage *emsg = [[EMMessage alloc] initWithReceiver:self.userName bodies:@[body]];
     
     
     
@@ -626,7 +630,7 @@ MLSpeakViewDelegate
     [self.contentImageArray removeAllObjects];
     [self.contentThumbnailImageArray removeAllObjects];
     
-     EMConversation *conversation = [[EaseMob sharedInstance].chatManager conversationForChatter:self.buddy.username conversationType:eConversationTypeChat];
+     EMConversation *conversation = [[EaseMob sharedInstance].chatManager conversationForChatter:self.userName conversationType:eConversationTypeChat];
     
     NSArray *messages = [conversation loadAllMessages];
     

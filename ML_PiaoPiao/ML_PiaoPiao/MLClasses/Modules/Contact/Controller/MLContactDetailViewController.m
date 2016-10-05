@@ -66,7 +66,7 @@
     tabBarVC = (MLTabBarViewController *)[[UIApplication sharedApplication].keyWindow rootViewController];
     tabBarVC.selectedViewController = tabBarVC.viewControllers[0];
     MLDetailChatViewController *detailChatVC = [[MLDetailChatViewController alloc] init];
-    detailChatVC.buddy = self.buddy;
+    detailChatVC.userName = self.buddy.username;
     [(UINavigationController *)tabBarVC.viewControllers[0] pushViewController:detailChatVC animated:YES];
     
     
