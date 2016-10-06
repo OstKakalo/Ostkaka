@@ -15,9 +15,12 @@
 
 #import "MLNewFriendViewController.h"
 #import "MLRequestInfo.h"
+
+#import "MLConnectViewController.h"
 @interface MLTabBarViewController ()
 <
-EMChatManagerDelegate
+EMChatManagerDelegate,
+EMCallManagerDelegate
 >
 
 @property (nonatomic, strong) NSMutableArray *requestInfoArray;
@@ -69,7 +72,7 @@ EMChatManagerDelegate
     
     
     [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
-    
+    [[EaseMob sharedInstance].callManager addDelegate:self delegateQueue:nil];
     
     
 }
@@ -123,6 +126,46 @@ EMChatManagerDelegate
     
 }
 
+#pragma mark - EMCallManagerDelegate协议方法
+- (void)callSessionStatusChanged:(EMCallSession *)callSession
+                    changeReason:(EMCallStatusChangedReason)reason
+                           error:(EMError *)error {
+    NSLog(@"------------------------------%ld", (long)callSession.status);
+    
+    switch (callSession.status) {
+        case eCallSessionStatusConnected:
+        {
+            
+            MLConnectViewController *connectVC = [[MLConnectViewController alloc] init];
+            connectVC.callSession = callSession;
+            [self presentViewController:connectVC animated:YES completion:nil];
+        }
+            break;
+            
+        case eCallSessionStatusDisconnected:
+        {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+            break;
+            
+
+        default:
+            break;
+    }
+    
+    
+    
+    if (error) {
+        
+        [SVProgressHUD showErrorWithStatus:error.description];
+    }
+   
+    
+    
+    
+
+
+}
 
 
 @end

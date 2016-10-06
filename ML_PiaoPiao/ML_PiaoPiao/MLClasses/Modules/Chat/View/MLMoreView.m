@@ -30,6 +30,20 @@
     
 }
 
+- (IBAction)phone:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(ml_moreView:moreButtonStyle:)]) {
+        [self.delegate ml_moreView:self moreButtonStyle:1];
+    }
+    
+}
+
+- (IBAction)video:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(ml_moreView:moreButtonStyle:)]) {
+        [self.delegate ml_moreView:self moreButtonStyle:2];
+    }
+}
+
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

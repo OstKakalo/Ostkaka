@@ -15,6 +15,7 @@
 #import <MWPhotoBrowser.h>
 #import "MLSpeakView.h"
 #import "EMCDDeviceManager.h"
+#import "MLConnectViewController.h"
 static NSString *const ID = @"mlconversation";
 
 @interface MLDetailChatViewController ()
@@ -30,7 +31,8 @@ UIImagePickerControllerDelegate,
 IEMChatProgressDelegate,
 MLConversationTableViewCellDelegate,
 MWPhotoBrowserDelegate,
-MLSpeakViewDelegate
+MLSpeakViewDelegate,
+EMCallManagerDelegate
 
 >
 @property (nonatomic, strong) UITableView *tableView;
@@ -92,6 +94,7 @@ MLSpeakViewDelegate
     
     
     [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
+    [[EaseMob sharedInstance].callManager addDelegate:self delegateQueue:nil];
     
     
     
@@ -415,13 +418,46 @@ MLSpeakViewDelegate
 
 #pragma mark - moreView协议方法
 - (void)ml_moreView:(MLMoreView *)moreView moreButtonStyle:(NSInteger)buttonStyle {
-    // 相册
-    if (buttonStyle == 0) {
-        UIImagePickerController *iPC = [[UIImagePickerController alloc] init];
-        iPC.delegate = self;
-        [self presentViewController:iPC animated:YES completion:nil];
+    
+    
+    switch (buttonStyle) {
+        // 相册
+        case 0:
+        {
         
+            UIImagePickerController *iPC = [[UIImagePickerController alloc] init];
+            iPC.delegate = self;
+            [self presentViewController:iPC animated:YES completion:nil];
+            
+        }
+            break;
+        // 电话
+        case 1:
+        {
+            EMError *error = nil;
+            [[EaseMob sharedInstance].callManager asyncMakeVoiceCall:self.userName timeout:0 error:&error];
+            if (error) {
+                NSLog(@"%@",error);
+            }
+        }
+            break;
+        // 视频
+        case 2:
+        {
+            EMError *error = nil;
+            [[EaseMob sharedInstance].callManager asyncMakeVideoCall:self.userName timeout:0 error:&error];
+            if (error) {
+                NSLog(@"%@",error);
+            }
+        
+        }
+            break;
+            
+        default:
+            break;
     }
+    
+    
 
     
     
@@ -470,6 +506,23 @@ MLSpeakViewDelegate
      forMessageBody:(id<IEMMessageBody>)messageBody {
 
 }
+
+#pragma mark - EMCallManagerDelegate
+
+//- (void)callSessionStatusChanged:(EMCallSession *)callSession changeReason:(EMCallStatusChangedReason)reason error:(EMError *)error {
+//    
+//    if (callSession.status == eCallSessionStatusConnected) {
+//        MLConnectViewController *connectVC = [[MLConnectViewController alloc] init];
+//        connectVC.callSession = callSession;
+//        [self presentViewController:connectVC animated:YES completion:nil];
+//    } else {
+//        
+//        [SVProgressHUD showErrorWithStatus:error.description];
+//    
+//    }
+//
+//
+//}
 
 #pragma mark - MLConversationTableViewCellDelegate协议方法
 

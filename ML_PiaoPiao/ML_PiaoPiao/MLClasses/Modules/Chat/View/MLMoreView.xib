@@ -41,16 +41,74 @@
                         <action selector="photo:" destination="iN0-l3-epB" eventType="touchUpInside" id="SvH-OE-V3l"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone- chat.png" translatesAutoresizingMaskIntoConstraints="NO" id="OQg-2v-Kb3">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="YoC-KH-vAx"/>
+                        <constraint firstAttribute="width" constant="64" id="ubG-sW-Ll9"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="电话" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o34-hX-jFX">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Poi-2A-PkX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video- chat.png" translatesAutoresizingMaskIntoConstraints="NO" id="Q5k-aM-EtB">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="9lZ-1c-o0C"/>
+                        <constraint firstAttribute="width" constant="64" id="C4z-Wg-5eK"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="视频" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XE8-B6-7pj">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="5rg-5o-BHa"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="049-Tc-RDU">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="114" id="CNp-a3-Nd8"/>
+                        <constraint firstAttribute="width" constant="64" id="OGO-Dk-ciO"/>
+                    </constraints>
+                    <connections>
+                        <action selector="phone:" destination="iN0-l3-epB" eventType="touchUpInside" id="RLE-Pl-8QR"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tO4-59-9VK">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="114" id="pZA-7e-4dl"/>
+                        <constraint firstAttribute="width" constant="64" id="xtJ-Dl-FLg"/>
+                    </constraints>
+                    <connections>
+                        <action selector="video:" destination="iN0-l3-epB" eventType="touchUpInside" id="98L-ba-6VG"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="3DK-x8-WEd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="1Df-fz-A7k"/>
+                <constraint firstItem="049-Tc-RDU" firstAttribute="top" secondItem="u8z-wK-dVv" secondAttribute="bottom" constant="10" id="4nE-CA-2DB"/>
                 <constraint firstItem="O5Q-0j-pSG" firstAttribute="top" secondItem="Moq-sJ-euo" secondAttribute="bottom" constant="10" id="9uX-CA-ZvA"/>
                 <constraint firstItem="u8z-wK-dVv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="BC1-ZN-9Yt"/>
                 <constraint firstItem="3DK-x8-WEd" firstAttribute="top" secondItem="u8z-wK-dVv" secondAttribute="bottom" constant="10" id="Iw5-fF-RCC"/>
                 <constraint firstItem="Moq-sJ-euo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="MC7-Ki-Co1"/>
                 <constraint firstItem="u8z-wK-dVv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="NxQ-AT-Xaf"/>
+                <constraint firstItem="tO4-59-9VK" firstAttribute="top" secondItem="u8z-wK-dVv" secondAttribute="bottom" constant="10" id="Oer-yP-geh"/>
+                <constraint firstItem="XE8-B6-7pj" firstAttribute="centerX" secondItem="Q5k-aM-EtB" secondAttribute="centerX" id="RBH-Cl-fcY"/>
+                <constraint firstItem="049-Tc-RDU" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="S7k-gc-VeV"/>
+                <constraint firstAttribute="trailing" secondItem="tO4-59-9VK" secondAttribute="trailing" constant="10" id="UC1-GF-nww"/>
+                <constraint firstItem="OQg-2v-Kb3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Xok-5n-iow"/>
                 <constraint firstAttribute="trailing" secondItem="u8z-wK-dVv" secondAttribute="trailing" id="eq4-PF-pEU"/>
+                <constraint firstAttribute="trailing" secondItem="Q5k-aM-EtB" secondAttribute="trailing" constant="10" id="fLC-7O-40x"/>
+                <constraint firstItem="XE8-B6-7pj" firstAttribute="top" secondItem="Q5k-aM-EtB" secondAttribute="bottom" constant="10" id="fZF-H7-nNs"/>
+                <constraint firstItem="o34-hX-jFX" firstAttribute="top" secondItem="OQg-2v-Kb3" secondAttribute="bottom" constant="10" id="fp1-lI-ihP"/>
+                <constraint firstItem="Q5k-aM-EtB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="qaG-cU-tf4"/>
+                <constraint firstItem="OQg-2v-Kb3" firstAttribute="top" secondItem="u8z-wK-dVv" secondAttribute="bottom" constant="10" id="s1R-ar-xGV"/>
+                <constraint firstItem="o34-hX-jFX" firstAttribute="centerX" secondItem="OQg-2v-Kb3" secondAttribute="centerX" id="sXQ-nt-rUj"/>
                 <constraint firstItem="Moq-sJ-euo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="tzj-HA-9jQ"/>
                 <constraint firstItem="O5Q-0j-pSG" firstAttribute="centerX" secondItem="Moq-sJ-euo" secondAttribute="centerX" id="zqx-Td-Y2y"/>
             </constraints>
@@ -59,6 +117,8 @@
         </view>
     </objects>
     <resources>
+        <image name="phone- chat.png" width="64" height="64"/>
         <image name="photo- chat.png" width="65" height="64"/>
+        <image name="video- chat.png" width="64" height="64"/>
     </resources>
 </document>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MLConnectViewController">
+            <connections>
+                <outlet property="agreeButton" destination="3cM-IW-cKy" id="MGF-Cu-q7f"/>
+                <outlet property="agreeLabel" destination="77V-cb-mqU" id="jw6-Qm-iGi"/>
+                <outlet property="rejectButton" destination="3Ex-bt-WRx" id="7Kd-ut-InD"/>
+                <outlet property="rejectLabel" destination="dBT-g7-mzO" id="LB6-Ra-N6e"/>
+                <outlet property="username" destination="GSj-xH-05X" id="FhZ-YN-jbc"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ex-bt-WRx">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="AeF-n6-qvF"/>
+                        <constraint firstAttribute="width" constant="50" id="RWj-h3-pMf"/>
+                    </constraints>
+                    <state key="normal" title="取消" image="acceptPhone.png"/>
+                    <connections>
+                        <action selector="reject:" destination="-1" eventType="touchUpInside" id="T87-eu-BDI"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cM-IW-cKy">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="H0c-me-rX3"/>
+                        <constraint firstAttribute="width" constant="50" id="ode-n7-yOr"/>
+                    </constraints>
+                    <state key="normal" title="同意" image="rejectPhone.png"/>
+                    <connections>
+                        <action selector="agree:" destination="-1" eventType="touchUpInside" id="gDJ-v0-UvN"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="接听" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77V-cb-mqU">
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="挂断" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBT-g7-mzO">
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSj-xH-05X">
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="3Ex-bt-WRx" secondAttribute="trailing" constant="80" id="1Ph-60-6pz"/>
+                <constraint firstItem="3cM-IW-cKy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="80" id="2HP-FE-fuq"/>
+                <constraint firstItem="dBT-g7-mzO" firstAttribute="top" secondItem="3Ex-bt-WRx" secondAttribute="bottom" id="ATq-FH-jMw"/>
+                <constraint firstAttribute="bottom" secondItem="3cM-IW-cKy" secondAttribute="bottom" constant="30" id="Adf-aU-pRF"/>
+                <constraint firstAttribute="bottom" secondItem="77V-cb-mqU" secondAttribute="bottom" id="CCr-4I-fAn"/>
+                <constraint firstAttribute="bottom" secondItem="dBT-g7-mzO" secondAttribute="bottom" id="E5E-0J-q7W"/>
+                <constraint firstItem="dBT-g7-mzO" firstAttribute="centerX" secondItem="3Ex-bt-WRx" secondAttribute="centerX" id="ia7-Du-28J"/>
+                <constraint firstAttribute="bottom" secondItem="3Ex-bt-WRx" secondAttribute="bottom" constant="30" id="kWc-RO-ylb"/>
+                <constraint firstItem="GSj-xH-05X" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mdW-fy-6yN"/>
+                <constraint firstItem="77V-cb-mqU" firstAttribute="top" secondItem="3cM-IW-cKy" secondAttribute="bottom" id="q5G-y9-SBc"/>
+                <constraint firstItem="77V-cb-mqU" firstAttribute="centerX" secondItem="3cM-IW-cKy" secondAttribute="centerX" id="qOG-Bb-dUk"/>
+                <constraint firstItem="GSj-xH-05X" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="150" id="sCy-ri-h1b"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="acceptPhone.png" width="50" height="50"/>
+        <image name="rejectPhone.png" width="50" height="50"/>
+    </resources>
+</document>
