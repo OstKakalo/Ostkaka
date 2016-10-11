@@ -17,9 +17,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationBar.barTintColor = [UIColor blackColor];
+    self.navigationBar.barTintColor = ColorWith48Red;
     self.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor], NSFontAttributeName:[UIFont systemFontOfSize:20]};
+    [self.navigationBar jxl_setDayMode:^(UIView *view) {
+        UINavigationBar *bar = (UINavigationBar *)view;
+        bar.barTintColor = ColorWith48Red;
+        bar.tintColor = [UIColor whiteColor];
+    } nightMode:^(UIView *view) {
+        UINavigationBar *bar = (UINavigationBar *)view;
+        bar.barTintColor = ColorWith51Black;
+        bar.tintColor = ColorWith243;
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

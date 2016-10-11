@@ -113,12 +113,17 @@
                 <constraint firstItem="O5Q-0j-pSG" firstAttribute="centerX" secondItem="Moq-sJ-euo" secondAttribute="centerX" id="zqx-Td-Y2y"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="phoneLabel" destination="o34-hX-jFX" id="kYJ-Of-YN3"/>
+                <outlet property="photoLabel" destination="O5Q-0j-pSG" id="ybJ-DP-40O"/>
+                <outlet property="videoLabel" destination="XE8-B6-7pj" id="OmM-Bu-Q4U"/>
+            </connections>
             <point key="canvasLocation" x="33.5" y="265"/>
         </view>
     </objects>
     <resources>
         <image name="phone- chat.png" width="64" height="64"/>
-        <image name="photo- chat.png" width="65" height="64"/>
+        <image name="photo- chat.png" width="64" height="64"/>
         <image name="video- chat.png" width="64" height="64"/>
     </resources>
 </document>

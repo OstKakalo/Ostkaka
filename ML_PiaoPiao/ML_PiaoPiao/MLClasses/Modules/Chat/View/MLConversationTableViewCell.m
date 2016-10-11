@@ -151,6 +151,11 @@
         _timeLabel.textColor = [UIColor grayColor];
         _timeLabel.textAlignment = NSTextAlignmentCenter;
         _timeLabel.font = kTimeFont;
+        [_timeLabel jxl_setDayMode:^(UIView *view) {
+            ((UITextField*)view).textColor = [UIColor grayColor];
+        } nightMode:^(UIView *view) {
+            ((UITextField*)view).textColor = [UIColor colorWithRed:200 / 255.f green:200 / 255.f blue:200 / 255.f alpha:1];
+        }];
         [self.contentView addSubview:_timeLabel];
         
         

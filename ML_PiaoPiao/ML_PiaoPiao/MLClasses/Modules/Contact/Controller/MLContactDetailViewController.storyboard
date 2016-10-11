@@ -25,7 +25,7 @@
                                             <frame key="frameInset" width="375" height="87"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="JJT-oS-GVD">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="JJT-oS-GVD">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="68" id="0pA-gz-t1t"/>
                                                     </constraints>
@@ -61,20 +61,24 @@
                             </tableViewSection>
                             <tableViewSection id="QY6-z4-XEJ">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="4BS-r7-fFL" style="IBUITableViewCellStyleDefault" id="ZCu-tM-hoZ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="4BS-r7-fFL" imageView="6B4-EC-BLJ" style="IBUITableViewCellStyleDefault" id="ZCu-tM-hoZ">
                                         <rect key="frame" x="0.0" y="159" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZCu-tM-hoZ" id="OGn-nF-LLN">
                                             <frame key="frameInset" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4BS-r7-fFL">
-                                                    <frame key="frameInset" minX="15" width="325" height="43"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="TA还未开通任何特殊服务" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4BS-r7-fFL">
+                                                    <frame key="frameInset" minX="62" width="278" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="vip.png" id="6B4-EC-BLJ">
+                                                    <frame key="frameInset" minX="15" minY="5" width="32" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -82,20 +86,24 @@
                             </tableViewSection>
                             <tableViewSection id="RaG-tc-Efd">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="y1E-SA-ap5" style="IBUITableViewCellStyleDefault" id="iAD-43-xad">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="y1E-SA-ap5" imageView="nNe-Xh-LEs" style="IBUITableViewCellStyleDefault" id="iAD-43-xad">
                                         <rect key="frame" x="0.0" y="239" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iAD-43-xad" id="fhG-YP-yvI">
                                             <frame key="frameInset" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y1E-SA-ap5">
-                                                    <frame key="frameInset" minX="15" width="325" height="43"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="相册流" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y1E-SA-ap5">
+                                                    <frame key="frameInset" minX="62" width="278" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="detailPhoto.png" id="nNe-Xh-LEs">
+                                                    <frame key="frameInset" minX="15" minY="5" width="32" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -108,7 +116,13 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="SecondCell" destination="ZCu-tM-hoZ" id="8HS-ca-bZV"/>
+                        <outlet property="firstCell" destination="IHq-my-INS" id="qBr-9B-rvv"/>
+                        <outlet property="photoLabel" destination="y1E-SA-ap5" id="e0C-dG-oNk"/>
+                        <outlet property="sayLabel" destination="CAC-dR-PUg" id="vJJ-mO-E7S"/>
+                        <outlet property="thirdCell" destination="iAD-43-xad" id="DZi-5w-FR8"/>
                         <outlet property="username" destination="tCN-Vn-REK" id="KNp-gW-0L0"/>
+                        <outlet property="vipLabel" destination="4BS-r7-fFL" id="JJc-wS-PLX"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5AZ-cU-y7R" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -117,6 +131,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="detailPhoto.png" width="32" height="32"/>
         <image name="head.jpg" width="256" height="256"/>
+        <image name="vip.png" width="32" height="32"/>
     </resources>
 </document>

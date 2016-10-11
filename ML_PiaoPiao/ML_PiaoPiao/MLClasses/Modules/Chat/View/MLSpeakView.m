@@ -19,6 +19,11 @@
 @implementation MLSpeakView
 
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    [self.labelStatus ml_setLabelDayAndNight];
+}
+
 - (instancetype)init
 {
     self = [super init];

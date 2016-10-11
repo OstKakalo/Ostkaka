@@ -45,7 +45,7 @@ EMChatManagerDelegate
     
     [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
     
-    
+    [self.view ml_setbackViewDayAndNight];
   
 }
 
@@ -100,11 +100,14 @@ EMChatManagerDelegate
 
         MLMenuTableViewCell *cell = [MLMenuTableViewCell ml_menuTableViewCellWithTableView:tableView];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell ml_setFrontViewDayAndNight];
         return cell;
 
     } else {
         MLFriendsTableViewCell *cell = [MLFriendsTableViewCell ml_friendsTableViewCellWithTableView:tableView];
         cell.buddy = self.friendsArray[indexPath.row];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell ml_setFrontViewDayAndNight];
         return cell;
 
     }
@@ -170,6 +173,7 @@ EMChatManagerDelegate
     [self.view addSubview:_tableView];
     _tableView.backgroundColor = ColorWith243;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [_tableView ml_setbackViewDayAndNight];
 
 }
 

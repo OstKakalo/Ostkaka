@@ -48,7 +48,7 @@
                         <action selector="ml_add:" destination="iN0-l3-epB" eventType="touchUpInside" id="kpX-Ni-8ua"/>
                     </connections>
                 </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="说点什么吧...." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TWj-u5-zeL">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="说点什么吧...." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TWj-u5-zeL">
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="OI0-ax-OZJ"/>
                     </constraints>
@@ -73,7 +73,9 @@
                 <constraint firstItem="1Bg-Xa-mbz" firstAttribute="top" secondItem="DZR-1P-HUT" secondAttribute="bottom" constant="200" id="uvg-CH-Rlr"/>
             </constraints>
             <connections>
+                <outlet property="addButton" destination="1Bg-Xa-mbz" id="H82-33-wLb"/>
                 <outlet property="message" destination="TWj-u5-zeL" id="il1-Qr-X0A"/>
+                <outlet property="smallView" destination="hJF-cP-5W5" id="As7-o5-wL0"/>
                 <outlet property="username" destination="DZR-1P-HUT" id="PDf-DN-gYN"/>
             </connections>
             <point key="canvasLocation" x="-135" y="-171"/>

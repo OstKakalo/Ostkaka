@@ -39,7 +39,7 @@ UITableViewDataSource
     
     [self.view addSubview:self.tableView];
     
-    
+    [self.view ml_setbackViewDayAndNight];
     
     UINib *nib = [UINib nibWithNibName:@"MLTotalConversationTableViewCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"TotalConversation"];
@@ -80,6 +80,7 @@ UITableViewDataSource
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.rowHeight = 60;
         _tableView.backgroundColor = ColorWith243;
+        [_tableView ml_setbackViewDayAndNight];
     }
     return _tableView;
 }
@@ -94,7 +95,7 @@ UITableViewDataSource
     
     MLTotalConversationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TotalConversation"];
     
-
+    [cell ml_setFrontViewDayAndNight];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.conversation = _conversationsArray[indexPath.row];
     return cell;

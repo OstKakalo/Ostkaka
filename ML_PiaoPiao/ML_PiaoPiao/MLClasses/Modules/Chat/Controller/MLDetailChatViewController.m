@@ -52,6 +52,8 @@ EMCallManagerDelegate
 @property (nonatomic, strong) NSMutableArray *contentImageArray;
 
 @property (nonatomic, strong) MLSpeakView *speakView;
+
+@property (nonatomic, strong) UIImageView *backImage;
 @end
 
 @implementation MLDetailChatViewController
@@ -72,6 +74,7 @@ EMCallManagerDelegate
     
     // 添加子控件
     [self.view addSubview:self.modelView];
+    [self.modelView addSubview:self.backImage];
     [self.modelView addSubview:self.tableView];
     [self.modelView addSubview:self.inputView];
     [self.view addSubview:self.moreView];
@@ -79,6 +82,7 @@ EMCallManagerDelegate
     
     [self.view bringSubviewToFront:self.modelView];
     [self.view bringSubviewToFront:_inputView];
+    
     
     self.title = self.userName;
     
@@ -99,6 +103,9 @@ EMCallManagerDelegate
     
     
     [[[EaseMob sharedInstance].chatManager conversationForChatter:self.userName conversationType:eConversationTypeChat] markAllMessagesAsRead:YES];
+    
+    
+    
     
     
 }
@@ -163,9 +170,10 @@ EMCallManagerDelegate
 - (UIView *)inputView {
     if (!_inputView) {
         _inputView = [MLInputView ml_inputView];
-        _inputView.frame = CGRectMake(0, self.view.bounds.size.height - 50 - 64 - 10, self.view.bounds.size.width, 50 );
+        _inputView.frame = CGRectMake(0, self.view.bounds.size.height - 50 - 64, self.view.bounds.size.width, 50 );
         _inputView.textField.delegate = self;
         _inputView.delegate = self;
+        [_inputView ml_setbackViewDayAndNight];
         
     }
     return _inputView;
@@ -177,7 +185,7 @@ EMCallManagerDelegate
         _tableView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - 50 - 64);
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        _tableView.backgroundColor = ColorWith243;
+        _tableView.backgroundColor = [UIColor clearColor];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         
         
@@ -193,7 +201,7 @@ EMCallManagerDelegate
         _moreView.frame = CGRectMake(0, self.view.frame.size.height -  _keyHeight, self.view.bounds.size.width, _keyHeight);
         _moreView.backgroundColor = [UIColor whiteColor];
         _moreView.delegate = self;
-        
+        [_moreView ml_setFrontViewDayAndNight];
         
     }
     return _moreView;
@@ -223,9 +231,21 @@ EMCallManagerDelegate
         _speakView.frame = CGRectMake(0, 0, self.view.frame.size.width, _keyHeight);
         _speakView.backgroundColor = [UIColor whiteColor];
         _speakView.delegate = self;
+        [_speakView ml_setFrontViewDayAndNight];
         
     }
     return _speakView;
+}
+- (UIImageView *)backImage {
+    if (!_backImage) {
+        _backImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - 64 - 50)];
+        [_backImage jxl_setDayMode:^(UIView *view) {
+            ((UIImageView *)view).image = [UIImage imageNamed:@"dayBack"];
+        } nightMode:^(UIView *view) {
+            ((UIImageView *)view).image = [UIImage imageNamed:@"nightBack.jpg"];
+        }];
+    }
+    return _backImage;
 }
 #pragma mark - setter方法
 
@@ -282,6 +302,7 @@ EMCallManagerDelegate
     
     MLConversationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     cell.delegate = self;
+    cell.backgroundColor = [UIColor clearColor];
     [cell setConversationFrame:_messagesArray[indexPath.row]];
     
    
@@ -507,22 +528,7 @@ EMCallManagerDelegate
 
 }
 
-#pragma mark - EMCallManagerDelegate
 
-//- (void)callSessionStatusChanged:(EMCallSession *)callSession changeReason:(EMCallStatusChangedReason)reason error:(EMError *)error {
-//    
-//    if (callSession.status == eCallSessionStatusConnected) {
-//        MLConnectViewController *connectVC = [[MLConnectViewController alloc] init];
-//        connectVC.callSession = callSession;
-//        [self presentViewController:connectVC animated:YES completion:nil];
-//    } else {
-//        
-//        [SVProgressHUD showErrorWithStatus:error.description];
-//    
-//    }
-//
-//
-//}
 
 #pragma mark - MLConversationTableViewCellDelegate协议方法
 

@@ -33,23 +33,84 @@
                             <action selector="friendButton:" destination="jD7-R7-ETr" eventType="touchUpInside" id="NcU-fL-ctx"/>
                         </connections>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.png" translatesAutoresizingMaskIntoConstraints="NO" id="GTw-L5-w98">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="32" id="FAb-bn-3gb"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="瓢娱乐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMd-iz-0VR">
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCA-xy-nOK">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="32" id="aXf-tZ-gns"/>
+                        </constraints>
+                        <connections>
+                            <action selector="playButton:" destination="jD7-R7-ETr" eventType="touchUpInside" id="vx1-tU-Yzl"/>
+                        </connections>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="news.png" translatesAutoresizingMaskIntoConstraints="NO" id="QsK-bu-TKD">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="32" id="v6r-0v-igh"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="瓢资讯" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWC-Qy-IA9">
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cfh-Ea-L8E">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="32" id="eQS-yi-l1i"/>
+                        </constraints>
+                        <connections>
+                            <action selector="newsButton:" destination="jD7-R7-ETr" eventType="touchUpInside" id="DmW-e3-JxF"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="dWC-Qy-IA9" firstAttribute="top" secondItem="QsK-bu-TKD" secondAttribute="bottom" constant="10" id="0H7-IU-QIo"/>
+                    <constraint firstItem="fMd-iz-0VR" firstAttribute="top" secondItem="GTw-L5-w98" secondAttribute="bottom" constant="10" id="231-5l-CH5"/>
+                    <constraint firstAttribute="bottom" secondItem="dWC-Qy-IA9" secondAttribute="bottom" constant="10" id="8f1-R6-kE7"/>
                     <constraint firstAttribute="bottom" secondItem="Yku-Lr-fpB" secondAttribute="bottom" constant="48" id="8mG-BR-FRX"/>
                     <constraint firstItem="5ZM-l6-3vm" firstAttribute="leading" secondItem="Y3o-UX-PWe" secondAttribute="leading" constant="40" id="8sG-GO-cnz"/>
                     <constraint firstItem="Yku-Lr-fpB" firstAttribute="leading" secondItem="Y3o-UX-PWe" secondAttribute="leading" constant="40" id="BvY-Pf-SIk"/>
                     <constraint firstItem="5ZM-l6-3vm" firstAttribute="top" secondItem="Y3o-UX-PWe" secondAttribute="top" constant="20" id="Enf-kM-GfX"/>
+                    <constraint firstAttribute="bottom" secondItem="GTw-L5-w98" secondAttribute="bottom" constant="48" id="FoB-L8-a2Z"/>
                     <constraint firstAttribute="bottom" secondItem="5ZM-l6-3vm" secondAttribute="bottom" constant="10" id="HQp-7e-Z4i"/>
                     <constraint firstItem="osx-SI-gzI" firstAttribute="top" secondItem="Yku-Lr-fpB" secondAttribute="bottom" constant="10" id="Jsh-zc-WIp"/>
+                    <constraint firstItem="QsK-bu-TKD" firstAttribute="centerX" secondItem="Y3o-UX-PWe" secondAttribute="centerX" id="Kiy-q3-Va2"/>
+                    <constraint firstAttribute="bottom" secondItem="hCA-xy-nOK" secondAttribute="bottom" constant="10" id="S6M-D8-qLo"/>
+                    <constraint firstItem="Cfh-Ea-L8E" firstAttribute="top" secondItem="Y3o-UX-PWe" secondAttribute="top" constant="20" id="V2t-vA-c5i"/>
+                    <constraint firstItem="hCA-xy-nOK" firstAttribute="top" secondItem="Y3o-UX-PWe" secondAttribute="top" constant="20" id="Yj3-87-q5M"/>
+                    <constraint firstItem="QsK-bu-TKD" firstAttribute="top" secondItem="Y3o-UX-PWe" secondAttribute="top" constant="20" id="adb-ud-zj9"/>
+                    <constraint firstItem="Cfh-Ea-L8E" firstAttribute="centerX" secondItem="Y3o-UX-PWe" secondAttribute="centerX" id="cDy-yL-X0W"/>
+                    <constraint firstItem="GTw-L5-w98" firstAttribute="top" secondItem="Y3o-UX-PWe" secondAttribute="top" constant="20" id="cSH-CK-dLJ"/>
+                    <constraint firstItem="dWC-Qy-IA9" firstAttribute="centerX" secondItem="QsK-bu-TKD" secondAttribute="centerX" id="fwf-xR-UVB"/>
+                    <constraint firstAttribute="bottom" secondItem="QsK-bu-TKD" secondAttribute="bottom" constant="48" id="lX0-W3-KyD"/>
                     <constraint firstItem="osx-SI-gzI" firstAttribute="centerX" secondItem="Yku-Lr-fpB" secondAttribute="centerX" id="lhn-fa-P90"/>
                     <constraint firstAttribute="bottom" secondItem="osx-SI-gzI" secondAttribute="bottom" constant="10" id="oIA-Lc-cg8"/>
                     <constraint firstItem="Yku-Lr-fpB" firstAttribute="top" secondItem="Y3o-UX-PWe" secondAttribute="top" constant="20" id="qS8-Jf-Q1A"/>
+                    <constraint firstAttribute="trailing" secondItem="GTw-L5-w98" secondAttribute="trailing" constant="40" id="t9A-NJ-pXU"/>
+                    <constraint firstAttribute="trailing" secondItem="hCA-xy-nOK" secondAttribute="trailing" constant="40" id="teV-ic-AjB"/>
+                    <constraint firstAttribute="bottom" secondItem="fMd-iz-0VR" secondAttribute="bottom" constant="10" id="vdG-4H-7lY"/>
+                    <constraint firstItem="fMd-iz-0VR" firstAttribute="centerX" secondItem="GTw-L5-w98" secondAttribute="centerX" id="y2n-Am-fYX"/>
+                    <constraint firstAttribute="bottom" secondItem="Cfh-Ea-L8E" secondAttribute="bottom" constant="10" id="yEk-A0-Wo9"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="friendLabel" destination="osx-SI-gzI" id="bWy-E3-Vef"/>
+                <outlet property="newsLabel" destination="dWC-Qy-IA9" id="qL4-b6-gHq"/>
+                <outlet property="playLabel" destination="fMd-iz-0VR" id="pKz-a8-FyR"/>
+            </connections>
             <point key="canvasLocation" x="-3" y="68"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="newFriend.png" width="32" height="32"/>
+        <image name="news.png" width="32" height="32"/>
+        <image name="play.png" width="32" height="32"/>
     </resources>
 </document>

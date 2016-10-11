@@ -8,13 +8,25 @@
 
 #import "MLMenuTableViewCell.h"
 #import "MLNewFriendViewController.h"
-
+#import "MLPlayViewController.h"
 
 @interface MLMenuTableViewCell ()
+@property (weak, nonatomic) IBOutlet UILabel *friendLabel;
+@property (weak, nonatomic) IBOutlet UILabel *playLabel;
+@property (weak, nonatomic) IBOutlet UILabel *newsLabel;
 
 @end
 
 @implementation MLMenuTableViewCell
+
+- (void)awakeFromNib {
+
+    [super awakeFromNib];
+    
+    [self.friendLabel ml_setLabelDayAndNight];
+    [self.newsLabel ml_setLabelDayAndNight];
+    [self.playLabel ml_setLabelDayAndNight];
+}
 
 - (IBAction)friendButton:(id)sender {
     
@@ -23,6 +35,19 @@
     
     
 }
+
+- (IBAction)playButton:(id)sender {
+    MLPlayViewController *playVC = [[MLPlayViewController alloc] init];
+    [[self viewController].navigationController pushViewController:playVC animated:YES];
+    
+}
+
+
+- (IBAction)newsButton:(id)sender {
+    
+    
+}
+
 
 +(instancetype)ml_menuTableViewCellWithTableView:(UITableView *)tableView {
  

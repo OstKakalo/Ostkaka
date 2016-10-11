@@ -40,7 +40,7 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="32" id="8Lz-f1-Yws"/>
                     </constraints>
-                    <state key="normal" backgroundImage="add.png"/>
+                    <state key="normal" image="add.png"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="16"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="0.2"/>
@@ -53,7 +53,7 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="32" id="i6T-2X-2gm"/>
                     </constraints>
-                    <state key="normal" backgroundImage="face.png"/>
+                    <state key="normal" image="face.png"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="16"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="0.2"/>
@@ -84,6 +84,10 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="faceButton" destination="dP6-fl-Fdv" id="Un7-W3-Kra"/>
+                <outlet property="inputTextField" destination="ZDQ-us-3q0" id="Svb-dQ-1Lj"/>
+                <outlet property="moreButton" destination="dhx-dA-zns" id="huJ-RX-tLF"/>
+                <outlet property="speechButton" destination="mjQ-FS-wIo" id="WoA-h7-vl9"/>
                 <outlet property="textField" destination="ZDQ-us-3q0" id="bR4-vX-rEH"/>
             </connections>
             <point key="canvasLocation" x="258.5" y="-205.5"/>

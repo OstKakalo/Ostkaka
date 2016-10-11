@@ -8,9 +8,25 @@
 
 #import "MLMoreView.h"
 
+@interface MLMoreView ()
+
+@property (weak, nonatomic) IBOutlet UILabel *photoLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
+@property (weak, nonatomic) IBOutlet UILabel *videoLabel;
+
+@end
+
 @implementation MLMoreView
 
-
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    [self.photoLabel ml_setLabelDayAndNight];
+    [self.phoneLabel ml_setLabelDayAndNight];
+    [self.videoLabel ml_setLabelDayAndNight];
+    
+}
 
 - (instancetype)init
 {

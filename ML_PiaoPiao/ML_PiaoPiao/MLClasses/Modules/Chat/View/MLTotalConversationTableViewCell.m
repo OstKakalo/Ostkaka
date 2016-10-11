@@ -24,6 +24,10 @@
 @implementation MLTotalConversationTableViewCell
 
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    [self.username ml_setLabelDayAndNight];
+}
 
 
 - (void)setConversation:(EMConversation *)conversation {

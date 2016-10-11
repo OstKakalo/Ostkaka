@@ -21,7 +21,7 @@
                             <constraint firstAttribute="height" constant="15" id="XSQ-36-Bib"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hand.png" translatesAutoresizingMaskIntoConstraints="NO" id="4j1-5a-YHY">
@@ -101,7 +101,9 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="agreeButton" destination="7jY-vL-GGl" id="jzv-8h-fRK"/>
                 <outlet property="message" destination="1mh-WQ-B0h" id="afK-ce-duf"/>
+                <outlet property="regectButton" destination="51p-aA-DUE" id="qwI-Th-Cwf"/>
                 <outlet property="username" destination="PQN-2M-jsM" id="ss9-kD-JcJ"/>
             </connections>
             <point key="canvasLocation" x="34" y="96.5"/>

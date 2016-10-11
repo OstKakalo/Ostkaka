@@ -29,9 +29,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TYj-k5-eSE">
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="1" id="xRZ-Le-eto"/>
+                            <constraint firstAttribute="height" constant="0.5" id="xRZ-Le-eto"/>
                         </constraints>
                     </view>
                 </subviews>

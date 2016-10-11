@@ -37,7 +37,7 @@
 - (void)setBuddy:(EMBuddy *)buddy {
     _buddy = buddy;
     _username.text = _buddy.username;
-
+    [_username ml_setLabelDayAndNight];
 }
 
 @end

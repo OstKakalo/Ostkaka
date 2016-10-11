@@ -14,11 +14,27 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *message;
 
+@property (weak, nonatomic) IBOutlet UIButton *agreeButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *regectButton;
+
 @end
 
 @implementation MLNewFriendTableViewCell
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    [self.username ml_setLabelDayAndNight];
+    [self.message ml_setLabelDayAndNight];
+    [self.agreeButton jxl_setDayMode:^(UIView *view) {
+        view.backgroundColor = [UIColor whiteColor];
+        [((UIButton *)view) setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    } nightMode:^(UIView *view) {
+        view.backgroundColor = ColorWithBackGround;
+        [((UIButton *)view) setTitleColor:ColorWith243 forState:UIControlStateNormal];
+    }];
 
+}
 
 - (IBAction)agree:(id)sender {
     EMError *error = nil;
@@ -58,6 +74,7 @@
     
     id cell = [tableView dequeueReusableCellWithIdentifier:NewFriend];
     if (!cell) {
+        [cell ml_setFrontViewDayAndNight];
         cell = MYXIB;
     }
     return cell;

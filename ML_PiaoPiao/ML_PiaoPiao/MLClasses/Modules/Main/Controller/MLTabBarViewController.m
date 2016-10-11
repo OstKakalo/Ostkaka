@@ -59,8 +59,23 @@ EMCallManagerDelegate
 
         meNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"我" image:[UIImage imageNamed:@"me"] selectedImage:[UIImage imageNamed:@"me-s"]];
         
-        self.tabBar.barTintColor = [UIColor blackColor];
-        self.tabBar.tintColor = [UIColor whiteColor];
+        
+        
+//        self.tabBar.barTintColor = [UIColor whiteColor];
+//        self.tabBar.tintColor = ColorWith48Red;
+        
+        [self.tabBar jxl_setDayMode:^(UIView *view) {
+            UITabBar *bar = (UITabBar *)view;
+            bar.barTintColor = [UIColor whiteColor];
+            bar.tintColor = ColorWith48Red;
+
+        } nightMode:^(UIView *view) {
+            UITabBar *bar = (UITabBar *)view;
+            bar.barTintColor = ColorWith51Black;
+            bar.tintColor = ColorWith243;
+            
+
+        }];
     }
     return self;
 }

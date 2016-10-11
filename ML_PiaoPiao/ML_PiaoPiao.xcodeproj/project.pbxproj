@@ -16,7 +16,6 @@
 		110DB1211DA6290A00985683 /* rejectPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 110DB11F1DA6290A00985683 /* rejectPhone.png */; };
 		110DB1221DA6290A00985683 /* acceptPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 110DB1201DA6290A00985683 /* acceptPhone.png */; };
 		1117AA191D9C9FDD008B4D40 /* MLMoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1117AA181D9C9FDD008B4D40 /* MLMoreView.xib */; };
-		1117AA1B1D9CA1C1008B4D40 /* photo- chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 1117AA1A1D9CA1C1008B4D40 /* photo- chat.png */; };
 		1136D4C21D9E7F67002E872B /* MLSpeakView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1136D4C11D9E7F67002E872B /* MLSpeakView.m */; };
 		1136D4C41D9E7F73002E872B /* MLSpeakView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1136D4C31D9E7F73002E872B /* MLSpeakView.xib */; };
 		1136D4C61D9E8536002E872B /* speak.png in Resources */ = {isa = PBXBuildFile; fileRef = 1136D4C51D9E8536002E872B /* speak.png */; };
@@ -38,8 +37,43 @@
 		1136D50D1D9FBC30002E872B /* he1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1136D5081D9FBC30002E872B /* he1.png */; };
 		1136D50E1D9FBC30002E872B /* me2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1136D5091D9FBC30002E872B /* me2.png */; };
 		1136D50F1D9FBC30002E872B /* me1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1136D50A1D9FBC30002E872B /* me1.png */; };
+		113734901DA889E900141763 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 1137348F1DA889E900141763 /* play.png */; };
+		113734931DA88BF000141763 /* MLPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 113734921DA88BF000141763 /* MLPlayViewController.m */; };
+		113734951DA88CDB00141763 /* news.png in Resources */ = {isa = PBXBuildFile; fileRef = 113734941DA88CDB00141763 /* news.png */; };
 		116686761D9A9DF50070C3F7 /* water.png in Resources */ = {isa = PBXBuildFile; fileRef = 116686751D9A9DF50070C3F7 /* water.png */; };
+		117917911DA8E8D200D51562 /* day.png in Resources */ = {isa = PBXBuildFile; fileRef = 1179178F1DA8E8D200D51562 /* day.png */; };
+		117917921DA8E8D200D51562 /* night.png in Resources */ = {isa = PBXBuildFile; fileRef = 117917901DA8E8D200D51562 /* night.png */; };
+		117917991DA8EB0F00D51562 /* JXLDayAndNightManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 117917951DA8EB0F00D51562 /* JXLDayAndNightManager.m */; };
+		1179179A1DA8EB0F00D51562 /* UIView+JXLDAN.m in Sources */ = {isa = PBXBuildFile; fileRef = 117917981DA8EB0F00D51562 /* UIView+JXLDAN.m */; };
+		117918471DA9DFCF00D51562 /* MLInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 117918461DA9DFCF00D51562 /* MLInfo.m */; };
+		1179184A1DA9E54900D51562 /* MLData.m in Sources */ = {isa = PBXBuildFile; fileRef = 117918491DA9E54900D51562 /* MLData.m */; };
+		1179184D1DA9E55600D51562 /* MLList.m in Sources */ = {isa = PBXBuildFile; fileRef = 1179184C1DA9E55600D51562 /* MLList.m */; };
+		117918871DAA25BB00D51562 /* MLPlayHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 117918861DAA25BB00D51562 /* MLPlayHeaderView.m */; };
+		1179188B1DAA296100D51562 /* MLPlayHeaderViewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 117918891DAA296100D51562 /* MLPlayHeaderViewCollectionViewCell.m */; };
+		1179188C1DAA296100D51562 /* MLPlayHeaderViewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1179188A1DAA296100D51562 /* MLPlayHeaderViewCollectionViewCell.xib */; };
+		1179188F1DAA461300D51562 /* MLSeparateImageURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 1179188E1DAA461300D51562 /* MLSeparateImageURL.m */; };
+		117918931DAA5B7000D51562 /* MLPlayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 117918911DAA5B7000D51562 /* MLPlayTableViewCell.m */; };
+		117918941DAA5B7000D51562 /* MLPlayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 117918921DAA5B7000D51562 /* MLPlayTableViewCell.xib */; };
+		117918961DAA5E0300D51562 /* eyes.png in Resources */ = {isa = PBXBuildFile; fileRef = 117918951DAA5E0300D51562 /* eyes.png */; };
+		1179189A1DAA765500D51562 /* MLPlayTableViewCellSecond.m in Sources */ = {isa = PBXBuildFile; fileRef = 117918981DAA765500D51562 /* MLPlayTableViewCellSecond.m */; };
+		1179189B1DAA765500D51562 /* MLPlayTableViewCellSecond.xib in Resources */ = {isa = PBXBuildFile; fileRef = 117918991DAA765500D51562 /* MLPlayTableViewCellSecond.xib */; };
+		117918A11DAB1EBE00D51562 /* NSObject+MLClear.m in Sources */ = {isa = PBXBuildFile; fileRef = 117918A01DAB1EBE00D51562 /* NSObject+MLClear.m */; };
+		117918A31DAB228C00D51562 /* clear.png in Resources */ = {isa = PBXBuildFile; fileRef = 117918A21DAB228C00D51562 /* clear.png */; };
+		117918A61DAB39C600D51562 /* detailPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 117918A41DAB39C600D51562 /* detailPhoto.png */; };
+		117918A71DAB39C600D51562 /* vip.png in Resources */ = {isa = PBXBuildFile; fileRef = 117918A51DAB39C600D51562 /* vip.png */; };
+		117918AA1DAB3B9800D51562 /* MLAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 117918A91DAB3B9800D51562 /* MLAlert.m */; };
+		117918B01DAB3CBD00D51562 /* UIView+MLFindSuperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 117918AF1DAB3CBD00D51562 /* UIView+MLFindSuperViewController.m */; };
+		117918B41DAB40EE00D51562 /* money.png in Resources */ = {isa = PBXBuildFile; fileRef = 117918B31DAB40EE00D51562 /* money.png */; };
+		117918B81DAB43F600D51562 /* photo- chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 117918B71DAB43F600D51562 /* photo- chat.png */; };
 		118F7EFF1D9BFC3C00D1F592 /* MLMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 118F7EFE1D9BFC3C00D1F592 /* MLMoreView.m */; };
+		11924FC11DAB9589001CD022 /* UIView+MLDayAndNight.m in Sources */ = {isa = PBXBuildFile; fileRef = 11924FC01DAB9589001CD022 /* UIView+MLDayAndNight.m */; };
+		11924FC41DAB97F9001CD022 /* UILabel+MLDayAndNight.m in Sources */ = {isa = PBXBuildFile; fileRef = 11924FC31DAB97F9001CD022 /* UILabel+MLDayAndNight.m */; };
+		11924FC81DABAF45001CD022 /* set.png in Resources */ = {isa = PBXBuildFile; fileRef = 11924FC71DABAF45001CD022 /* set.png */; };
+		11924FCB1DABD029001CD022 /* dayBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 11924FC91DABD029001CD022 /* dayBack.png */; };
+		11924FCE1DABD58F001CD022 /* nightBack.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11924FCD1DABD58F001CD022 /* nightBack.jpg */; };
+		11924FD31DABD726001CD022 /* face-night.png in Resources */ = {isa = PBXBuildFile; fileRef = 11924FD01DABD726001CD022 /* face-night.png */; };
+		11924FD41DABD726001CD022 /* speek-night.png in Resources */ = {isa = PBXBuildFile; fileRef = 11924FD11DABD726001CD022 /* speek-night.png */; };
+		11924FD81DABD7D1001CD022 /* add-night.png in Resources */ = {isa = PBXBuildFile; fileRef = 11924FD71DABD7D1001CD022 /* add-night.png */; };
 		11C6A0C71D954F2700304D7D /* MLTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C6A0C61D954F2700304D7D /* MLTabBarViewController.m */; };
 		11C6A0DF1D95530F00304D7D /* MLMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C6A0DD1D95530F00304D7D /* MLMeViewController.m */; };
 		11C6A0E91D95548100304D7D /* chat-s.png in Resources */ = {isa = PBXBuildFile; fileRef = 11C6A0E11D95548100304D7D /* chat-s.png */; };
@@ -51,12 +85,10 @@
 		11C6A0EF1D95548100304D7D /* me-s.png in Resources */ = {isa = PBXBuildFile; fileRef = 11C6A0E71D95548100304D7D /* me-s.png */; };
 		11C6A0F01D95548100304D7D /* me.png in Resources */ = {isa = PBXBuildFile; fileRef = 11C6A0E81D95548100304D7D /* me.png */; };
 		11C6A0F21D956D5100304D7D /* MLMeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C6A0F11D956D5100304D7D /* MLMeViewController.storyboard */; };
-		11C6A0F41D956DE700304D7D /* MLChatViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C6A0F31D956DE700304D7D /* MLChatViewController.storyboard */; };
 		11C6A0FB1D9606BB00304D7D /* MLSetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C6A0FA1D9606BB00304D7D /* MLSetTableViewController.m */; };
 		11C6A0FD1D9606CC00304D7D /* MLSetTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C6A0FC1D9606CC00304D7D /* MLSetTableViewController.storyboard */; };
 		11C6A1001D96077D00304D7D /* MLBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C6A0FF1D96077D00304D7D /* MLBaseTableViewController.m */; };
 		11C6A1061D96152C00304D7D /* MLContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C6A1051D96152C00304D7D /* MLContactViewController.m */; };
-		11C6A1081D96154500304D7D /* MLContactViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C6A1071D96154500304D7D /* MLContactViewController.storyboard */; };
 		11C6A10B1D96157600304D7D /* MLChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C6A10A1D96157600304D7D /* MLChatViewController.m */; };
 		11C6A1171D9619AE00304D7D /* MLAddFrendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C6A1151D9619AE00304D7D /* MLAddFrendViewController.m */; };
 		11C6A11B1D961C4100304D7D /* MLAddFriendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C6A11A1D961C4100304D7D /* MLAddFriendView.m */; };
@@ -127,7 +159,6 @@
 		110DB11F1DA6290A00985683 /* rejectPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rejectPhone.png; sourceTree = "<group>"; };
 		110DB1201DA6290A00985683 /* acceptPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = acceptPhone.png; sourceTree = "<group>"; };
 		1117AA181D9C9FDD008B4D40 /* MLMoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MLMoreView.xib; sourceTree = "<group>"; };
-		1117AA1A1D9CA1C1008B4D40 /* photo- chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo- chat.png"; sourceTree = "<group>"; };
 		1136D4C01D9E7F67002E872B /* MLSpeakView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSpeakView.h; sourceTree = "<group>"; };
 		1136D4C11D9E7F67002E872B /* MLSpeakView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSpeakView.m; sourceTree = "<group>"; };
 		1136D4C31D9E7F73002E872B /* MLSpeakView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MLSpeakView.xib; sourceTree = "<group>"; };
@@ -168,9 +199,61 @@
 		1136D5081D9FBC30002E872B /* he1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = he1.png; sourceTree = "<group>"; };
 		1136D5091D9FBC30002E872B /* me2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me2.png; sourceTree = "<group>"; };
 		1136D50A1D9FBC30002E872B /* me1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me1.png; sourceTree = "<group>"; };
+		1137348F1DA889E900141763 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		113734911DA88BF000141763 /* MLPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPlayViewController.h; sourceTree = "<group>"; };
+		113734921DA88BF000141763 /* MLPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPlayViewController.m; sourceTree = "<group>"; };
+		113734941DA88CDB00141763 /* news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news.png; sourceTree = "<group>"; };
 		116686751D9A9DF50070C3F7 /* water.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water.png; sourceTree = "<group>"; };
+		1179178F1DA8E8D200D51562 /* day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = day.png; sourceTree = "<group>"; };
+		117917901DA8E8D200D51562 /* night.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = night.png; sourceTree = "<group>"; };
+		117917941DA8EB0F00D51562 /* JXLDayAndNightManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXLDayAndNightManager.h; sourceTree = "<group>"; };
+		117917951DA8EB0F00D51562 /* JXLDayAndNightManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXLDayAndNightManager.m; sourceTree = "<group>"; };
+		117917961DA8EB0F00D51562 /* JXLDayAndNightMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXLDayAndNightMode.h; sourceTree = "<group>"; };
+		117917971DA8EB0F00D51562 /* UIView+JXLDAN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JXLDAN.h"; sourceTree = "<group>"; };
+		117917981DA8EB0F00D51562 /* UIView+JXLDAN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JXLDAN.m"; sourceTree = "<group>"; };
+		117918451DA9DFCF00D51562 /* MLInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLInfo.h; sourceTree = "<group>"; };
+		117918461DA9DFCF00D51562 /* MLInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLInfo.m; sourceTree = "<group>"; };
+		117918481DA9E54900D51562 /* MLData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLData.h; sourceTree = "<group>"; };
+		117918491DA9E54900D51562 /* MLData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLData.m; sourceTree = "<group>"; };
+		1179184B1DA9E55600D51562 /* MLList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLList.h; sourceTree = "<group>"; };
+		1179184C1DA9E55600D51562 /* MLList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLList.m; sourceTree = "<group>"; };
+		117918851DAA25BB00D51562 /* MLPlayHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPlayHeaderView.h; sourceTree = "<group>"; };
+		117918861DAA25BB00D51562 /* MLPlayHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPlayHeaderView.m; sourceTree = "<group>"; };
+		117918881DAA296100D51562 /* MLPlayHeaderViewCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPlayHeaderViewCollectionViewCell.h; sourceTree = "<group>"; };
+		117918891DAA296100D51562 /* MLPlayHeaderViewCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPlayHeaderViewCollectionViewCell.m; sourceTree = "<group>"; };
+		1179188A1DAA296100D51562 /* MLPlayHeaderViewCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MLPlayHeaderViewCollectionViewCell.xib; sourceTree = "<group>"; };
+		1179188D1DAA461300D51562 /* MLSeparateImageURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSeparateImageURL.h; sourceTree = "<group>"; };
+		1179188E1DAA461300D51562 /* MLSeparateImageURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSeparateImageURL.m; sourceTree = "<group>"; };
+		117918901DAA5B7000D51562 /* MLPlayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPlayTableViewCell.h; sourceTree = "<group>"; };
+		117918911DAA5B7000D51562 /* MLPlayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPlayTableViewCell.m; sourceTree = "<group>"; };
+		117918921DAA5B7000D51562 /* MLPlayTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MLPlayTableViewCell.xib; sourceTree = "<group>"; };
+		117918951DAA5E0300D51562 /* eyes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eyes.png; sourceTree = "<group>"; };
+		117918971DAA765500D51562 /* MLPlayTableViewCellSecond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPlayTableViewCellSecond.h; sourceTree = "<group>"; };
+		117918981DAA765500D51562 /* MLPlayTableViewCellSecond.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPlayTableViewCellSecond.m; sourceTree = "<group>"; };
+		117918991DAA765500D51562 /* MLPlayTableViewCellSecond.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MLPlayTableViewCellSecond.xib; sourceTree = "<group>"; };
+		1179189F1DAB1EBE00D51562 /* NSObject+MLClear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MLClear.h"; sourceTree = "<group>"; };
+		117918A01DAB1EBE00D51562 /* NSObject+MLClear.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MLClear.m"; sourceTree = "<group>"; };
+		117918A21DAB228C00D51562 /* clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clear.png; sourceTree = "<group>"; };
+		117918A41DAB39C600D51562 /* detailPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = detailPhoto.png; sourceTree = "<group>"; };
+		117918A51DAB39C600D51562 /* vip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vip.png; sourceTree = "<group>"; };
+		117918A81DAB3B9800D51562 /* MLAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLAlert.h; sourceTree = "<group>"; };
+		117918A91DAB3B9800D51562 /* MLAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLAlert.m; sourceTree = "<group>"; };
+		117918AE1DAB3CBD00D51562 /* UIView+MLFindSuperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MLFindSuperViewController.h"; sourceTree = "<group>"; };
+		117918AF1DAB3CBD00D51562 /* UIView+MLFindSuperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MLFindSuperViewController.m"; sourceTree = "<group>"; };
+		117918B31DAB40EE00D51562 /* money.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = money.png; sourceTree = "<group>"; };
+		117918B71DAB43F600D51562 /* photo- chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo- chat.png"; sourceTree = "<group>"; };
 		118F7EFD1D9BFC3C00D1F592 /* MLMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLMoreView.h; sourceTree = "<group>"; };
 		118F7EFE1D9BFC3C00D1F592 /* MLMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLMoreView.m; sourceTree = "<group>"; };
+		11924FBF1DAB9589001CD022 /* UIView+MLDayAndNight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MLDayAndNight.h"; sourceTree = "<group>"; };
+		11924FC01DAB9589001CD022 /* UIView+MLDayAndNight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MLDayAndNight.m"; sourceTree = "<group>"; };
+		11924FC21DAB97F9001CD022 /* UILabel+MLDayAndNight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+MLDayAndNight.h"; sourceTree = "<group>"; };
+		11924FC31DAB97F9001CD022 /* UILabel+MLDayAndNight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+MLDayAndNight.m"; sourceTree = "<group>"; };
+		11924FC71DABAF45001CD022 /* set.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = set.png; sourceTree = "<group>"; };
+		11924FC91DABD029001CD022 /* dayBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dayBack.png; sourceTree = "<group>"; };
+		11924FCD1DABD58F001CD022 /* nightBack.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nightBack.jpg; sourceTree = "<group>"; };
+		11924FD01DABD726001CD022 /* face-night.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "face-night.png"; sourceTree = "<group>"; };
+		11924FD11DABD726001CD022 /* speek-night.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "speek-night.png"; sourceTree = "<group>"; };
+		11924FD71DABD7D1001CD022 /* add-night.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add-night.png"; sourceTree = "<group>"; };
 		11C6A0C51D954F2700304D7D /* MLTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTabBarViewController.h; sourceTree = "<group>"; };
 		11C6A0C61D954F2700304D7D /* MLTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTabBarViewController.m; sourceTree = "<group>"; };
 		11C6A0DC1D95530F00304D7D /* MLMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLMeViewController.h; sourceTree = "<group>"; };
@@ -184,7 +267,6 @@
 		11C6A0E71D95548100304D7D /* me-s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "me-s.png"; sourceTree = "<group>"; };
 		11C6A0E81D95548100304D7D /* me.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me.png; sourceTree = "<group>"; };
 		11C6A0F11D956D5100304D7D /* MLMeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MLMeViewController.storyboard; sourceTree = "<group>"; };
-		11C6A0F31D956DE700304D7D /* MLChatViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MLChatViewController.storyboard; sourceTree = "<group>"; };
 		11C6A0F91D9606BB00304D7D /* MLSetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSetTableViewController.h; sourceTree = "<group>"; };
 		11C6A0FA1D9606BB00304D7D /* MLSetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSetTableViewController.m; sourceTree = "<group>"; };
 		11C6A0FC1D9606CC00304D7D /* MLSetTableViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MLSetTableViewController.storyboard; sourceTree = "<group>"; };
@@ -192,7 +274,6 @@
 		11C6A0FF1D96077D00304D7D /* MLBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MLBaseTableViewController.m; path = ../../Modules/Main/Controller/MLBaseTableViewController.m; sourceTree = "<group>"; };
 		11C6A1041D96152C00304D7D /* MLContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLContactViewController.h; sourceTree = "<group>"; };
 		11C6A1051D96152C00304D7D /* MLContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLContactViewController.m; sourceTree = "<group>"; };
-		11C6A1071D96154500304D7D /* MLContactViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MLContactViewController.storyboard; sourceTree = "<group>"; };
 		11C6A1091D96157600304D7D /* MLChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLChatViewController.h; sourceTree = "<group>"; };
 		11C6A10A1D96157600304D7D /* MLChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLChatViewController.m; sourceTree = "<group>"; };
 		11C6A1141D9619AE00304D7D /* MLAddFrendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLAddFrendViewController.h; sourceTree = "<group>"; };
@@ -399,6 +480,18 @@
 			path = "opencore-amrwb";
 			sourceTree = "<group>";
 		};
+		117917931DA8EB0F00D51562 /* JXLDayAndNightMode */ = {
+			isa = PBXGroup;
+			children = (
+				117917941DA8EB0F00D51562 /* JXLDayAndNightManager.h */,
+				117917951DA8EB0F00D51562 /* JXLDayAndNightManager.m */,
+				117917961DA8EB0F00D51562 /* JXLDayAndNightMode.h */,
+				117917971DA8EB0F00D51562 /* UIView+JXLDAN.h */,
+				117917981DA8EB0F00D51562 /* UIView+JXLDAN.m */,
+			);
+			path = JXLDayAndNightMode;
+			sourceTree = "<group>";
+		};
 		11C6A09B1D95335000304D7D /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -543,6 +636,8 @@
 		11E72FC81D94DFCF001D964E /* HttpClient */ = {
 			isa = PBXGroup;
 			children = (
+				1179188D1DAA461300D51562 /* MLSeparateImageURL.h */,
+				1179188E1DAA461300D51562 /* MLSeparateImageURL.m */,
 			);
 			path = HttpClient;
 			sourceTree = "<group>";
@@ -550,6 +645,7 @@
 		11E72FC91D94DFCF001D964E /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				117917931DA8EB0F00D51562 /* JXLDayAndNightMode */,
 				1136D4C71D9E95F0002E872B /* DeviceHelper */,
 			);
 			path = Lib;
@@ -558,6 +654,8 @@
 		11E72FCA1D94DFCF001D964E /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				117918A81DAB3B9800D51562 /* MLAlert.h */,
+				117918A91DAB3B9800D51562 /* MLAlert.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -589,7 +687,6 @@
 			children = (
 				11C6A1091D96157600304D7D /* MLChatViewController.h */,
 				11C6A10A1D96157600304D7D /* MLChatViewController.m */,
-				11C6A0F31D956DE700304D7D /* MLChatViewController.storyboard */,
 				11C6A14C1D98ACBA00304D7D /* MLDetailChatViewController.h */,
 				11C6A14D1D98ACBA00304D7D /* MLDetailChatViewController.m */,
 				110DB11A1DA6072700985683 /* MLConnectViewController.h */,
@@ -650,7 +747,8 @@
 				11C6A1051D96152C00304D7D /* MLContactViewController.m */,
 				11C6A1381D96A3CB00304D7D /* MLNewFriendViewController.h */,
 				11C6A1391D96A3CB00304D7D /* MLNewFriendViewController.m */,
-				11C6A1071D96154500304D7D /* MLContactViewController.storyboard */,
+				113734911DA88BF000141763 /* MLPlayViewController.h */,
+				113734921DA88BF000141763 /* MLPlayViewController.m */,
 				11C6A1141D9619AE00304D7D /* MLAddFrendViewController.h */,
 				11C6A1151D9619AE00304D7D /* MLAddFrendViewController.m */,
 				11C6A1451D97EA1800304D7D /* MLContactDetailViewController.h */,
@@ -663,6 +761,12 @@
 		11E72FD21D94DFCF001D964E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				117918451DA9DFCF00D51562 /* MLInfo.h */,
+				117918461DA9DFCF00D51562 /* MLInfo.m */,
+				117918481DA9E54900D51562 /* MLData.h */,
+				117918491DA9E54900D51562 /* MLData.m */,
+				1179184B1DA9E55600D51562 /* MLList.h */,
+				1179184C1DA9E55600D51562 /* MLList.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -682,6 +786,17 @@
 				11C6A13B1D96A7E700304D7D /* MLNewFriendTableViewCell.h */,
 				11C6A13C1D96A7E700304D7D /* MLNewFriendTableViewCell.m */,
 				11C6A13D1D96A7E700304D7D /* MLNewFriendTableViewCell.xib */,
+				117918851DAA25BB00D51562 /* MLPlayHeaderView.h */,
+				117918861DAA25BB00D51562 /* MLPlayHeaderView.m */,
+				117918881DAA296100D51562 /* MLPlayHeaderViewCollectionViewCell.h */,
+				117918891DAA296100D51562 /* MLPlayHeaderViewCollectionViewCell.m */,
+				1179188A1DAA296100D51562 /* MLPlayHeaderViewCollectionViewCell.xib */,
+				117918901DAA5B7000D51562 /* MLPlayTableViewCell.h */,
+				117918911DAA5B7000D51562 /* MLPlayTableViewCell.m */,
+				117918921DAA5B7000D51562 /* MLPlayTableViewCell.xib */,
+				117918971DAA765500D51562 /* MLPlayTableViewCellSecond.h */,
+				117918981DAA765500D51562 /* MLPlayTableViewCellSecond.m */,
+				117918991DAA765500D51562 /* MLPlayTableViewCellSecond.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -782,20 +897,35 @@
 			isa = PBXGroup;
 			children = (
 				11E730231D9515AA001D964E /* background.jpg */,
+				117918A41DAB39C600D51562 /* detailPhoto.png */,
+				117918A51DAB39C600D51562 /* vip.png */,
+				11924FC91DABD029001CD022 /* dayBack.png */,
+				11924FCD1DABD58F001CD022 /* nightBack.jpg */,
+				117918951DAA5E0300D51562 /* eyes.png */,
+				11924FC71DABAF45001CD022 /* set.png */,
+				117918A21DAB228C00D51562 /* clear.png */,
+				117918B31DAB40EE00D51562 /* money.png */,
+				117918B71DAB43F600D51562 /* photo- chat.png */,
 				11E72FE91D94FEE5001D964E /* launch.jpg */,
 				11C6A1361D967E6000304D7D /* newFriend.png */,
+				1179178F1DA8E8D200D51562 /* day.png */,
+				117917901DA8E8D200D51562 /* night.png */,
 				1136D4C51D9E8536002E872B /* speak.png */,
 				110DB11F1DA6290A00985683 /* rejectPhone.png */,
 				110DB1201DA6290A00985683 /* acceptPhone.png */,
 				11C6A12A1D965DA300304D7D /* head.jpg */,
-				1117AA1A1D9CA1C1008B4D40 /* photo- chat.png */,
+				113734941DA88CDB00141763 /* news.png */,
+				1137348F1DA889E900141763 /* play.png */,
 				110DB1181DA5FB7600985683 /* video- chat.png */,
 				110DB1151DA5FA2100985683 /* phone- chat.png */,
 				116686751D9A9DF50070C3F7 /* water.png */,
 				11C6A0E11D95548100304D7D /* chat-s.png */,
 				11C6A1561D98CB2D00304D7D /* face.png */,
 				11C6A1571D98CB2D00304D7D /* add.png */,
+				11924FD71DABD7D1001CD022 /* add-night.png */,
 				11C6A1581D98CB2D00304D7D /* speech.png */,
+				11924FD01DABD726001CD022 /* face-night.png */,
+				11924FD11DABD726001CD022 /* speek-night.png */,
 				1136D5061D9FBC30002E872B /* he3.png */,
 				1136D5071D9FBC30002E872B /* he2.png */,
 				1136D5081D9FBC30002E872B /* he1.png */,
@@ -840,6 +970,14 @@
 				11E72FFF1D950292001D964E /* UIColor+Categories.m */,
 				11E730021D950292001D964E /* UIView+Frame.h */,
 				11E730031D950292001D964E /* UIView+Frame.m */,
+				1179189F1DAB1EBE00D51562 /* NSObject+MLClear.h */,
+				117918A01DAB1EBE00D51562 /* NSObject+MLClear.m */,
+				117918AE1DAB3CBD00D51562 /* UIView+MLFindSuperViewController.h */,
+				117918AF1DAB3CBD00D51562 /* UIView+MLFindSuperViewController.m */,
+				11924FBF1DAB9589001CD022 /* UIView+MLDayAndNight.h */,
+				11924FC01DAB9589001CD022 /* UIView+MLDayAndNight.m */,
+				11924FC21DAB97F9001CD022 /* UILabel+MLDayAndNight.h */,
+				11924FC31DAB97F9001CD022 /* UILabel+MLDayAndNight.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -928,9 +1066,13 @@
 				1136D5051D9FBAA8002E872B /* me3.png in Resources */,
 				11C6A11D1D961C4F00304D7D /* MLAddFriendView.xib in Resources */,
 				1136D50B1D9FBC30002E872B /* he3.png in Resources */,
+				11924FD41DABD726001CD022 /* speek-night.png in Resources */,
+				11924FD81DABD7D1001CD022 /* add-night.png in Resources */,
 				11C6A0ED1D95548100304D7D /* discover-s.png in Resources */,
+				1179189B1DAA765500D51562 /* MLPlayTableViewCellSecond.xib in Resources */,
 				11C6A0EC1D95548100304D7D /* contect.png in Resources */,
 				11C6A15A1D98CB2D00304D7D /* add.png in Resources */,
+				113734951DA88CDB00141763 /* news.png in Resources */,
 				11E730221D95107A001D964E /* MLRegisterViewController.xib in Resources */,
 				110DB1211DA6290A00985683 /* rejectPhone.png in Resources */,
 				11C6A1351D96735900304D7D /* MLMenuTableViewCell.xib in Resources */,
@@ -938,12 +1080,19 @@
 				110DB1221DA6290A00985683 /* acceptPhone.png in Resources */,
 				1136D4C61D9E8536002E872B /* speak.png in Resources */,
 				11C6A0EA1D95548100304D7D /* chat.png in Resources */,
+				117918B81DAB43F600D51562 /* photo- chat.png in Resources */,
 				11C6A0EE1D95548100304D7D /* discover.png in Resources */,
 				1117AA191D9C9FDD008B4D40 /* MLMoreView.xib in Resources */,
 				1136D4C41D9E7F73002E872B /* MLSpeakView.xib in Resources */,
-				1117AA1B1D9CA1C1008B4D40 /* photo- chat.png in Resources */,
 				11C6A0F21D956D5100304D7D /* MLMeViewController.storyboard in Resources */,
+				11924FD31DABD726001CD022 /* face-night.png in Resources */,
 				11C6A1291D9628A600304D7D /* search.png in Resources */,
+				113734901DA889E900141763 /* play.png in Resources */,
+				117918A61DAB39C600D51562 /* detailPhoto.png in Resources */,
+				1179188C1DAA296100D51562 /* MLPlayHeaderViewCollectionViewCell.xib in Resources */,
+				117918A31DAB228C00D51562 /* clear.png in Resources */,
+				11924FCE1DABD58F001CD022 /* nightBack.jpg in Resources */,
+				117918B41DAB40EE00D51562 /* money.png in Resources */,
 				11C6A1591D98CB2D00304D7D /* face.png in Resources */,
 				11C6A0E91D95548100304D7D /* chat-s.png in Resources */,
 				1136D50D1D9FBC30002E872B /* he1.png in Resources */,
@@ -957,19 +1106,24 @@
 				11E730241D9515AA001D964E /* background.jpg in Resources */,
 				11C6A0F01D95548100304D7D /* me.png in Resources */,
 				11C6A15B1D98CB2D00304D7D /* speech.png in Resources */,
+				117917911DA8E8D200D51562 /* day.png in Resources */,
 				11C6A0EF1D95548100304D7D /* me-s.png in Resources */,
+				117918941DAA5B7000D51562 /* MLPlayTableViewCell.xib in Resources */,
 				11E72FB91D94DA42001D964E /* LaunchScreen.storyboard in Resources */,
 				11C6A12B1D965DA300304D7D /* head.jpg in Resources */,
-				11C6A1081D96154500304D7D /* MLContactViewController.storyboard in Resources */,
+				11924FCB1DABD029001CD022 /* dayBack.png in Resources */,
 				11C6A1411D96A9E900304D7D /* hand.png in Resources */,
 				11E7301E1D950DB1001D964E /* MLLoginViewController.xib in Resources */,
 				11C6A1301D96732F00304D7D /* MLFriendsTableViewCell.xib in Resources */,
 				11C6A13F1D96A7E700304D7D /* MLNewFriendTableViewCell.xib in Resources */,
 				11C6A1371D967E6000304D7D /* newFriend.png in Resources */,
+				117917921DA8E8D200D51562 /* night.png in Resources */,
+				11924FC81DABAF45001CD022 /* set.png in Resources */,
+				117918961DAA5E0300D51562 /* eyes.png in Resources */,
 				1136D50C1D9FBC30002E872B /* he2.png in Resources */,
 				11E72FB61D94DA42001D964E /* Assets.xcassets in Resources */,
-				11C6A0F41D956DE700304D7D /* MLChatViewController.storyboard in Resources */,
 				11C6A0FD1D9606CC00304D7D /* MLSetTableViewController.storyboard in Resources */,
+				117918A71DAB39C600D51562 /* vip.png in Resources */,
 				11E72FB41D94DA42001D964E /* Main.storyboard in Resources */,
 				116686761D9A9DF50070C3F7 /* water.png in Resources */,
 			);
@@ -1033,9 +1187,14 @@
 				1136D4F41D9E95F0002E872B /* wav.mm in Sources */,
 				11C6A1061D96152C00304D7D /* MLContactViewController.m in Sources */,
 				11E730181D950D9F001D964E /* MLRegisterViewController.m in Sources */,
+				1179188F1DAA461300D51562 /* MLSeparateImageURL.m in Sources */,
 				11C6A14E1D98ACBA00304D7D /* MLDetailChatViewController.m in Sources */,
+				1179184D1DA9E55600D51562 /* MLList.m in Sources */,
 				1136D4EE1D9E95F0002E872B /* EMCDDeviceManager+Media.m in Sources */,
+				11924FC41DAB97F9001CD022 /* UILabel+MLDayAndNight.m in Sources */,
+				117918AA1DAB3B9800D51562 /* MLAlert.m in Sources */,
 				11C6A0FB1D9606BB00304D7D /* MLSetTableViewController.m in Sources */,
+				117918B01DAB3CBD00D51562 /* UIView+MLFindSuperViewController.m in Sources */,
 				11E730081D950292001D964E /* NSNumber+Extend.m in Sources */,
 				1136D4F51D9E95F0002E872B /* EMVoiceConverter.mm in Sources */,
 				11E730061D950292001D964E /* NSDate+EasyExtend.mm in Sources */,
@@ -1049,24 +1208,33 @@
 				11C6A1441D976A1100304D7D /* MLRequestInfo.m in Sources */,
 				11E72FB11D94DA42001D964E /* ViewController.m in Sources */,
 				11E7300C1D950292001D964E /* UIButton+Block.m in Sources */,
+				113734931DA88BF000141763 /* MLPlayViewController.m in Sources */,
 				11E023FF1D991DF60065A72B /* MLConversation.m in Sources */,
 				1136D4C21D9E7F67002E872B /* MLSpeakView.m in Sources */,
+				117917991DA8EB0F00D51562 /* JXLDayAndNightManager.m in Sources */,
 				1136D4F11D9E95F0002E872B /* EMCDDeviceManager+Remind.m in Sources */,
+				1179188B1DAA296100D51562 /* MLPlayHeaderViewCollectionViewCell.m in Sources */,
 				1136D4EF1D9E95F0002E872B /* EMCDDeviceManager+Microphone.m in Sources */,
 				11E7300F1D950292001D964E /* UIView+Frame.m in Sources */,
 				11E730091D950292001D964E /* NSString+Categories.m in Sources */,
 				11C6A1201D961D7400304D7D /* MLBaseView.m in Sources */,
 				110DB11D1DA6072700985683 /* MLConnectViewController.m in Sources */,
 				11C6A13E1D96A7E700304D7D /* MLNewFriendTableViewCell.m in Sources */,
+				1179184A1DA9E54900D51562 /* MLData.m in Sources */,
+				117918A11DAB1EBE00D51562 /* NSObject+MLClear.m in Sources */,
+				117918931DAA5B7000D51562 /* MLPlayTableViewCell.m in Sources */,
 				1136D4ED1D9E95F0002E872B /* EMAudioRecorderUtil.m in Sources */,
 				11C6A0C71D954F2700304D7D /* MLTabBarViewController.m in Sources */,
 				1136D4EC1D9E95F0002E872B /* EMAudioPlayerUtil.m in Sources */,
 				11C6A1481D97EA1800304D7D /* MLContactDetailViewController.m in Sources */,
+				117918471DA9DFCF00D51562 /* MLInfo.m in Sources */,
 				11C6A13A1D96A3CB00304D7D /* MLNewFriendViewController.m in Sources */,
 				11C6A1231D9620D400304D7D /* MLNavigationController.m in Sources */,
 				11E730071D950292001D964E /* NSDictionary+Categories.m in Sources */,
 				11C6A1341D96735900304D7D /* MLMenuTableViewCell.m in Sources */,
+				1179189A1DAA765500D51562 /* MLPlayTableViewCellSecond.m in Sources */,
 				11E72FE31D94DFCF001D964E /* main.m in Sources */,
+				117918871DAA25BB00D51562 /* MLPlayHeaderView.m in Sources */,
 				11E7301D1D950DB1001D964E /* MLLoginViewController.m in Sources */,
 				11C6A0DF1D95530F00304D7D /* MLMeViewController.m in Sources */,
 				11C6A1511D98B06500304D7D /* MLInputView.m in Sources */,
@@ -1076,11 +1244,13 @@
 				11E7300A1D950292001D964E /* NSString+Regex.m in Sources */,
 				118F7EFF1D9BFC3C00D1F592 /* MLMoreView.m in Sources */,
 				1136D4F31D9E95F0002E872B /* amrFileCodec.mm in Sources */,
+				11924FC11DAB9589001CD022 /* UIView+MLDayAndNight.m in Sources */,
 				11E72FAE1D94DA42001D964E /* AppDelegate.mm in Sources */,
 				11E024051D991E690065A72B /* MLLongPressButton.m in Sources */,
 				11E7300D1D950292001D964E /* UIColor+Categories.m in Sources */,
 				1136D4F21D9E95F0002E872B /* EMCDDeviceManagerBase.m in Sources */,
 				11E023FC1D991D660065A72B /* MLConversationTableViewCell.m in Sources */,
+				1179179A1DA8EB0F00D51562 /* UIView+JXLDAN.m in Sources */,
 				11C6A10B1D96157600304D7D /* MLChatViewController.m in Sources */,
 				11C6A1001D96077D00304D7D /* MLBaseTableViewController.m in Sources */,
 				11E024021D991E040065A72B /* MLConversationFrame.m in Sources */,
