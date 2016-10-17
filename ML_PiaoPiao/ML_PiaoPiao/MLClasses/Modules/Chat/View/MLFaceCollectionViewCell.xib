@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="FaceCollectionViewCell" id="gTV-IL-0wX" customClass="MLFaceCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lZl-p1-iT5"/>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="lZl-p1-iT5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="6Bu-7U-Ri7"/>
+                <constraint firstAttribute="trailing" secondItem="lZl-p1-iT5" secondAttribute="trailing" id="B4k-ZE-NtQ"/>
+                <constraint firstAttribute="bottom" secondItem="lZl-p1-iT5" secondAttribute="bottom" id="avk-93-IXX"/>
+                <constraint firstItem="lZl-p1-iT5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gZL-M3-5Fp"/>
+            </constraints>
+            <connections>
+                <outlet property="faceImage" destination="lZl-p1-iT5" id="ugZ-SF-n9b"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>

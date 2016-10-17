@@ -16,6 +16,7 @@
 #import "MLSpeakView.h"
 #import "EMCDDeviceManager.h"
 #import "MLConnectViewController.h"
+#import "MLFaceView.h"
 static NSString *const ID = @"mlconversation";
 
 @interface MLDetailChatViewController ()
@@ -32,8 +33,8 @@ IEMChatProgressDelegate,
 MLConversationTableViewCellDelegate,
 MWPhotoBrowserDelegate,
 MLSpeakViewDelegate,
-EMCallManagerDelegate
-
+EMCallManagerDelegate,
+MLFaceViewDelegate
 >
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -54,6 +55,8 @@ EMCallManagerDelegate
 @property (nonatomic, strong) MLSpeakView *speakView;
 
 @property (nonatomic, strong) UIImageView *backImage;
+
+@property (nonatomic, strong) MLFaceView *faceView;
 @end
 
 @implementation MLDetailChatViewController
@@ -61,7 +64,12 @@ EMCallManagerDelegate
 
 
 
+- (void)dealloc {
+    [[EaseMob sharedInstance].callManager removeDelegate:self];
+    [[EaseMob sharedInstance].chatManager removeDelegate:self];
 
+
+}
 
 
 - (void)viewDidLoad {
@@ -78,8 +86,8 @@ EMCallManagerDelegate
     [self.modelView addSubview:self.tableView];
     [self.modelView addSubview:self.inputView];
     [self.view addSubview:self.moreView];
+    [self.moreView addSubview:self.faceView];
     [self.moreView addSubview:self.speakView];
-    
     [self.view bringSubviewToFront:self.modelView];
     [self.view bringSubviewToFront:_inputView];
     
@@ -240,12 +248,20 @@ EMCallManagerDelegate
     if (!_backImage) {
         _backImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - 64 - 50)];
         [_backImage jxl_setDayMode:^(UIView *view) {
-            ((UIImageView *)view).image = [UIImage imageNamed:@"dayBack"];
+            ((UIImageView *)view).image = [UIImage imageNamed:@"dayBack.jpg"];
         } nightMode:^(UIView *view) {
             ((UIImageView *)view).image = [UIImage imageNamed:@"nightBack.jpg"];
         }];
     }
     return _backImage;
+}
+- (MLFaceView *)faceView {
+    if (!_faceView) {
+        _faceView = [[MLFaceView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, _keyHeight)];
+        _faceView.delegate = self;
+        [_faceView ml_setFrontViewDayAndNight];
+    }
+    return _faceView;
 }
 #pragma mark - setter方法
 
@@ -253,6 +269,10 @@ EMCallManagerDelegate
 
     _keyHeight = keyHeight;
     self.moreView.frame = CGRectMake(0,self.view.bounds.size.height - _keyHeight , self.view.bounds.size.width, _keyHeight);
+    self.faceView.frame = CGRectMake(0, 0, self.view.bounds.size.width, _keyHeight);
+    self.speakView.frame = CGRectMake(0, 0, self.view.bounds.size.width, _keyHeight);
+    self.faceView.collectionView.frame = CGRectMake(0, 0, self.view.bounds.size.width, _keyHeight);
+    [self.faceView.collectionView reloadData];
 
 }
 
@@ -334,6 +354,8 @@ EMCallManagerDelegate
         if ([_inputView.textField isFirstResponder]) {
             
             self.speakView.hidden = YES;
+            self.faceView.hidden = YES;
+            self.moreView.hidden = NO;
             
             [self.view endEditing:YES];
             
@@ -349,6 +371,8 @@ EMCallManagerDelegate
         // 语音按钮
         if ([_inputView.textField isFirstResponder]) {
             
+            self.moreView.hidden = NO;
+            self.faceView.hidden = NO;
             self.speakView.hidden = NO;
             
             [self.view endEditing:YES];
@@ -363,6 +387,24 @@ EMCallManagerDelegate
     
     
     
+    } else if (buttonStyle == 1) {
+        // 表情按钮
+        if ([_inputView.textField isFirstResponder]) {
+            
+            self.moreView.hidden = NO;
+            self.faceView.hidden = NO;
+            self.speakView.hidden = YES;
+            
+            [self.view endEditing:YES];
+            
+            self.modelView.frame = CGRectMake(0, - self.keyHeight + 64, self.view.bounds.size.width, self.view.bounds.size.height - 64);
+            
+        } else {
+            
+            [_inputView.textField becomeFirstResponder];
+            
+        }
+        
     }
     
     
@@ -484,6 +526,35 @@ EMCallManagerDelegate
     
 
 }
+
+#pragma mark - MLFaceViewDelegate协议方法
+- (void)ml_faceView:(MLFaceView *)faceView withInteger:(NSInteger)number {
+    NSString *imageStr = [NSString stringWithFormat:@"%ld@2x", (long)number];
+    
+    EMChatText *textChat = [[EMChatText alloc] initWithText:imageStr];
+    
+    EMTextMessageBody *body = [[EMTextMessageBody alloc] initWithChatObject:textChat];
+    
+    EMMessage *message = [[EMMessage alloc] initWithReceiver:self.userName bodies:@[body]];
+    
+    
+    
+    [[EaseMob sharedInstance].chatManager asyncSendMessage:message progress:nil prepare:^(EMMessage *message, EMError *error) {
+        //
+    } onQueue:nil completion:^(EMMessage *message, EMError *error) {
+        //
+        if (!error) {
+
+            [self ml_reload];
+        }
+    } onQueue:nil];
+    
+    
+    
+
+}
+
+
 #pragma mark - UIImagePickerControllerDelegate协议方法
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {

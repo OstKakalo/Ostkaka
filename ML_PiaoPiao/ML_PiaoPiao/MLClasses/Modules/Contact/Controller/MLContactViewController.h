@@ -10,6 +10,7 @@
 
 @interface MLContactViewController : MLBaseViewController
 
+@property (nonatomic, strong) NSMutableArray *friendsArray;
 
-
+@property (nonatomic, strong) UITableView *tableView;
 @end

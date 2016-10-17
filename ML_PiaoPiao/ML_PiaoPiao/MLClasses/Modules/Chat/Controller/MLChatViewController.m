@@ -114,6 +114,23 @@ UITableViewDataSource
     
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+
+        if (editingStyle == UITableViewCellEditingStyleDelete) {
+            
+            
+            EMConversation *conversation = _conversationsArray[indexPath.row];
+            NSString *username = conversation.chatter;
+            
+            [[EaseMob sharedInstance].chatManager removeConversationByChatter:username deleteMessages:YES append2Chat:YES];
+            
+            [self ml_reload];
+        }
+    
+    
+    
+    
+}
 
 #pragma mark - 监听网络状态以及掉线重连效果
 

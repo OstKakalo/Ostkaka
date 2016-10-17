@@ -8,9 +8,12 @@
 
 #import "MLConnectViewController.h"
 
+
+
 @interface MLConnectViewController ()
 <
-EMCallManagerDelegate
+EMCallManagerDelegate,
+AVCaptureMetadataOutputObjectsDelegate
 >
 
 @property (weak, nonatomic) IBOutlet UILabel *username;
@@ -23,9 +26,34 @@ EMCallManagerDelegate
 @property (weak, nonatomic) IBOutlet UILabel *rejectLabel;
 
 
+
+
+//@property (nonatomic, strong)AVCaptureDevice *device;
+//
+//@property (nonatomic, strong)AVCaptureDeviceInput *input;
+//
+//@property (nonatomic, strong)AVCaptureMetadataOutput *output;
+//// 输入输出中间的桥梁
+//@property (nonatomic, strong)AVCaptureSession *session;
+//
+//@property (nonatomic, assign) BOOL hasCameraRight;
+//
+//@property (nonatomic, strong)AVCaptureVideoPreviewLayer *preview;
 @end
 
 @implementation MLConnectViewController
+
+//-(void)viewWillAppear:(BOOL)animated
+//{
+//    [super viewWillAppear:animated];
+//    
+//    if (_hasCameraRight) {
+//        if (_session && ![_session isRunning]) {
+//            [_session startRunning];
+//        }
+//        
+//    }
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,13 +63,44 @@ EMCallManagerDelegate
     self.username.text = self.callSession.sessionChatter;
     
     
+    
+    
+    
+//    // 获取相机授权状态
+//    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+//    
+//    // 对相机授权状态判断
+//    if(authStatus == AVAuthorizationStatusRestricted || authStatus == AVAuthorizationStatusDenied){
+//        
+//        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"没有相机权限" message:@"请去设置-隐私-相机中对爱儿邦授权" preferredStyle:UIAlertControllerStyleAlert];
+//        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//            [self.navigationController popViewControllerAnimated:YES];
+//        }];
+//        [alertController addAction:okAction];
+//        
+//        _hasCameraRight = NO;
+//        return;
+//    }
+//    _hasCameraRight = YES;
+//    
+
+    
+//    [self setupCamera];
 }
+
+
+
+
+
+
 
 #pragma mark - 点击事件
 - (IBAction)agree:(id)sender {
+    
     EMError *error = [[EaseMob sharedInstance].callManager asyncAnswerCall:self.callSession.sessionId];
+    
     NSLog(@"%@", error);
-//    [[EaseMob sharedInstance].callManager markCallSession:self.callSession.sessionId asSilence:NO];
+
     
 }
 - (IBAction)reject:(id)sender {
@@ -79,5 +138,52 @@ EMCallManagerDelegate
     // Pass the selected object to the new view controller.
 }
 */
-
+// 设置相机
+//- (void)setupCamera
+//{
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        // 耗时的操作
+//        // 获取摄像设备
+//        _device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+//        
+//        // 创建输入流
+//        _input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:nil];
+//        
+//        // 创建输出流
+//        _output = [[AVCaptureMetadataOutput alloc]init];
+//        
+//        // 设置代理，在主线程里刷新
+//        [_output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
+//        
+//        // 初始化链接对象
+//        _session = [[AVCaptureSession alloc]init];
+//        
+//        // 高质量采集率
+//        [_session setSessionPreset:AVCaptureSessionPresetHigh];
+//        
+//        if ([_session canAddInput:self.input])
+//        {
+//            [_session addInput:self.input];
+//        }
+//        
+//        if ([_session canAddOutput:self.output])
+//        {
+//            [_session addOutput:self.output];
+//        }
+//        // 条码类型 AVMetadataObjectTypeQRCode
+//        _output.metadataObjectTypes = @[AVMetadataObjectTypeQRCode];
+//        
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            // 更新界面
+//            // Preview
+//            _preview =[AVCaptureVideoPreviewLayer layerWithSession:self.session];
+//            _preview.videoGravity = AVLayerVideoGravityResizeAspectFill;
+//            _preview.frame =CGRectMake(48,110,280,280);
+//            //            _preview.frame = self.view.bounds;
+//            [self.view.layer insertSublayer:self.preview atIndex:0];
+//            // Start
+//            [_session startRunning];
+//        });
+//    });
+//}
 @end

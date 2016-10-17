@@ -11,6 +11,7 @@
 #import "MLTabBarViewController.h"
 #import "MLLoginViewController.h"
 #import "MLMainViewController.h"
+#import "MLLeaderViewController.h"
 @interface AppDelegate ()
 <
 EMChatManagerDelegate
@@ -33,19 +34,39 @@ EMChatManagerDelegate
     
     
     
-    
-    
-    // 判断是否自动登录
-    BOOL isAutoLogin = [[EaseMob sharedInstance].chatManager isAutoLoginEnabled];
-    if (!isAutoLogin) {
-        // 不是自动登录状态
-        MLMainViewController *mainVC = [[MLMainViewController alloc] init];
-        self.window.rootViewController = mainVC;
-    } else {
-        // 自动登录状态
-        [SVProgressHUD showWithStatus:@"自动登录中..."];
-    
+    // 引导页
+    NSUserDefaults *userDef = [NSUserDefaults standardUserDefaults];
+    // 判断是否第一次进入应用
+    if (![userDef boolForKey:@"notFirst"]) {
+        // 如果第一次，进入引导页
+        _window.rootViewController = [[MLLeaderViewController alloc] init];
+
     }
+    else {
+        
+        
+        
+        
+        // 判断是否自动登录
+        BOOL isAutoLogin = [[EaseMob sharedInstance].chatManager isAutoLoginEnabled];
+        if (!isAutoLogin) {
+            // 不是自动登录状态
+            MLMainViewController *mainVC = [[MLMainViewController alloc] init];
+            self.window.rootViewController = mainVC;
+        } else {
+            // 自动登录状态
+            [SVProgressHUD showWithStatus:@"自动登录中..."];
+            
+        }
+
+        
+       
+        
+    }
+    
+    
+    
+    
 
     
     

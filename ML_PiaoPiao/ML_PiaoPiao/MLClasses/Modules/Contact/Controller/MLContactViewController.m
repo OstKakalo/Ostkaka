@@ -19,8 +19,8 @@ UITableViewDelegate,
 EMChatManagerDelegate
 >
 
-@property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray *friendsArray;
+
+
 
 @end
 

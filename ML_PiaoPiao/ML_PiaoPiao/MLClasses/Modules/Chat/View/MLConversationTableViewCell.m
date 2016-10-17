@@ -45,15 +45,45 @@
         case eMessageBodyType_Text:
         {
             
-            // 解决图文重用问题，如果是文字，将button图片置空
-            _contentButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-            [_contentButton setImage:nil forState:UIControlStateNormal];
+            if ([conversation.contentText hasSuffix:@"@2x"]) {
+                
+                NSString *imageStr = [@"love_emoji_" stringByAppendingString:conversation.contentText];
+                
+                NSTextAttachment *attach = [[NSTextAttachment alloc] init];
+                attach.image = [UIImage imageNamed:imageStr];
+                attach.bounds = CGRectMake(0, 0, 32, 32);
+                NSAttributedString *attribute = [NSAttributedString attributedStringWithAttachment:attach];
+                [_contentButton setAttributedTitle:attribute forState:UIControlStateNormal];
+                
+                
+                
+                _contentButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+                [_contentButton setImage:nil forState:UIControlStateNormal];
+                
+                [_contentButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+                _contentButton.titleLabel.font = [UIFont systemFontOfSize: 15.f];
+                [_contentButton setTitle:nil forState:UIControlStateNormal];
+                _contentButton.backgroundColor = conversation.contentBackGroundColor;
+                _contentButton.titleEdgeInsets = UIEdgeInsetsZero;
+                
+                
+                
+                
+            } else {
             
-            [_contentButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            _contentButton.titleLabel.font = [UIFont systemFontOfSize: 15.f];
-            [_contentButton setTitle:conversation.contentText forState:UIControlStateNormal];
-            _contentButton.backgroundColor = conversation.contentBackGroundColor;
-            _contentButton.titleEdgeInsets = UIEdgeInsetsZero;
+                // 解决图文重用问题，如果是文字，将button图片置空
+                _contentButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+                [_contentButton setImage:nil forState:UIControlStateNormal];
+                
+                [_contentButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+                _contentButton.titleLabel.font = [UIFont systemFontOfSize: 15.f];
+                [_contentButton setTitle:conversation.contentText forState:UIControlStateNormal];
+                _contentButton.backgroundColor = conversation.contentBackGroundColor;
+                _contentButton.titleEdgeInsets = UIEdgeInsetsZero;
+                [_contentButton setAttributedTitle:nil forState:UIControlStateNormal];
+            
+            }
+            
             
         }
             break;
@@ -116,6 +146,11 @@
             [_contentButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
             _contentButton.titleLabel.font = [UIFont systemFontOfSize: 10.f];
             _contentButton.backgroundColor = conversation.contentBackGroundColor;
+            
+            
+            
+            
+            [_contentButton setAttributedTitle:nil forState:UIControlStateNormal];
     
         }
             break;

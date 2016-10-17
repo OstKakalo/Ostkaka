@@ -24,6 +24,7 @@ EMCallManagerDelegate
 >
 
 @property (nonatomic, strong) NSMutableArray *requestInfoArray;
+@property (nonatomic, strong) NSArray *buddyList;
 @end
 
 @implementation MLTabBarViewController
@@ -141,6 +142,38 @@ EMCallManagerDelegate
     
 }
 
+// 监控好友列表
+- (void)didUpdateBuddyList:(NSArray *)buddyList
+            changedBuddies:(NSArray *)changedBuddies
+                     isAdd:(BOOL)isAdd {
+    self.buddyList = buddyList;
+    
+}
+
+
+// 监控好友请求被接受
+- (void)didAcceptedByBuddy:(NSString *)username {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@同意了您的好友请求", username] message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    [alert addAction:[UIAlertAction actionWithTitle:@"好的呐！！" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        MLContactViewController *contactVC = [[MLContactViewController alloc] init];
+        [contactVC.friendsArray removeAllObjects];
+        [contactVC.friendsArray addObjectsFromArray:_buddyList];
+        [contactVC.tableView reloadData];
+    }]];
+    [self presentViewController:alert animated:YES completion:nil];
+
+}
+// 监控好友请求被拒绝
+
+- (void)didRejectedByBuddy:(NSString *)username {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@拒绝了您的好友请求", username] message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    [alert addAction:[UIAlertAction actionWithTitle:@"知道了！！" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        //
+    }]];
+    [self presentViewController:alert animated:YES completion:nil];
+
+}
+
 #pragma mark - EMCallManagerDelegate协议方法
 - (void)callSessionStatusChanged:(EMCallSession *)callSession
                     changeReason:(EMCallStatusChangedReason)reason
@@ -151,9 +184,13 @@ EMCallManagerDelegate
         case eCallSessionStatusConnected:
         {
             
+            
             MLConnectViewController *connectVC = [[MLConnectViewController alloc] init];
             connectVC.callSession = callSession;
             [self presentViewController:connectVC animated:YES completion:nil];
+          
+            
+            
         }
             break;
             

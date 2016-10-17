@@ -41,6 +41,12 @@
             [self dismissViewControllerAnimated:YES completion:nil];
         } else {
             NSLog(@"%@",error);
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"用户已经注册" message:nil preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"知道啦" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                self.username.text = nil;
+                self.password.text = nil;
+            }]];
+            [self presentViewController:alert animated:YES completion:nil];
         }
     } onQueue:nil];
 }

@@ -65,6 +65,12 @@
         } else{
         
             NSLog(@"%@", error);
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"用户名或密码错误" message:nil preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"知道啦" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                self.lusername.text = nil;
+                self.lpassword.text = nil;
+            }]];
+            [self presentViewController:alert animated:YES completion:nil];
         }
     } onQueue:nil];
 }

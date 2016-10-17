@@ -19,7 +19,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Xfg-eo-Dnq"/>
+                <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mao2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Xfg-eo-Dnq"/>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lB8-xc-SBX">
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="PEl-3A-Q5O"/>
@@ -81,12 +81,12 @@
                         <constraint firstAttribute="height" constant="21" id="a3Q-94-3BS"/>
                         <constraint firstAttribute="width" constant="85" id="kuc-2p-dzA"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <color key="textColor" red="0.53665865384615385" green="0.53665865384615385" blue="0.53665865384615385" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="dOh-at-O6H" firstAttribute="top" secondItem="Rck-MP-ROC" secondAttribute="bottom" constant="20" id="29v-iX-omM"/>
                 <constraint firstItem="Xfg-eo-Dnq" firstAttribute="leading" secondItem="AXc-5c-DPJ" secondAttribute="leading" id="ApI-9o-YLv"/>
@@ -113,7 +113,7 @@
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
     </objects>
     <resources>
-        <image name="background.jpg" width="640" height="1136"/>
+        <image name="mao2.jpg" width="580" height="1030"/>
         <image name="water.png" width="128" height="128"/>
     </resources>
 </document>
