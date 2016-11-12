@@ -103,7 +103,7 @@
     if (indexPath.section == 2) {
         [[EaseMob sharedInstance].chatManager asyncLogoffWithUnbindDeviceToken:YES completion:^(NSDictionary *info, EMError *error) {
             if (!error) {
-                NSLog(@"退出成功");
+                // NSLog(@"退出成功");
         
                 // 切换根视图控制器
                 UIWindow *window = [UIApplication sharedApplication].keyWindow;

@@ -45,6 +45,8 @@
 
 - (IBAction)newsButton:(id)sender {
     
+    UIAlertController *alert = [MLAlert ml_alertControllerWithDefailDevelop];
+    [[self viewController] presentViewController:alert animated:YES completion:nil];
     
 }
 

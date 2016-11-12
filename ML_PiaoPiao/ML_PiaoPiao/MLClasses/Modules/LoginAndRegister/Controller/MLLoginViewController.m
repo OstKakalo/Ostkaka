@@ -30,7 +30,7 @@
 - (IBAction)back:(id)sender {
     
     [self dismissViewControllerAnimated:YES completion:nil];
-    NSLog(@"%@", self);
+    // NSLog(@"%@", self);
 }
 
 
@@ -46,16 +46,26 @@
     [self ml_keyBoardMove];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    
+    
+}
 
 
 - (IBAction)ml_login:(id)sender {
     [self.view endEditing:YES];
+    [SVProgressHUD showWithStatus:@"登录中..."];
     [[EaseMob sharedInstance].chatManager asyncLoginWithUsername:self.lusername.text password:self.lpassword.text completion:^(NSDictionary *loginInfo, EMError *error) {
         
         if (!error && loginInfo) {
-            NSLog(@"登录成功");
+            // NSLog(@"登录成功");
             // 设置自动登录
             [[EaseMob sharedInstance].chatManager setIsAutoLoginEnabled:YES];
+            
+            
+            [SVProgressHUD dismiss];
             
             // 跳转页面
             UIWindow *window = [UIApplication sharedApplication].keyWindow;
@@ -64,7 +74,7 @@
             
         } else{
         
-            NSLog(@"%@", error);
+            // NSLog(@"%@", error);
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"用户名或密码错误" message:nil preferredStyle:UIAlertControllerStyleAlert];
             [alert addAction:[UIAlertAction actionWithTitle:@"知道啦" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 self.lusername.text = nil;
@@ -89,7 +99,7 @@
 - (void)ml_keyBoardMove {
     
     [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillChangeFrameNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
-//        NSLog(@"%@", note);
+//        // NSLog(@"%@", note);
         /*
          NSConcreteNotification 0x608000251850 {name = UIKeyboardWillChangeFrameNotification; userInfo = {
          UIKeyboardAnimationCurveUserInfoKey = 7;

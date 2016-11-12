@@ -19,7 +19,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mao2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Xfg-eo-Dnq"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="callBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xfg-eo-Dnq"/>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lB8-xc-SBX">
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="PEl-3A-Q5O"/>
@@ -79,12 +79,24 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GOURD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQ4-Qa-4FA">
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="a3Q-94-3BS"/>
-                        <constraint firstAttribute="width" constant="85" id="kuc-2p-dzA"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <color key="textColor" red="0.53665865384615385" green="0.53665865384615385" blue="0.53665865384615385" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhW-JO-uFg">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="KlD-v0-Cza"/>
+                        <constraint firstAttribute="width" constant="233" id="rfs-Cy-J4U"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="注册代表您已同意相关服务条款和隐私政策">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="severAction:" destination="-1" eventType="touchUpInside" id="g9Q-GQ-X2V"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
@@ -95,12 +107,14 @@
                 <constraint firstAttribute="trailing" secondItem="dOh-at-O6H" secondAttribute="trailing" constant="40" id="ETZ-VS-P0d"/>
                 <constraint firstAttribute="bottom" secondItem="Xfg-eo-Dnq" secondAttribute="bottom" id="FZp-1Z-COi"/>
                 <constraint firstAttribute="trailing" secondItem="lB8-xc-SBX" secondAttribute="trailing" constant="40" id="Fa5-DK-VzJ"/>
+                <constraint firstItem="PhW-JO-uFg" firstAttribute="top" secondItem="dOh-at-O6H" secondAttribute="bottom" constant="10" id="HhP-ek-8fx"/>
                 <constraint firstItem="dOh-at-O6H" firstAttribute="leading" secondItem="AXc-5c-DPJ" secondAttribute="leading" constant="40" id="IP9-CB-8QW"/>
                 <constraint firstItem="lB8-xc-SBX" firstAttribute="leading" secondItem="AXc-5c-DPJ" secondAttribute="leading" constant="40" id="PHq-zN-5fr"/>
                 <constraint firstItem="yQ4-Qa-4FA" firstAttribute="centerX" secondItem="AXc-5c-DPJ" secondAttribute="centerX" id="T8C-0x-1TT"/>
                 <constraint firstItem="hJ1-HO-uWI" firstAttribute="leading" secondItem="AXc-5c-DPJ" secondAttribute="leading" constant="10" id="V10-eK-t1Q"/>
-                <constraint firstAttribute="bottom" secondItem="lB8-xc-SBX" secondAttribute="bottom" constant="200" id="YKo-sE-lSb"/>
+                <constraint firstAttribute="bottom" secondItem="lB8-xc-SBX" secondAttribute="bottom" constant="230" id="YKo-sE-lSb"/>
                 <constraint firstItem="Rck-MP-ROC" firstAttribute="leading" secondItem="AXc-5c-DPJ" secondAttribute="leading" constant="40" id="bj3-wI-43c"/>
+                <constraint firstAttribute="trailing" secondItem="PhW-JO-uFg" secondAttribute="trailing" constant="40" id="bo7-zo-hxs"/>
                 <constraint firstAttribute="trailing" secondItem="Rck-MP-ROC" secondAttribute="trailing" constant="40" id="cg8-eY-TMi"/>
                 <constraint firstItem="Xfg-eo-Dnq" firstAttribute="top" secondItem="AXc-5c-DPJ" secondAttribute="top" id="cxW-gE-dGI"/>
                 <constraint firstAttribute="trailing" secondItem="Xfg-eo-Dnq" secondAttribute="trailing" id="mCC-Cb-cpE"/>
@@ -113,7 +127,7 @@
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
     </objects>
     <resources>
-        <image name="mao2.jpg" width="580" height="1030"/>
+        <image name="callBack.png" width="640" height="1136"/>
         <image name="water.png" width="128" height="128"/>
     </resources>
 </document>

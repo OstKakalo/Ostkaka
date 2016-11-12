@@ -9,6 +9,7 @@
 #import "MLContactDetailViewController.h"
 #import "MLDetailChatViewController.h"
 #import "MLTabBarViewController.h"
+#import "MLReportViewController.h"
 @interface MLContactDetailViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *username;
@@ -17,7 +18,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *vipLabel;
 
-
 @property (weak, nonatomic) IBOutlet UILabel *photoLabel;
 
 @property (weak, nonatomic) IBOutlet UITableViewCell *firstCell;
@@ -25,6 +25,8 @@
 @property (weak, nonatomic) IBOutlet UITableViewCell *SecondCell;
 
 @property (weak, nonatomic) IBOutlet UITableViewCell *thirdCell;
+
+@property (nonatomic, assign) BOOL isBlackName;
 
 @end
 
@@ -35,7 +37,15 @@
     return MYSTORYBOARD;
 
 }
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+ 
+//    [self.navigationController popViewControllerAnimated:YES];
+    
+    
 
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -62,14 +72,95 @@
     
     
     
+    
+    
+    
 }
+
+- (void)viewDidAppear:(BOOL)animated {
+
+    [super viewDidAppear:animated];
+    
+    [[EaseMob sharedInstance].chatManager asyncFetchBlockedListWithCompletion:^(NSArray *blockedList, EMError *error) {
+        if (!error) {
+            NSLog(@"获取成功 -- %@",blockedList);
+            self.thirdCell.textLabel.text = @"添加黑名单";
+            self.thirdCell.imageView.image = [UIImage imageNamed:@"BlackName"];
+            self.isBlackName = NO;
+            for (NSString *userName in blockedList) {
+                if ([userName isEqualToString:self.buddy.username]) {
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        self.thirdCell.textLabel.text = @"移除黑名单";
+                        self.thirdCell.imageView.image = [UIImage imageNamed:@"RemoveBlack"];
+                        self.isBlackName = YES;
+                        
+                    });
+                    
+                }
+            }
+        }
+    } onQueue:nil];
+    
+    [self.tableView reloadData];
+
+}
+
 
 
 
 #pragma mark - tableView协议方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    __weak typeof(self) weakSelf = self;
+    if (indexPath.section == 1) {
+        MLReportViewController *reportVC = [[MLReportViewController alloc] init];
+        [self.navigationController pushViewController:reportVC animated:YES];
+    }
+    
     if (indexPath.section == 2) {
-        [self presentViewController:[MLAlert ml_alertControllerWithDefailDevelop] animated:YES completion:nil];
+        
+        if (_isBlackName) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"取消黑名单后您将收到对方的消息" preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil]];
+            [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+                //
+                
+                EMError *error = [[EaseMob sharedInstance].chatManager unblockBuddy:self.buddy.username];
+                if (!error) {
+                    NSLog(@"发送成功");
+                    weakSelf.thirdCell.textLabel.text = @"加入黑名单";
+                    weakSelf.thirdCell.imageView.image = [UIImage imageNamed:@"BlackName"];
+                    weakSelf.isBlackName = NO;
+
+                }
+                
+                
+            }]];
+            [weakSelf presentViewController:alert animated:YES completion:nil];
+        } else {
+        
+        
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"加入黑名单后将接不到对方的消息" preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil]];
+            [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+                //
+                
+                EMError *error = [[EaseMob sharedInstance].chatManager blockBuddy:self.buddy.username 	relationship:eRelationshipFrom];
+                if (!error) {
+                    NSLog(@"发送成功");
+                    weakSelf.thirdCell.textLabel.text = @"取消黑名单";
+                    weakSelf.thirdCell.imageView.image = [UIImage imageNamed:@"RemoveBlack"];
+                    weakSelf.isBlackName = YES;
+                }
+                
+                
+            }]];
+            [weakSelf presentViewController:alert animated:YES completion:nil];
+        }
+        
+        
+        
     }
 
 }
@@ -87,7 +178,7 @@
     sendMsgButton.backgroundColor = ColorWith48Red;
     [sendMsgButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [sendMsgButton setTitle:@"发消息" forState:UIControlStateNormal];
-    sendMsgButton.frame = CGRectMake(30, 100, viewW - 60, 60);
+    sendMsgButton.frame = CGRectMake(30, 60, viewW - 60, 60);
     sendMsgButton.layer.cornerRadius = 10;
     [self.view addSubview:sendMsgButton];
     [footView addSubview:sendMsgButton];

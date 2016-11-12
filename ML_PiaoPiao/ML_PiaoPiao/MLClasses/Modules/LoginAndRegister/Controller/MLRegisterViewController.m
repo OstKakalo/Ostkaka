@@ -8,6 +8,8 @@
 
 #import "MLRegisterViewController.h"
 
+#import "MLServerViewController.h"
+
 @interface MLRegisterViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *username;
@@ -33,14 +35,28 @@
 
 
 #pragma mark - 点击事件
+
+- (IBAction)severAction:(id)sender {
+    MLServerViewController *serverVC = [[MLServerViewController alloc] init];
+    [self presentViewController:serverVC animated:YES completion:nil];
+    
+}
+
+
+
 - (IBAction)ml_register:(id)sender {
     [self.view endEditing:YES];
     [[EaseMob sharedInstance].chatManager asyncRegisterNewAccount:self.username.text password:self.password.text withCompletion:^(NSString *username, NSString *password, EMError *error) {
         if (!error) {
-            NSLog(@"注册成功");
-            [self dismissViewControllerAnimated:YES completion:nil];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"注册成功" message:nil preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"知道啦" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                // NSLog(@"注册成功");
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }]];            
+            [self presentViewController:alert animated:YES completion:nil];
+  
         } else {
-            NSLog(@"%@",error);
+            // NSLog(@"%@",error);
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"用户已经注册" message:nil preferredStyle:UIAlertControllerStyleAlert];
             [alert addAction:[UIAlertAction actionWithTitle:@"知道啦" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 self.username.text = nil;
@@ -75,7 +91,7 @@
 - (void)ml_keyBoardMove {
     
     [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillChangeFrameNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
-//        NSLog(@"%@", note);
+//        // NSLog(@"%@", note);
         /*
          NSConcreteNotification 0x608000251850 {name = UIKeyboardWillChangeFrameNotification; userInfo = {
          UIKeyboardAnimationCurveUserInfoKey = 7;

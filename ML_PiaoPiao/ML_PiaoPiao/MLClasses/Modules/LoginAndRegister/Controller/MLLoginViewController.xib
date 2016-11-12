@@ -19,7 +19,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mao4.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="H9C-Wa-Y6s"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="callBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="H9C-Wa-Y6s"/>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rOF-4w-YVl">
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="uYu-s0-dcB"/>
@@ -78,7 +78,6 @@
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GOURD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDa-IJ-Cju">
                     <constraints>
-                        <constraint firstAttribute="width" constant="85" id="ADH-H1-nkC"/>
                         <constraint firstAttribute="height" constant="21" id="MzE-7y-UEG"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -112,7 +111,7 @@
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
     </objects>
     <resources>
-        <image name="mao4.jpg" width="440" height="781"/>
+        <image name="callBack.png" width="640" height="1136"/>
         <image name="water.png" width="128" height="128"/>
     </resources>
 </document>

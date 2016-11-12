@@ -24,9 +24,17 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    [self ml_setFrontViewDayAndNight];
     [self.username ml_setLabelDayAndNight];
     [self.message ml_setLabelDayAndNight];
     [self.agreeButton jxl_setDayMode:^(UIView *view) {
+        view.backgroundColor = [UIColor whiteColor];
+        [((UIButton *)view) setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    } nightMode:^(UIView *view) {
+        view.backgroundColor = ColorWithBackGround;
+        [((UIButton *)view) setTitleColor:ColorWith243 forState:UIControlStateNormal];
+    }];
+    [self.regectButton jxl_setDayMode:^(UIView *view) {
         view.backgroundColor = [UIColor whiteColor];
         [((UIButton *)view) setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     } nightMode:^(UIView *view) {

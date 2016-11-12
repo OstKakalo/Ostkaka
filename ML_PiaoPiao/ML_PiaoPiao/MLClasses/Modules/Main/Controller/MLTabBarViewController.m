@@ -17,6 +17,7 @@
 #import "MLRequestInfo.h"
 
 #import "MLConnectViewController.h"
+#import "MLConnectVideoViewController.h"
 @interface MLTabBarViewController ()
 <
 EMChatManagerDelegate,
@@ -60,10 +61,6 @@ EMCallManagerDelegate
 
         meNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"我" image:[UIImage imageNamed:@"me"] selectedImage:[UIImage imageNamed:@"me-s"]];
         
-        
-        
-//        self.tabBar.barTintColor = [UIColor whiteColor];
-//        self.tabBar.tintColor = ColorWith48Red;
         
         [self.tabBar jxl_setDayMode:^(UIView *view) {
             UITabBar *bar = (UITabBar *)view;
@@ -178,16 +175,27 @@ EMCallManagerDelegate
 - (void)callSessionStatusChanged:(EMCallSession *)callSession
                     changeReason:(EMCallStatusChangedReason)reason
                            error:(EMError *)error {
-    NSLog(@"------------------------------%ld", (long)callSession.status);
+    // NSLog(@"------------------------------%ld", (long)callSession.status);
     
     switch (callSession.status) {
         case eCallSessionStatusConnected:
         {
             
             
-            MLConnectViewController *connectVC = [[MLConnectViewController alloc] init];
-            connectVC.callSession = callSession;
-            [self presentViewController:connectVC animated:YES completion:nil];
+            if (callSession.type == eCallSessionTypeAudio) {
+                // 语音
+                MLConnectViewController *connectVC = [[MLConnectViewController alloc] init];
+                connectVC.callSession = callSession;
+                [self presentViewController:connectVC animated:YES completion:nil];
+            } else if (callSession.type == eCallSessionTypeVideo) {
+            
+                MLConnectVideoViewController *videoVC = [[MLConnectVideoViewController alloc] init];
+                videoVC.callSession = callSession;
+                [self presentViewController:videoVC animated:YES completion:nil];
+                
+                
+            }
+            
           
             
             

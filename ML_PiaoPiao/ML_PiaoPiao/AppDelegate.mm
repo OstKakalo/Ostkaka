@@ -117,7 +117,7 @@ EMChatManagerDelegate
 
     [SVProgressHUD dismiss];
     if (error) {
-        NSLog(@"%@", error);
+        // NSLog(@"%@", error);
     } else {
         MLTabBarViewController *tabBarVC = [[MLTabBarViewController alloc] init];
         self.window.rootViewController = tabBarVC;

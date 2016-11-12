@@ -118,6 +118,8 @@ MLFaceViewDelegate
     
 }
 - (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
     [self ml_scrollToBottom];
 
 }
@@ -137,6 +139,16 @@ MLFaceViewDelegate
     
 }
 
+
+
+- (void)ml_hideKeyboard {
+
+    [self.view endEditing:YES];
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        self.modelView.frame = CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height - 64);
+    }];
+}
 
 
 #pragma mark - 操控tabBar消失出现
@@ -196,6 +208,11 @@ MLFaceViewDelegate
         _tableView.backgroundColor = [UIColor clearColor];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         
+        
+        UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ml_hideKeyboard)];
+        gesture.cancelsTouchesInView = NO;
+        gesture.numberOfTapsRequired = 1;
+        [_tableView addGestureRecognizer:gesture];
         
     }
     return _tableView;
@@ -423,7 +440,7 @@ MLFaceViewDelegate
             NSString *fileName = [NSString stringWithFormat:@"%@%zd%zd", self.userName, now, randowNum];
             [[EMCDDeviceManager sharedInstance] asyncStartRecordingWithFileName:fileName completion:^(NSError *error) {
                 if (!error) {
-                    NSLog(@"正在录制");
+                    // NSLog(@"正在录制");
                 }
             }];
             
@@ -500,7 +517,7 @@ MLFaceViewDelegate
             EMError *error = nil;
             [[EaseMob sharedInstance].callManager asyncMakeVoiceCall:self.userName timeout:0 error:&error];
             if (error) {
-                NSLog(@"%@",error);
+                // NSLog(@"%@",error);
             }
         }
             break;
@@ -510,7 +527,7 @@ MLFaceViewDelegate
             EMError *error = nil;
             [[EaseMob sharedInstance].callManager asyncMakeVideoCall:self.userName timeout:0 error:&error];
             if (error) {
-                NSLog(@"%@",error);
+                // NSLog(@"%@",error);
             }
         
         }
@@ -718,10 +735,12 @@ MLFaceViewDelegate
 
 #pragma mark - 私有方法
 
+
+
 - (void)ml_keyBoardMove {
     
     [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillChangeFrameNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
-        NSLog(@"note %@, note %@",note , [note class]);
+        // NSLog(@"note %@, note %@",note , [note class]);
         /*
          {name = UIKeyboardWillChangeFrameNotification; userInfo = {
          UIKeyboardAnimationCurveUserInfoKey = 7;

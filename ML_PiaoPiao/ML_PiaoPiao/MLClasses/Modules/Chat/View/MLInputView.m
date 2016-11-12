@@ -53,18 +53,18 @@
         [self.delegate ml_inputView:self inputButtonStyle:2 sender:sender];
     }
 
-    NSLog(@"more");
+    // NSLog(@"more");
 }
 
 - (IBAction)face:(id)sender {
-    NSLog(@"face");
+    // NSLog(@"face");
     if ([self.delegate respondsToSelector:@selector(ml_inputView:inputButtonStyle:sender:)]) {
         [self.delegate ml_inputView:self inputButtonStyle:1 sender:sender];
     }
 }
 
 - (IBAction)speech:(id)sender {
-    NSLog(@"speech");
+    // NSLog(@"speech");
     if ([self.delegate respondsToSelector:@selector(ml_inputView:inputButtonStyle:sender:)]) {
         [self.delegate ml_inputView:self inputButtonStyle:0 sender:sender];
     }

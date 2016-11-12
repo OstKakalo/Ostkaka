@@ -36,7 +36,7 @@ UITableViewDataSource
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillAppear:animated];
+    [super viewWillDisappear:animated];
     self.tabBarController.tabBar.hidden = NO;
     
     
@@ -156,8 +156,8 @@ UITableViewDataSource
     }
     
     
-    return nil;
     
+    return nil;
     
 }
 
@@ -184,7 +184,7 @@ UITableViewDataSource
         
 
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"%@", error);
+        // NSLog(@"%@", error);
     }];
     
 
@@ -210,7 +210,7 @@ UITableViewDataSource
             }
             [self.tableView reloadData];
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            NSLog(@"%@", error);
+            // NSLog(@"%@", error);
         }];
         
         [self.tableView.mj_header endRefreshing];

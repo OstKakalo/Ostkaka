@@ -18,11 +18,11 @@
                         <sections>
                             <tableViewSection id="Lcf-20-rWJ">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="88" id="FW9-Xq-tat">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="88" id="FW9-Xq-tat">
                                         <rect key="frame" x="0.0" y="35" width="375" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FW9-Xq-tat" id="kaa-GU-eIi">
-                                            <frame key="frameInset" width="342" height="87"/>
+                                            <frame key="frameInset" width="375" height="87"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="DQG-ua-rXU">
@@ -60,35 +60,14 @@
                                             <frame key="frameInset" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="激活会员" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2QM-jx-mnZ">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="黑名单" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2QM-jx-mnZ">
                                                     <frame key="frameInset" minX="62" width="278" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="vip.png" id="27O-vh-Zve">
-                                                    <frame key="frameInset" minX="15" minY="5" width="32" height="32"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="2e1-He-r2d" imageView="eIQ-2e-sPc" style="IBUITableViewCellStyleDefault" id="xlF-fX-6Gf">
-                                        <rect key="frame" x="0.0" y="203" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xlF-fX-6Gf" id="4f4-Kd-BwO">
-                                            <frame key="frameInset" width="342" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="钱包" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2e1-He-r2d">
-                                                    <frame key="frameInset" minX="62" width="278" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="money.png" id="eIQ-2e-sPc">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="BlackName.png" id="27O-vh-Zve">
                                                     <frame key="frameInset" minX="15" minY="5" width="32" height="32"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
@@ -100,7 +79,7 @@
                             <tableViewSection id="6WO-8K-aY1">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="fKh-ff-89B" imageView="hzW-b2-DoZ" style="IBUITableViewCellStyleDefault" id="Yjk-Nj-3PZ">
-                                        <rect key="frame" x="0.0" y="283" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="239" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yjk-Nj-3PZ" id="QqD-D4-Haw">
                                             <frame key="frameInset" width="342" height="43"/>
@@ -125,7 +104,7 @@
                             <tableViewSection id="Sh5-xc-MlO">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="5C6-cs-DRW" imageView="RiN-gk-z7z" style="IBUITableViewCellStyleDefault" id="G3t-8p-U7d">
-                                        <rect key="frame" x="0.0" y="363" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="319" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G3t-8p-U7d" id="yPg-sG-tdv">
                                             <frame key="frameInset" width="342" height="43"/>
@@ -147,6 +126,31 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="DXP-O0-lB1">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="JHJ-Id-Uh6" imageView="Wjz-qa-Czx" style="IBUITableViewCellStyleDefault" id="be7-GE-Dhm">
+                                        <rect key="frame" x="0.0" y="399" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="be7-GE-Dhm" id="jQp-Os-eRw">
+                                            <frame key="frameInset" width="342" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="服务条款" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JHJ-Id-Uh6">
+                                                    <frame key="frameInset" minX="62" width="278" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="serverList.png" id="Wjz-qa-Czx">
+                                                    <frame key="frameInset" minX="15" minY="5" width="32" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="6fN-Vj-KhC" id="zLa-Pe-2pV"/>
@@ -157,11 +161,10 @@
                         <outlet property="fifthCell" destination="G3t-8p-U7d" id="Fvo-8U-leu"/>
                         <outlet property="firstCell" destination="FW9-Xq-tat" id="yxg-eb-R06"/>
                         <outlet property="fourthCell" destination="Yjk-Nj-3PZ" id="aBy-H7-Bh5"/>
-                        <outlet property="moneyLabel" destination="2e1-He-r2d" id="UCl-kP-EOn"/>
                         <outlet property="photoLabel" destination="fKh-ff-89B" id="Asg-nG-Qqo"/>
                         <outlet property="secondCell" destination="lCC-ld-4j6" id="M8S-ci-6jT"/>
                         <outlet property="setLabel" destination="5C6-cs-DRW" id="VVf-xU-HHs"/>
-                        <outlet property="thridCell" destination="xlF-fX-6Gf" id="dIa-kr-7lM"/>
+                        <outlet property="sixthCell" destination="be7-GE-Dhm" id="rBd-eo-ElH"/>
                         <outlet property="username" destination="n9c-xv-g6K" id="B34-B6-28X"/>
                         <outlet property="vipLabel" destination="2QM-jx-mnZ" id="iWb-ol-Wrz"/>
                     </connections>
@@ -172,10 +175,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BlackName.png" width="32" height="32"/>
         <image name="detailPhoto.png" width="32" height="32"/>
         <image name="head.jpg" width="256" height="256"/>
-        <image name="money.png" width="32" height="32"/>
+        <image name="serverList.png" width="32" height="32"/>
         <image name="set.png" width="32" height="32"/>
-        <image name="vip.png" width="32" height="32"/>
     </resources>
 </document>

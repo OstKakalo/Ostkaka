@@ -68,14 +68,14 @@
                                             <frame key="frameInset" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="TA还未开通任何特殊服务" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4BS-r7-fFL">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="举报TA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4BS-r7-fFL">
                                                     <frame key="frameInset" minX="62" width="278" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="vip.png" id="6B4-EC-BLJ">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="report.png" id="6B4-EC-BLJ">
                                                     <frame key="frameInset" minX="15" minY="5" width="32" height="32"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
@@ -93,14 +93,14 @@
                                             <frame key="frameInset" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="相册流" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y1E-SA-ap5">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="加入黑名单" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y1E-SA-ap5">
                                                     <frame key="frameInset" minX="62" width="278" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="detailPhoto.png" id="nNe-Xh-LEs">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="BlackName.png" id="nNe-Xh-LEs">
                                                     <frame key="frameInset" minX="15" minY="5" width="32" height="32"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
@@ -131,8 +131,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="detailPhoto.png" width="32" height="32"/>
+        <image name="BlackName.png" width="32" height="32"/>
         <image name="head.jpg" width="256" height="256"/>
-        <image name="vip.png" width="32" height="32"/>
+        <image name="report.png" width="32" height="32"/>
     </resources>
 </document>

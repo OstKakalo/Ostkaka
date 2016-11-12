@@ -58,7 +58,7 @@ EMChatManagerDelegate
         
         [[EaseMob sharedInstance].chatManager asyncFetchBuddyListWithCompletion:^(NSArray *buddyList, EMError *error) {
             if (!error) {
-                NSLog(@"获取成功 -- %@",buddyList);
+                // NSLog(@"获取成功 -- %@",buddyList);
                 if (buddyList.count) {
                     [_friendsArray addObjectsFromArray:buddyList];
                 }
@@ -143,7 +143,7 @@ EMChatManagerDelegate
             // 删除好友
             BOOL isSuccess = [[EaseMob sharedInstance].chatManager removeBuddy:buddy.username removeFromRemote:YES error:&error];
             if (isSuccess && !error) {
-                NSLog(@"删除成功");
+                // NSLog(@"删除成功");
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"删除成功" message:@"" preferredStyle:UIAlertControllerStyleAlert];
                 UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
                 [alert addAction:action];
